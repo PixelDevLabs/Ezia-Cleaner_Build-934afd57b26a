@@ -411,7 +411,7 @@
     <ClInclude Include="RSPiX\Src\orange\Gui\Dlg.h" />
     <ClInclude Include="RSPiX\Src\orange\gui\edit.h" />
     <ClInclude Include="RSPiX\Src\orange\file\file.h" />
-    <ClInclude Include="RSPiX\Src\orange\quickmath\fixedpoint.h" />
+    <ClInclude Include="RSPiX\Src\ORANGE\QuickMath\FixedPoint.h" />
     <ClInclude Include="RSPiX\Src\orange\gui\guiItem.h" />
     <ClInclude Include="RSPiX\Src\orange\iff\iff.h" />
     <ClInclude Include="RSPiX\Src\orange\ImageTools\lasso.h" />
