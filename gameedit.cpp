@@ -7571,8 +7571,8 @@ static int16_t TmpFileName(								// Returns 0 if successfull, non-zero otherwi
 
 	#else
 	rspGetTempPath(szPath, sizeof(szPath));
-	// Impliment for some other system!		 +		strcat(szPath, "/XXXXXX");
-	ASSERT(0);		 +		mktemp(szPath);
+	strcat(szPath, "/XXXXXX");
+	mktemp(szPath);
 	if (!szPath[0]) // first character of string is null terminator
 	 {
 	TRACE("TmpFileName(): mktemp() failed.\n");
