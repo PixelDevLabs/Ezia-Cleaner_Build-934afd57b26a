@@ -309,6 +309,13 @@ endif
 
 CFLAGS += -DALLOW_TWINSTICK
 
+NFDSRCDIR := $(shell $(SRCDIR)/makehelp.sh nfdSrcDir $(target))
+NFDTARGET := $(shell $(SRCDIR)/makehelp.sh nfdTarget $(target) $(MAKECMDGOALS))
+NFDFILENAME := $(shell $(SRCDIR)/makehelp.sh nfdFileName $(target) $(MAKECMDGOALS))
+# FIXME: Don't link the game against GTK. Link NFD against GTK and dynamically load
+# NFD in the game.
+LIBS += $(NFDFILENAME) $(shell pkg-config gtk+-3.0 --libs)
+
 .PHONY: all bindir
 
 
@@ -394,6 +401,9 @@ $(EBINDIR) :
 ebindir :
 	mkdir -p $(EBINDIR)
 
+$(NFDFILENAME):
+	cd $(NFDSRCDIR) && $(MAKE) config=$(NFDTARGET) nfd
+
 distclean: clean
 
 clean:
@@ -403,5 +413,6 @@ clean:
 	#rm -f $(SRCDIR)/parser/lex.yy.c
 	rm -rf $(EBINDIR)
 	rm -f saktool
+	[ ! -z "$(NFDSRCDIR)" ] && cd $(SRCDIR)/$(NFDSRCDIR) && $(MAKE) config=$(NFDTARGET) clean
 
 # end of Makefile ...

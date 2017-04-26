@@ -232,6 +232,8 @@ extern int32_t rspGetToggleKeyStates(void);	// Returns toggle key state flags
 #define RSP_NUM_LOCK_ON				0x00000002
 #define RSP_SCROLL_LOCK_ON			0x00000004
 
+extern void rspSetWindowGrab(bool mode);
+extern bool rspGetWindowGrab();
 
 ///////////////////////////////////////////////////////////////////////////////
 // JOYSTICK Macros:
