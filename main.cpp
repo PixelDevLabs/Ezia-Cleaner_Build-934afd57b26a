@@ -165,11 +165,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Variables/data
 ////////////////////////////////////////////////////////////////////////////////
-extern double wideScreenWidth = 0.0;
-extern double wideScreenHeight = 0.0;
+extern int wideScreenWidth = 0;
+extern int wideScreenHeight = 0;
+extern int wideScreenMultiW = 0;
+extern int wideScreenMultiH = 0;
 extern int PrefsViewWidth = 0;
 extern int PrefsViewHeight = 0;
-extern double myRatio = 0.0;
 ////////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ////////////////////////////////////////////////////////////////////////////////
@@ -208,23 +209,24 @@ static int16_t SetupVideo(					// Returns 0 on success.
 	// Sanity-check result
 
 	// Aspect Ratio / Greatest Common Divisor Check
-	int getGCD = gcd(sWidth, sHeight)+20;
+	//int getGCD = gcd(sWidth, sHeight)+20;
 	
+	int getGCD = (PrefsViewWidth / PrefsViewHeight);
+
 	switch (getGCD)
 	{
-	case 120:	// 4:3
+	case (4/3):	// 4:3
 	//	wideScreenWidth = PrefsViewWidth;
-		wideScreenWidth = ((double)PrefsViewWidth * ((double)PrefsViewWidth / (double)PrefsViewHeight));
+		wideScreenWidth = (PrefsViewWidth * (PrefsViewWidth / PrefsViewHeight));
 		wideScreenHeight = PrefsViewHeight;
-		
 		break;
 	default:
-		wideScreenWidth = ((double)PrefsViewWidth * ((double)sWidth / (double)sHeight));
-		wideScreenHeight = ((double)PrefsViewHeight / ((double)sWidth / (double)sHeight));
-		
+		wideScreenWidth = PrefsViewWidth;
+		wideScreenHeight = PrefsViewHeight;
 		break;
 	}
-
+	wideScreenMultiW = PrefsViewWidth / 640;
+	wideScreenMultiH = PrefsViewHeight / 480;
 	
 	// If bigger than 640x480, set to 853x480, else 640x480...no ty
 	/*
@@ -871,7 +873,7 @@ rspSetProfileOutput("profile.out");
 				//------------------------------------------------------------------------
 				// Setup video
 				//------------------------------------------------------------------------
-				myRatio = (((double)PrefsViewWidth*(double)PrefsViewHeight) / (640.0 * 480.0));
+				
 				sResult	= SetupVideo(				// Returns 0 on success.
 					sUseCurrentDeviceDimensions,	// In:  1 to use current video area.
 					sDeviceWidth,						// In:  Desired video hardware width.

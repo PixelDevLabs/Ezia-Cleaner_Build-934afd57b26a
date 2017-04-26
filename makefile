@@ -1,4 +1,3 @@
-
 # !!! FIXME: Make this more robust. MUCH more robust.
 # !!! FIXME: ...or at least comment the rest of these options...
 
@@ -232,7 +231,6 @@ SRCS := \
 
     # wtf is THIS?!
 	#RSPiX/Src/ORANGE/MTask/mtask.cpp \
-
 OBJS0 := $(SRCS:.s=.o)
 OBJS1 := $(OBJS0:.c=.o)
 OBJS2 := $(OBJS1:.cpp=.o)
@@ -308,6 +306,13 @@ ifeq ($(strip $(steamworks)),true)
 endif
 
 CFLAGS += -DALLOW_TWINSTICK
+
+NFDSRCDIR := $(shell $(SRCDIR)/makehelp.sh nfdSrcDir $(target))
+NFDTARGET := $(shell $(SRCDIR)/makehelp.sh nfdTarget $(target) $(MAKECMDGOALS))
+NFDFILENAME := $(shell $(SRCDIR)/makehelp.sh nfdFileName $(target) $(MAKECMDGOALS))
+# FIXME: Don't link the game against GTK. Link NFD against GTK and dynamically load
+# NFD in the game.
+LIBS += $(NFDFILENAME) $(shell pkg-config gtk+-3.0 --libs)
 
 .PHONY: all bindir
 
@@ -394,6 +399,9 @@ $(EBINDIR) :
 ebindir :
 	mkdir -p $(EBINDIR)
 
+$(NFDFILENAME):
+	cd $(NFDSRCDIR) && $(MAKE) config=$(NFDTARGET) nfd
+
 distclean: clean
 
 clean:
@@ -403,5 +411,6 @@ clean:
 	#rm -f $(SRCDIR)/parser/lex.yy.c
 	rm -rf $(EBINDIR)
 	rm -f saktool
+	[ ! -z "$(NFDSRCDIR)" ] && cd $(SRCDIR)/$(NFDSRCDIR) && $(MAKE) config=$(NFDTARGET) clean
 
 # end of Makefile ...

@@ -1,0 +1,38 @@
+﻿Build started 4/26/2017 3:20:14 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Postal Plus.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I.\steamworks\sdk\public /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D NOSHMALLOC /D TRACENASSERT /D WIN32 /D _WINDOWS /D LOCALE=US /D TARGET=POSTAL_2015 /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D DEBUG_LEVEL_CHEAT /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Postal Plus\Debug/" /Fd".\Build\Postal Plus\Debug/vc120.pdb" /FR".\Build\Postal Plus\Debug\\" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Postal Plus\Debug\PostalD.exe) does not match the Linker's OutputFile property value (E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Testing\PostalD.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Testing\PostalD.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\SDL2\libs\win32 /LIBPATH:.\steamworks\sdk\redistributable_bin nfd_d.lib odbc32.lib odbccp32.lib WSock32.lib WinMM.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmt /NODEFAULTLIB:libcmtd /NODEFAULTLIB:libc /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Build\Postal Plus\Debug/Postal PlusD.pdb" /SUBSYSTEM:CONSOLE,"5.01" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Build\Postal Plus\Debug\PostalD.lib" /MACHINE:X86 /SAFESEH ".\Build\Postal Plus\Debug\Postal.res"
+         ".\Build\Postal Plus\Debug/aivars.obj"
+         ".\Build\Postal Plus\Debug/band.obj"
+         ".\Build\Postal Plus\Debug/credits.obj"
+         ".\Build\Postal Plus\Debug/game.obj"
+         ".\Build\Postal Plus\Debug/input.obj"
+         ".\Build\Postal Plus\Debug/localize.obj"
+         ".\Build\Postal Plus\Debug/main.obj"
+         ".\Build\Postal Plus\Debug/menus.obj"
+         ".\Build\Postal Plus\Debug/play.obj"
+         ".\Build\Postal Plus\Debug/SampleMaster.obj"
+         ".\Build\Postal Plus\Debug/title.obj"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Cyan\Debug\Cyan.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Blue\Debug\BlueD.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\BLiT\Debug\BLiT.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\BLiT3D\Debug\BLiT3D.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Green\Debug\Green.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Orange\Debug\Orange.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\WishPiX\Debug\WishPiX.lib"
+         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Postal Common\Debug\Postal Common.lib"
+     1>aivars.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         Postal Plus.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Postal Plus\Debug\PostalD.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\Build\Postal Plus\Debug\PostalD.bsc" ".\Build\Postal Plus\Debug\aivars.sbr" ".\Build\Postal Plus\Debug\band.sbr" ".\Build\Postal Plus\Debug\credits.sbr" ".\Build\Postal Plus\Debug\game.sbr" ".\Build\Postal Plus\Debug\input.sbr" ".\Build\Postal Plus\Debug\localize.sbr" ".\Build\Postal Plus\Debug\main.sbr" ".\Build\Postal Plus\Debug\menus.sbr" ".\Build\Postal Plus\Debug\play.sbr" ".\Build\Postal Plus\Debug\SampleMaster.sbr" ".\Build\Postal Plus\Debug\title.sbr"
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Postal Plus.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.60

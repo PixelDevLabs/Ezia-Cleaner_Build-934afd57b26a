@@ -742,8 +742,10 @@
 
 #include "CompileOptions.h"
 
-extern double wideScreenWidth;
-extern double wideScreenHeight;
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+extern int wideScreenMultiW;
+extern int wideScreenMultiH;
 ////////////////////////////////////////////////////////////////////////////////
 // Macros/types/etc.
 ////////////////////////////////////////////////////////////////////////////////
@@ -954,7 +956,7 @@ extern double wideScreenHeight;
 #define DISPLAY_RIGHT_BORDER	(wideScreenHeight/(480/100))
 
 // Initial camera viewable area.
-#define INITIAL_CAMERA_X		(wideScreenWidth)
+#define INITIAL_CAMERA_X		(floor(wideScreenWidth))
 #define INITIAL_CAMERA_Y		(wideScreenHeight)
 
 // Front most priority for a hotbox.
@@ -7571,8 +7573,10 @@ static int16_t TmpFileName(								// Returns 0 if successfull, non-zero otherwi
 
 	#else
 	rspGetTempPath(szPath, sizeof(szPath));
-	// Impliment for some other system!		 +		strcat(szPath, "/XXXXXX");
-	ASSERT(0);		 +		mktemp(szPath);
+	// Impliment for some other system!		 
+	strcat(szPath, "/XXXXXX");
+	ASSERT(0);		 
+	mktemp(szPath);
 	if (!szPath[0]) // first character of string is null terminator
 	 {
 	TRACE("TmpFileName(): mktemp() failed.\n");

@@ -1,0 +1,46 @@
+﻿Build started 4/24/2017 12:26:18 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Cyan.vcxproj" on node 5 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\c\Win32\WinG\Inc /I.\RSPiX\c\Win32\DirectX\Inc /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D WITH_STEAMWORKS=0 /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Cyan\Release/" /Fd".\Build\Cyan\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\Cyan\Unix\uColors.cpp RSPiX\Src\Cyan\Unix\uDialog.cpp RSPiX\Src\Cyan\Unix\uPath.cpp
+         uColors.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         uDialog.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\Cyan\Unix\uDialog.cpp(153): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\Cyan\Unix\uDialog.cpp(186): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         uPath.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\Cyan\Unix\uPath.cpp(78): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\Cyan\Unix\uPath.cpp(118): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\Cyan\Unix\uPath.cpp(160): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Cyan\Release\Cyan.lib" /NOLOGO .\Build\Cyan\Release/uColors.obj
+         .\Build\Cyan\Release/uDialog.obj
+         .\Build\Cyan\Release/uPath.obj
+         Cyan.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Cyan\Release\Cyan.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Cyan.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.69

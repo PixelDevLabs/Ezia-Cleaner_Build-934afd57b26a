@@ -131,7 +131,9 @@ extern int16_t rspMsgBox(	// Returns RSP_MB_RET_*.  See switch statement below.
     data.buttons = buttons;
 
     int button = 0;
+
     const int rc = SDL_ShowMessageBox(&data, &button);
+
     return (rc == 0) ? button : -1;
 }
 
@@ -145,8 +147,10 @@ extern int16_t rspOpenBox(								// Returns 0 if successfull, non-zero otherwis
 {
 	int sRes = -1;
 	
+
 	nfdchar_t *outPath = NULL;
 	nfdresult_t result = NFD_OpenDialog(NULL, NULL, &outPath);
+
 
 	if (result == NFD_OKAY) {
 		puts("Success!");
@@ -178,8 +182,11 @@ extern int16_t rspSaveBox(			// Returns 0 on success.
 	// Note: Cannot use '.' in filter.  Preceding '.' ignored.
 {
 	int sRes = -1;
+
+
 	nfdchar_t *outPath = NULL;
 	nfdresult_t result = NFD_SaveDialog(NULL, NULL, &outPath);
+
 
 	if (result == NFD_OKAY) {
 		puts("Success!");

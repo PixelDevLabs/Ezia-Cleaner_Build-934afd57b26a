@@ -1,0 +1,26 @@
+﻿Build started 4/26/2017 12:09:20 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\WishPiX.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\WishPiX\Debug/" /Fd".\Build\WishPiX\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt WishPiX\Menu\menu.cpp WishPiX\Prefs\prefline.cpp WishPiX\Prefs\prefs.cpp WishPiX\ResourceManager\resmgr.cpp WishPiX\Spry\spry.cpp
+         menu.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         prefline.cpp
+         prefs.cpp
+         resmgr.cpp
+         spry.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\WishPiX\Debug\WishPiX.lib" /NOLOGO .\Build\WishPiX\Debug/menu.obj
+         .\Build\WishPiX\Debug/prefline.obj
+         .\Build\WishPiX\Debug/prefs.obj
+         .\Build\WishPiX\Debug/resmgr.obj
+         .\Build\WishPiX\Debug/spry.obj
+         WishPiX.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\WishPiX\Debug\WishPiX.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\WishPiX.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.02

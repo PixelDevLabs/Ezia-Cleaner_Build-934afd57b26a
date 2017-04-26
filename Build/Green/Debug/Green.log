@@ -1,0 +1,44 @@
+﻿Build started 4/26/2017 12:09:23 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Green.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Green\Debug/" /Fd".\Build\Green\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\GREEN\Hot\hot.cpp RSPiX\Src\GREEN\Image\Image.cpp RSPiX\Src\GREEN\Image\ImageFile.cpp RSPiX\Src\GREEN\Image\Imagecon.cpp RSPiX\Src\GREEN\Image\PalFile.cpp RSPiX\Src\GREEN\Image\pal.cpp RSPiX\Src\GREEN\InputEvent\InputEvent.cpp RSPiX\Src\GREEN\Mix\MixBuf.cpp RSPiX\Src\GREEN\Mix\mix.cpp RSPiX\Src\GREEN\Sample\sample.cpp RSPiX\Src\GREEN\SndFx\SndFx.cpp RSPiX\Src\GREEN\Snd\snd.cpp RSPiX\Src\GREEN\Task\task.cpp
+         hot.cpp
+         Image.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\image\image.cpp(457): warning C4244: 'argument' : conversion from 'U64' to 'size_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\image\image.cpp(515): warning C4244: 'argument' : conversion from 'U64' to 'size_t', possible loss of data
+         ImageFile.cpp
+         Imagecon.cpp
+         PalFile.cpp
+         pal.cpp
+         InputEvent.cpp
+         MixBuf.cpp
+         mix.cpp
+         sample.cpp
+         SndFx.cpp
+         snd.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\snd\snd.cpp(627): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\snd\snd.cpp(628): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\snd\snd.cpp(774): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\snd\snd.cpp(775): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+         task.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Green\Debug\Green.lib" /NOLOGO .\Build\Green\Debug/hot.obj
+         .\Build\Green\Debug/Image.obj
+         .\Build\Green\Debug/Imagecon.obj
+         .\Build\Green\Debug/ImageFile.obj
+         .\Build\Green\Debug/InputEvent.obj
+         .\Build\Green\Debug/mix.obj
+         .\Build\Green\Debug/MixBuf.obj
+         .\Build\Green\Debug/pal.obj
+         .\Build\Green\Debug/PalFile.obj
+         .\Build\Green\Debug/sample.obj
+         .\Build\Green\Debug/snd.obj
+         .\Build\Green\Debug/SndFx.obj
+         .\Build\Green\Debug/task.obj
+         Green.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Green\Debug\Green.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Green.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.12

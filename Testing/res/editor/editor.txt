@@ -1,0 +1,146 @@
+HOW TO USE THE GAME EDITOR (bare bones, basic necessities version):
+
+IMPORTANT NOTE: the editor is presented "as-is" and is not supported by Running With Scissors.  No technical support will be given.
+
+
+1. in the "realm" box, choose "new" to create a new level, "open" to open an existing one.
+
+2. If you did "new", type in the name of the background art you want to create a level on from this list:
+   [Afb
+    bridge
+    CONSITE
+    Farm
+    Ghetto
+    Homer
+    Indust
+    mine
+    Newcity
+    parade
+    PARK
+    Salvage
+    Skirts
+    Trailer
+    train
+    Truck]
+(*special cropped versions of some levels are also available for multiplayer matches.  The "realm files" [.rlm] for these should be in a directory called "multi".  To create new levels with the cropped background graphics, in the "new" window type "MP" before the name on the above list, (eg: MPafb) and chop any letters off the end that cause the name to be longer than 8 characters (eg: MPconsit).
+
+   We've also provided the actual bouy nets we used to create the game levels, so that you don't have to make your own unless you want to. ('cause it's kind of a pain in the ass...)
+   use the "open" command and look in [directory] and choose one from this list:
+   [look in a directory called "bouynets" or something. the .rlm files will have the word "bouy" mispelled in them]
+   The "realm X rotation" and "scene X rotation" determine what angle the 3D objects are rendered at. For "side view" levels set these to: realm x = 45, scene x = 30
+   for "top down" levels set both to 90 and make sure the "scale terrain map hieghts via view angle" and "use side view 2D assets" are NOT checked (for "side view"
+   levels both these SHOULD be checked).  You can also set how much of the level's hostiles must be killed to "win" in the "% of kills" box.
+
+3. Now click "ok".  the selected background art should now appear in the editing screen.
+
+4. First you should add a "warp", located in the "place object..." box.  Select it and click on the background to "paste" it in.
+   This is where the player starts.  If you're creating a multiplayer
+   level, add several otherwise everyone will start right next to each other.  You can also
+   do this if you want random start points in single player mode.
+   double click on the warp to set it's "stockpile".  This is what weapons, ammo, etc. you'll enter the world with when you play.
+   editing any warp re-sets all the other warps on the same level to have the new settings.
+
+5. NAVNETS:
+   A Navnet contains Bouys.  Bouys are linked together to create navigational paths that the enemies
+   use to find their way around obstacles (they can clumsily do this to some extent even without a 
+   bouy network, but they really need the help.) the first Navnet (that round red thingy that appears in the 
+upper left corner of your world) is created by default.  any bouys you place will automatically be associated with
+the current navnet. To place bouys, choose "Bouy" from the "place objects..." list, then move move the cursor onto the edit
+screen and click where you want the bouy to go (If you do not see the bouy, hit "B" to make bouys visible. 
+TIP: pressing the spacebar adds another of whatever the last
+selected item was. CAUTION:  holding the spacebar down places VERY MANY of the last selected item! be sure to
+only tap the bar!) Place as many bouys as you think necessarry (up to a max of 254), think about how much help
+the enemies will need to get around tricky obstacles.  you link the bouys to one another by right clicking
+on one.  A green line will appear.  drag this line over to the next bouy you want to link to and click.  Now you'll see 
+a green line linking the bouys.  Note that you can link any bouy to as many other bouys as you want, in fact, the more 
+links, the more realistic and unpredictable the enemies movements will be.  If you want, you can create multiple navnets,
+ each with their own discrete bouy system (this is useful if you want enemies to stay within a certain area).
+To create a new Navnet, select "Navnet" from the list, name it in the dialog that appears, and click it in, somewhere on the background art (doesn't
+matter where) now, when you add bouys, the bouys are added to whichever navnet is currently selected.  You can toggle between
+existing navnets by clicking on them in the "Navnets" box in the lower right of your screen. (IMPORTANT: When you start 
+placing enemies, note that they are automatically linked to the currently selected Navnet and will ignore all others!
+Be careful that the intended navnet is selected before placing enemies!)
+
+6. Notes about successful bouy nets:  The main thing is to insure that the enemies have clear paths through tight spaces
+ click on the "height" and "no walk" buttons in the "view attributes" box.  This makes those attributes visible (as transparent green areas)
+now you can see where movement will be blocked.  try to give the enemies as simple and straight a path as possible through tight spaces.
+
+7. Placing enemies:
+   select "person" from the "place objects..." list box. Move the cursor into the edit window and click him in.  It always defaults
+to a grenader, with a grenade, using "default.lgk" as his logic table.
+
+8. Editing enemy attributes:
+   double click on the enemy.  A dialog will appear that controls all his attributes.  on the left hand side
+is a list of various personae.  These alter the look and set of dialog audio the enemy will use.  On the right
+is the list of available weapons. Below these is a dialog which indicates which logic table he is using.  Click on the
+"..." button to bring up a list of all available logic types and choose a new one if you wish.  when you're done,
+click "ok" until the dialog goes away.  Now the changes you've made take effect.
+
+9.  Logic tables:
+  these control a variety of behavioral attributes such as: what to do when shot, how agressive to be, does the
+enemy care if his friends nearby get shot, does he respond to PYLONS(more on these later), does he roam or guard, etc.
+here are a few examples:
+
+guard: stands his ground unless shot, then he'll attack/and or try to move to a safer spot to shoot at you
+
+fodder: detects player as soon as level begins and attempts to engage in battle at all costs
+
+victim: does not fire weapons.  If anyone nearby gets shot, they go into a panic and run around screaming
+
+Panic: same as above, except that as soon as they appear on the world, they are automatically in panic mode (good for having screaming crowds
+exiting movie theatres, etc.)
+
+protest: protestor logic.  In the "person" edit box you set which bouy numbers you want them to use as start and end points,
+and they will march back and forth between them until you shoot one ofthem, then they panic.
+
+default:  the most deluxe logic type, they hang around until you get in range then they attack.  If they encounter
+any PYLONS they will respond to whatever commands they(the pylons) are set to.
+
+10. Pylons:
+  these provide additional means to create specific behavior for enemies. Pylons are selected from the object list
+the same as anything else. once you place a pylon, double click on it to edit it's attributes, double RIGHT click on it to
+set it's trigger region.  Pylons can be set to:
+
+Pop out: this defines a start point for an enemy to run out (to a target pylon with "no message" set which must be defined) shoot, then run back
+         to the start point.  This requires an enemy with default, popout, or pop_only logic table. (which logic table you
+         choose will determine how easily  the enemy can be "distracted" from following the pylon's command)
+
+run_shoot: you set up two of these, each referencing the other, to provide a path, which the enemy will run back and forth along, shooting
+           at you simultaneously(strafing as he runs), when you step onto one of their trigger regions.  This requires an enemy with default logic.
+
+Safe: Enemies will see these as "cover" and try to hide there if they are wounded and have a logic table that allows them to notice pylons.
+
+11. Editing Pylon trigger regions:
+        Double right click on a pylon and a bounding square appears, centered on the pylon.  Use the arrow keys to position this square anywhere on the background
+art that you'd like(shift, ctrl, alt all speed up the square's movement). when you move the cursor into the square a smaller square appears.  This is your "brush", use it to
+paint in the spots withing the bounding square that you want to act as trigger regions for the pylon's command.  Increase
+the size of the bruch with the "+" on the numeric keypad, or shrink it with "-". Hit "esc" when you're done.
+
+OTHER STUFF:
+
+barrels: double clicking brings up a dialog where you can set them to be destructable only by the player.
+
+dispensers: these spew out whatever you select, in the quantities you choose, based on "timed" (set min/max for randomness),
+            "Exists" (new item only gets spewed after previous one dies.  set min/max to determine how long after death this occurs),
+            or "distance to dude" (set trigger range, and min/max for time between spews while activated)
+            when placed in the world, the dispenser will show an icon of the selected dispensee with a "25¢" on him.
+
+Deleting stuff: select an item and hit "del"
+
+Demon: adding one of these to the world crates that booming "FM DJ" voice that taunts the enemies and congratulates you while you play.
+
+Soundthing : these add in ambient sounds like wind, birds, phone sex...
+
+navigating around the background quickly: just put the cursor inside the little "map" window, click and drag...
+
+the "layers" box: this turns on and off all the visible layers of the backgrounds.  useful for placing bouy nets behind buldings, etc.
+
+"cameras" box: I have absolutely no idea what this does...
+
+play testing a level: hit "play" in the "realms" box, or just hit "p"
+
+when you're done playtesting a level and want to return to the editor: hit "esc"
+
+
+-There's lots more, but the above will allow you to create playable levels (unless I forgot something!).  Remember to save often!!
+ 

@@ -1,0 +1,3 @@
+USER_GLOBAL  TARGET_DIST -> SET_ACTION USER_GLOBAL
+normal		 <medium		advance		attack
+attack		 *				guard		*

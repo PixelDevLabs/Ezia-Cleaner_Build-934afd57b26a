@@ -72,9 +72,10 @@
 // TOOLBAR Graphic parameters:
 ////////////////////////////////////////////////////////////////////////////////
 
-extern double wideScreenWidth;
-extern double wideScreenHeight;
-
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+extern int wideScreenMultiW;
+extern int wideScreenMultiH;
 //=================== toolbar templates (loaded each level) ====================
 
 //=====================  General Toolbar Parameters  ===========================
@@ -361,8 +362,8 @@ public:
 
 			ms_pimCompositeBufferScaled = new RImage;
 			ms_pimCompositeBufferScaled->CreateImage(
-				pHood->m_pimEmptyBar->m_sWidth, //HACK HACK
-				pHood->m_pimEmptyBar->m_sHeight*2,
+				(pHood->m_pimEmptyBar->m_sWidth*wideScreenMultiW), //HACK HACK
+				(pHood->m_pimEmptyBar->m_sHeight*wideScreenMultiH), // MATH MATHS c:
 				RImage::BMP8);
 			}
 
@@ -387,8 +388,8 @@ public:
 
 		// Set up the bar to a neutral background:
 		rspBlit(pHood->m_pimEmptyBar,ms_pimCompositeBuffer,0,0,0,0,
-					ms_pimCompositeBuffer->m_sWidth,
-					ms_pimCompositeBuffer->m_sHeight*2);
+					(ms_pimCompositeBuffer->m_sWidth*wideScreenMultiW),
+					(ms_pimCompositeBuffer->m_sHeight*wideScreenMultiH));
 
 		for (i = NotWeapon + 1; i < NumberOfWeapons; i++)
 			{

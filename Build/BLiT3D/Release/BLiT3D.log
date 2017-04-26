@@ -1,0 +1,59 @@
+﻿Build started 4/24/2017 12:26:18 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\BLiT3D.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D WITH_STEAMWORKS=0 /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\BLiT3D\Release/" /Fd".\Build\BLiT3D\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\GREEN\3D\pipeline.cpp RSPiX\Src\GREEN\3D\render.cpp RSPiX\Src\GREEN\3D\types3d.cpp RSPiX\Src\GREEN\3D\zbuffer.cpp
+         pipeline.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>RSPiX\Src\GREEN\3D\pipeline.cpp(110): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>RSPiX\Src\GREEN\3D\pipeline.cpp(112): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>RSPiX\Src\GREEN\3D\pipeline.cpp(431): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>RSPiX\Src\GREEN\3D\pipeline.cpp(432): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+         render.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         types3d.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>RSPiX\Src\GREEN\3D\types3d.cpp(243): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+     1>RSPiX\Src\GREEN\3D\types3d.cpp(246): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+     1>RSPiX\Src\GREEN\3D\types3d.cpp(249): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+         zbuffer.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\BLiT3D\Release\BLiT3D.lib" /NOLOGO .\Build\BLiT3D\Release/pipeline.obj
+         .\Build\BLiT3D\Release/render.obj
+         .\Build\BLiT3D\Release/types3d.obj
+         .\Build\BLiT3D\Release/zbuffer.obj
+         BLiT3D.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\BLiT3D\Release\BLiT3D.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\BLiT3D.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.47

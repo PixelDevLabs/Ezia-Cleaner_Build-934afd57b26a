@@ -1,0 +1,138 @@
+﻿Build started 4/26/2017 12:09:19 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Orange.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Orange\Debug/" /Fd".\Build\Orange\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\ORANGE\Attribute\attribute.cpp RSPiX\Src\ORANGE\Channel\channel.cpp RSPiX\Src\ORANGE\Debug\profile.cpp RSPiX\Src\ORANGE\DirtRect\DirtRect.cpp RSPiX\Src\ORANGE\File\file.cpp RSPiX\Src\ORANGE\GUI\ListBox.cpp RSPiX\Src\ORANGE\GUI\ListContents.cpp RSPiX\Src\ORANGE\GUI\MultiBtn.cpp RSPiX\Src\ORANGE\GUI\ProcessGui.cpp RSPiX\Src\ORANGE\GUI\PushBtn.cpp RSPiX\Src\ORANGE\GUI\btn.cpp RSPiX\Src\ORANGE\GUI\dlg.cpp RSPiX\Src\ORANGE\GUI\edit.cpp RSPiX\Src\ORANGE\GUI\guiItem.cpp RSPiX\Src\ORANGE\GUI\scrollbar.cpp RSPiX\Src\ORANGE\GUI\txt.cpp RSPiX\Src\ORANGE\GameLib\ANIMSPRT.CPP RSPiX\Src\ORANGE\GameLib\Region.cpp RSPiX\Src\ORANGE\GameLib\SPRITE.CPP RSPiX\Src\ORANGE\IFF\iff.cpp RSPiX\Src\ORANGE\ImageTools\lasso.cpp RSPiX\Src\ORANGE\Laymage\laymage.cpp RSPiX\Src\ORANGE\MTask\mtask.cpp RSPiX\Src\ORANGE\Meter\meter.cpp RSPiX\Src\ORANGE\MsgBox\MsgBox.cpp RSPiX\Src\ORANGE\MultiGrid\MultiGrid.cpp RSPiX\Src\ORANGE\MultiGrid\MultiGridIndirect.cpp RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp RSPiX\Src\ORANGE\QuickMath\FixedPoint.cpp RSPiX\Src\ORANGE\QuickMath\QuickMath.cpp RSPiX\Src\ORANGE\RString\rstring.cpp RSPiX\Src\ORANGE\color\colormatch.cpp RSPiX\Src\ORANGE\color\dithermatch.cpp RSPiX\Src\ORANGE\str\str.cpp
+         attribute.cpp
+         channel.cpp
+         profile.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\debug\profile.cpp(78): warning C4244: '=' : conversion from 'S64' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\debug\profile.cpp(191): warning C4244: '=' : conversion from 'S64' to 'int16_t', possible loss of data
+         DirtRect.cpp
+         file.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(391): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\direct.h(140) : see declaration of 'mkdir'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(393): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\direct.h(140) : see declaration of 'mkdir'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(505): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\io.h(323) : see declaration of 'access'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(509): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\direct.h(140) : see declaration of 'mkdir'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(519): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\io.h(323) : see declaration of 'access'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(542): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\io.h(323) : see declaration of 'access'
+         ListBox.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         ListContents.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         MultiBtn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         ProcessGui.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         PushBtn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         btn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         dlg.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         edit.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         guiItem.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         scrollbar.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         txt.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         ANIMSPRT.CPP
+         Region.cpp
+         SPRITE.CPP
+         iff.cpp
+         Generating Code...
+         Compiling...
+         lasso.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         laymage.cpp
+         mtask.cpp
+         meter.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         MsgBox.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         MultiGrid.cpp
+         MultiGridIndirect.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         SimpleBatch.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\simplebatch.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\simplebatch.cpp(130): warning C4018: '<' : signed/unsigned mismatch
+         FixedPoint.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         QuickMath.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         rstring.cpp
+         colormatch.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\color\colormatch.cpp(440): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\color\colormatch.cpp(793): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\color\colormatch.cpp(800): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+         dithermatch.cpp
+         str.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Orange\Debug\Orange.lib" /NOLOGO .\Build\Orange\Debug/ANIMSPRT.obj
+         .\Build\Orange\Debug/attribute.obj
+         .\Build\Orange\Debug/btn.obj
+         .\Build\Orange\Debug/channel.obj
+         .\Build\Orange\Debug/colormatch.obj
+         .\Build\Orange\Debug/DirtRect.obj
+         .\Build\Orange\Debug/dithermatch.obj
+         .\Build\Orange\Debug/dlg.obj
+         .\Build\Orange\Debug/edit.obj
+         .\Build\Orange\Debug/file.obj
+         .\Build\Orange\Debug/FixedPoint.obj
+         .\Build\Orange\Debug/guiItem.obj
+         .\Build\Orange\Debug/iff.obj
+         .\Build\Orange\Debug/lasso.obj
+         .\Build\Orange\Debug/laymage.obj
+         .\Build\Orange\Debug/ListBox.obj
+         .\Build\Orange\Debug/ListContents.obj
+         .\Build\Orange\Debug/meter.obj
+         .\Build\Orange\Debug/MsgBox.obj
+         .\Build\Orange\Debug/mtask.obj
+         .\Build\Orange\Debug/MultiBtn.obj
+         .\Build\Orange\Debug/MultiGrid.obj
+         .\Build\Orange\Debug/MultiGridIndirect.obj
+         .\Build\Orange\Debug/ProcessGui.obj
+         .\Build\Orange\Debug/profile.obj
+         .\Build\Orange\Debug/PushBtn.obj
+         .\Build\Orange\Debug/QuickMath.obj
+         .\Build\Orange\Debug/Region.obj
+         .\Build\Orange\Debug/rstring.obj
+         .\Build\Orange\Debug/scrollbar.obj
+         .\Build\Orange\Debug/SHAPES.obj
+         .\Build\Orange\Debug/SimpleBatch.obj
+         .\Build\Orange\Debug/SPRITE.obj
+         .\Build\Orange\Debug/str.obj
+         .\Build\Orange\Debug/txt.obj
+         Orange.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Orange\Debug\Orange.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Orange.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.67

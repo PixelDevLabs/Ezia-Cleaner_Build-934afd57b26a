@@ -1011,8 +1011,10 @@ int16_t SpryLoadConv(			// Returns 0 on success.
 	return sRes;
 	}
 
-extern double wideScreenWidth;
-extern double wideScreenHeight;
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+extern int wideScreenMultiW;
+extern int wideScreenMultiH;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1223,9 +1225,9 @@ int16_t CHood::GetResources(void)						// Returns 0 if successfull, non-zero oth
 
 		RImage * stretched = new RImage();
 		RImage * stretched2 = new RImage();
-		stretched->CreateImage(wideScreenWidth,m_pimTopBar->GetHeight(), m_pimTopBar->GetType(), 0);
+		stretched->CreateImage(wideScreenWidth, (m_pimTopBar->GetHeight()*wideScreenMultiW), m_pimTopBar->GetType(), 0);
 		
-		stretched->CreateImage(wideScreenWidth, m_pimTopBar->GetHeight(), m_pimTopBar->GetType(), 0);
+		stretched->CreateImage(wideScreenWidth, (m_pimTopBar->GetHeight()*wideScreenMultiH), m_pimTopBar->GetType(), 0);
 
 		//Here we create a new streched image for widescreen
 		float widthScale = (float)m_pimTopBar->m_sWidth / (float)stretched->m_sWidth;

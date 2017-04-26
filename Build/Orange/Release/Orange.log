@@ -1,0 +1,465 @@
+﻿Build started 4/24/2017 12:26:19 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Orange.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D WITH_STEAMWORKS=0 /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Orange\Release/" /Fd".\Build\Orange\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\ORANGE\GameLib\ANIMSPRT.CPP RSPiX\Src\ORANGE\Attribute\attribute.cpp RSPiX\Src\ORANGE\GUI\btn.cpp RSPiX\Src\ORANGE\Channel\channel.cpp RSPiX\Src\ORANGE\color\colormatch.cpp RSPiX\Src\ORANGE\DirtRect\DirtRect.cpp RSPiX\Src\ORANGE\color\dithermatch.cpp RSPiX\Src\ORANGE\GUI\dlg.cpp RSPiX\Src\ORANGE\GUI\edit.cpp RSPiX\Src\ORANGE\File\file.cpp RSPiX\Src\ORANGE\QuickMath\FixedPoint.cpp RSPiX\Src\ORANGE\GUI\guiItem.cpp RSPiX\Src\ORANGE\IFF\iff.cpp RSPiX\Src\ORANGE\ImageTools\lasso.cpp RSPiX\Src\ORANGE\Laymage\laymage.cpp RSPiX\Src\ORANGE\GUI\ListBox.cpp RSPiX\Src\ORANGE\GUI\ListContents.cpp RSPiX\Src\ORANGE\Meter\meter.cpp RSPiX\Src\ORANGE\MsgBox\MsgBox.cpp RSPiX\Src\ORANGE\MTask\mtask.cpp RSPiX\Src\ORANGE\GUI\MultiBtn.cpp RSPiX\Src\ORANGE\MultiGrid\MultiGrid.cpp RSPiX\Src\ORANGE\MultiGrid\MultiGridIndirect.cpp RSPiX\Src\ORANGE\GUI\ProcessGui.cpp RSPiX\Src\ORANGE\Debug\profile.cpp RSPiX\Src\ORANGE\GUI\PushBtn.cpp RSPiX\Src\ORANGE\QuickMath\QuickMath.cpp RSPiX\Src\ORANGE\GameLib\Region.cpp RSPiX\Src\ORANGE\RString\rstring.cpp RSPiX\Src\ORANGE\GUI\scrollbar.cpp RSPiX\Src\ORANGE\GameLib\SHAPES.CPP RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp RSPiX\Src\ORANGE\GameLib\SPRITE.CPP RSPiX\Src\ORANGE\GUI\txt.cpp
+         ANIMSPRT.CPP
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         attribute.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         btn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         channel.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+         colormatch.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>RSPiX\Src\ORANGE\color\colormatch.cpp(440): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
+     1>RSPiX\Src\ORANGE\color\colormatch.cpp(793): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+     1>RSPiX\Src\ORANGE\color\colormatch.cpp(800): warning C4244: '=' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+         DirtRect.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         dithermatch.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         dlg.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         edit.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         file.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\File\file.cpp(355): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\File\file.cpp(378): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\File\file.cpp(390): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\File\file.cpp(391): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(140) : see declaration of 'mkdir'
+     1>RSPiX\Src\ORANGE\File\file.cpp(392): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\File\file.cpp(393): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(140) : see declaration of 'mkdir'
+     1>RSPiX\Src\ORANGE\File\file.cpp(394): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\File\file.cpp(480): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\File\file.cpp(483): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\File\file.cpp(488): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>RSPiX\Src\ORANGE\File\file.cpp(505): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : see declaration of 'access'
+     1>RSPiX\Src\ORANGE\File\file.cpp(509): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(140) : see declaration of 'mkdir'
+     1>RSPiX\Src\ORANGE\File\file.cpp(519): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : see declaration of 'access'
+     1>RSPiX\Src\ORANGE\File\file.cpp(521): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>RSPiX\Src\ORANGE\File\file.cpp(522): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>RSPiX\Src\ORANGE\File\file.cpp(542): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : see declaration of 'access'
+     1>RSPiX\Src\ORANGE\File\file.cpp(544): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\File\file.cpp(601): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>RSPiX\Src\ORANGE\File\file.cpp(1080): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(230) : see declaration of 'fscanf'
+                 RSPiX\Src\ORANGE\File\file.cpp(1123) : see reference to function template instantiation 'int32_t ReadASCII<U8>(TYPE *,int32_t,FILE *,double)' being compiled
+                 with
+                 [
+                     TYPE=U8
+                 ]
+         FixedPoint.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         guiItem.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>RSPiX\Src\ORANGE\GUI\guiItem.cpp(981): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>RSPiX\Src\ORANGE\GUI\guiItem.cpp(1000): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>RSPiX\Src\ORANGE\GUI\guiItem.cpp(2558): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         iff.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         lasso.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         laymage.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\Laymage\laymage.cpp(280): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Laymage\laymage.cpp(340): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Laymage\laymage.cpp(859): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Laymage\laymage.cpp(1497): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         ListBox.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         ListContents.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         meter.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/Meter/meter.h(192): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Meter\meter.cpp(114): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Meter\meter.cpp(332): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         MsgBox.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         mtask.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\ORANGE\MTask\mtask.cpp(191): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         Generating Code...
+         Compiling...
+         MultiBtn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         MultiGrid.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         MultiGridIndirect.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         ProcessGui.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         profile.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\debug\profile.h(299): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(78): warning C4244: '=' : conversion from 'S64' to 'int16_t', possible loss of data
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(120): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(191): warning C4244: '=' : conversion from 'S64' to 'int16_t', possible loss of data
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(226): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(304): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(308): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>RSPiX\Src\ORANGE\Debug\profile.cpp(433): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         PushBtn.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         QuickMath.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         Region.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         rstring.cpp
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\rstring\rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>RSPiX\Src\ORANGE\RString\rstring.cpp(331): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_vsnprintf'
+         scrollbar.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         SHAPES.CPP
+         SimpleBatch.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(80): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(86): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(92): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(93): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(105): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(106): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(125): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\parse\SimpleBatch.h(131): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+     1>RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp(130): warning C4018: '<' : signed/unsigned mismatch
+     1>RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp(194): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp(204): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>RSPiX\Src\ORANGE\Parse\SimpleBatch.cpp(208): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+         SPRITE.CPP
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         txt.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D WITH_STEAMWORKS=0 /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /FAs /Fa".\Build\Orange\Release/" /Fo".\Build\Orange\Release/" /Fd".\Build\Orange\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\ORANGE\str\str.cpp
+         str.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Orange\Release\Orange.lib" /NOLOGO .\Build\Orange\Release/ANIMSPRT.obj
+         .\Build\Orange\Release/attribute.obj
+         .\Build\Orange\Release/btn.obj
+         .\Build\Orange\Release/channel.obj
+         .\Build\Orange\Release/colormatch.obj
+         .\Build\Orange\Release/DirtRect.obj
+         .\Build\Orange\Release/dithermatch.obj
+         .\Build\Orange\Release/dlg.obj
+         .\Build\Orange\Release/edit.obj
+         .\Build\Orange\Release/file.obj
+         .\Build\Orange\Release/FixedPoint.obj
+         .\Build\Orange\Release/guiItem.obj
+         .\Build\Orange\Release/iff.obj
+         .\Build\Orange\Release/lasso.obj
+         .\Build\Orange\Release/laymage.obj
+         .\Build\Orange\Release/ListBox.obj
+         .\Build\Orange\Release/ListContents.obj
+         .\Build\Orange\Release/meter.obj
+         .\Build\Orange\Release/MsgBox.obj
+         .\Build\Orange\Release/mtask.obj
+         .\Build\Orange\Release/MultiBtn.obj
+         .\Build\Orange\Release/MultiGrid.obj
+         .\Build\Orange\Release/MultiGridIndirect.obj
+         .\Build\Orange\Release/ProcessGui.obj
+         .\Build\Orange\Release/profile.obj
+         .\Build\Orange\Release/PushBtn.obj
+         .\Build\Orange\Release/QuickMath.obj
+         .\Build\Orange\Release/Region.obj
+         .\Build\Orange\Release/rstring.obj
+         .\Build\Orange\Release/scrollbar.obj
+         .\Build\Orange\Release/SHAPES.obj
+         .\Build\Orange\Release/SimpleBatch.obj
+         .\Build\Orange\Release/SPRITE.obj
+         .\Build\Orange\Release/str.obj
+         .\Build\Orange\Release/txt.obj
+         Orange.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Orange\Release\Orange.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Orange.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.70

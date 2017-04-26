@@ -44,6 +44,8 @@ extern int FramebufferHeight = 0;
 static Uint32 *TexturePointer = NULL;
 static Uint8 *PalettedTexturePointer = NULL;
 extern bool presentDirty = FALSE;
+extern int wideScreenMultiW;
+extern int wideScreenMultiH;
 
 typedef struct		// Stores information on usable video modes.
 	{

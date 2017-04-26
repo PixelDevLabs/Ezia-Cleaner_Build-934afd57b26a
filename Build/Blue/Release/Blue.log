@@ -1,0 +1,29 @@
+﻿Build started 4/24/2017 12:33:46 PM.
+     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Blue.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\c\Win32\DirectX\Inc /I.\RSPiX\c\Win32\WinG\Inc /I.\RSPiX\c\Win32\SmartHeap\Include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Blue\Release/" /Fd".\Build\Blue\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\Blue\unix\Bdisp.cpp
+         Bdisp.cpp
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>RSPiX\Src\Blue\unix\Bdisp.cpp(256): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+     1>RSPiX\Src\Blue\unix\Bdisp.cpp(257): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+     1>RSPiX\Src\Blue\unix\Bdisp.cpp(258): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Blue\Release\Blue.lib" /NOLOGO .\Build\Blue\Release/Bdebug.obj
+         .\Build\Blue\Release/Bdisp.obj
+         .\Build\Blue\Release/Bjoy.obj
+         .\Build\Blue\Release/Bkey.obj
+         .\Build\Blue\Release/Bmain.obj
+         .\Build\Blue\Release/Bmouse.obj
+         .\Build\Blue\Release/Bsound.obj
+         .\Build\Blue\Release/Btime.obj
+         Blue.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Blue\Release\Blue.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Blue.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.65

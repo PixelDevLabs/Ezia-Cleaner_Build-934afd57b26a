@@ -378,8 +378,10 @@
 //#define RSP_PROFILE_ON
 //#include "ORANGE/Debug/profile.h"
 
-extern double wideScreenWidth;
-extern double wideScreenHeight;
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+extern int wideScreenMultiW;
+extern int wideScreenMultiH;
 ////////////////////////////////////////////////////////////////////////////////
 // Macros/types/etc.
 ////////////////////////////////////////////////////////////////////////////////
@@ -397,31 +399,32 @@ extern double wideScreenHeight;
 
 #define VIEW_X									0
 #define VIEW_Y									0
-#define VIEW_W									(wideScreenWidth)
-#define VIEW_H									((double)wideScreenHeight/1.2)
+#define VIEW_W									wideScreenWidth
+#define VIEW_H									wideScreenHeight/1.2
 
 #define FILM_X									0
 #define FILM_Y									40
 
+
 // Scaling values
 #define FILM_INCDEC_SCALE					0.05
-#define FILM_MAX_SCALE						1.00
+#define FILM_MAX_SCALE						10.00
 #define FILM_MIN_SCALE						0.30
 
 #define INFO_STATUS_RECT_X					((VIEW_W-640)/2)
 #define INFO_STATUS_RECT_Y					(FILM_Y - (INFO_STATUS_RECT_H + 3))
-#define INFO_STATUS_RECT_W					(g_pimScreenBuf->m_sWidth - INFO_STATUS_RECT_X)
+#define INFO_STATUS_RECT_W					((g_pimScreenBuf->m_sWidth - INFO_STATUS_RECT_X)*wideScreenMultiW)
 #define INFO_STATUS_RECT_H					DISP_INFO_FONT_HEIGHT
 
 #define DUDE_STATUS_RECT_X					((VIEW_W-640)/2)
-#define DUDE_STATUS_RECT_Y					((wideScreenHeight/(480/FILM_Y)) + VIEW_H)
-#define DUDE_STATUS_RECT_W					(g_pimScreenBuf->m_sWidth - DUDE_STATUS_RECT_X)
-#define DUDE_STATUS_RECT_H					(g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y)
+#define DUDE_STATUS_RECT_Y					(FILM_Y + VIEW_H)
+#define DUDE_STATUS_RECT_W					((g_pimScreenBuf->m_sWidth - DUDE_STATUS_RECT_X)*wideScreenMultiW)
+#define DUDE_STATUS_RECT_H					((g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y)*wideScreenMultiH)
 
 #define REALM_STATUS_RECT_X				0
 #define REALM_STATUS_RECT_Y				0
-#define REALM_STATUS_RECT_W				(FILM_X + VIEW_W - REALM_STATUS_RECT_X)
-#define REALM_STATUS_RECT_H				(wideScreenHeight/12)
+#define REALM_STATUS_RECT_W				((FILM_X + VIEW_W - REALM_STATUS_RECT_X)*wideScreenMultiW)
+#define REALM_STATUS_RECT_H				((wideScreenHeight/12)*wideScreenMultiW)
 
 // No less than this even after scaling.
 #define MIN_GRIP_ZONE_RADIUS				30
