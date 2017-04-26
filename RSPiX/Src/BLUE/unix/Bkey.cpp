@@ -70,6 +70,17 @@ extern bool mouse_grabbed;
 
 extern void rspSetQuitStatus(int16_t sQuitStatus);
 
+extern void rspSetWindowGrab(bool mode)
+{
+	SDL_SetWindowGrab(sdlWindow, mode ? SDL_TRUE : SDL_FALSE);
+	mouse_grabbed = mode;
+}
+
+extern bool rspGetWindowGrab()
+{
+	return SDL_GetWindowGrab(sdlWindow);
+}
+
 extern void Key_Event(SDL_Event *event)
 {
     ASSERT((event->type == SDL_KEYUP) || (event->type == SDL_KEYDOWN));
@@ -92,10 +103,8 @@ extern void Key_Event(SDL_Event *event)
         {
             if (event->key.keysym.mod & KMOD_CTRL) // ctrl-g
             {
-                const SDL_bool mode = SDL_GetWindowGrab(sdlWindow) ? SDL_FALSE : SDL_TRUE;
-                //SDL_SetRelativeMouseMode(mode);
-                SDL_SetWindowGrab(sdlWindow, mode);
-                mouse_grabbed = (mode == SDL_TRUE);
+                const bool mode = !rspGetWindowGrab();
+                rspSetWindowGrab(mode);
                 return;  // don't pass this key event on to the game.
             }
         }
