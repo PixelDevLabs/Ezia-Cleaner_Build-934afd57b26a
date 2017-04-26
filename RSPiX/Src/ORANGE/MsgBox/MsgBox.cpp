@@ -172,7 +172,7 @@
 //////////////////////////////////////////////////////////////////////////////
 // Module specific (static) variables.
 //////////////////////////////////////////////////////////////////////////////
-
+extern bool presentDirty;
 //////////////////////////////////////////////////////////////////////////////
 // Construction/Destruction.
 //////////////////////////////////////////////////////////////////////////////
@@ -395,12 +395,12 @@ inline void DrawDirty(	// Returns nothing.
 	RImage* pimScr,		// Screen buffer.
 	RDirtyRects* pdrl)		// List of dirty rects.
 	{
+		presentDirty = TRUE;
 	RDRect*	pdr;
 	// If not going direct to screen . . .
 	if (pimComp != pimScr)
 		{
 		rspShieldMouseCursor();
-
 		pdr	= pdrl->GetHead();
 		while (pdr != NULL)
 			{
@@ -409,18 +409,16 @@ inline void DrawDirty(	// Returns nothing.
 						pdr->sX, pdr->sY, 
 						pdr->sX, pdr->sY,
 						pdr->sW, pdr->sH);
-
-			rspPresentFrame();
-
+			
 			pdrl->Remove();
 
 			delete pdr;
 
 			pdr	= pdrl->GetNext();
 			}
-
 		rspUnshieldMouseCursor();
 		}
+	rspPresentFrameTest();
 	}
 
 ////////////////////////////////////////////////////////////////////////
@@ -548,7 +546,7 @@ uint32_t RMsgBox::DoModal(					// Returns chosen ID on success,
 		// Draw dirty areas if not going direct to screen and
 		// remove rects from drl.
 		DrawDirty(pimDst, pimScr, &drl);
-
+		
 		// Do GUI maintainence.
 		uint32_t	ulRes	= DoModeless(pie);
 		if (ulRes != 0)
@@ -574,7 +572,7 @@ uint32_t RMsgBox::DoModal(					// Returns chosen ID on success,
 
 	// Deactivate this and all children.
 	SetVisible(FALSE);
-
+	presentDirty = FALSE;
 	return m_ulId;
 	}
 

@@ -315,7 +315,6 @@ int16_t RDirtyRects::Combine(RDRect* pdr)
 									delete pdrExisting;
 									}
 								}
-							
 							sRes = 0;
 							break;
 							}

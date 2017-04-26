@@ -4,5 +4,6 @@
     <LocalDebuggerCommand>.\Testing\PostalD.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>$(SolutionDir)\Testing</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommandArguments>-windowed</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

@@ -41,7 +41,6 @@
 #define INC_N_WRAP(i, max)	(i = (i + 1) % max)
 
 extern SDL_Window *sdlWindow;
-extern SDL_Surface *sdlShadowSurface;
 
 static bool sdlKeyRepeat = false;
 

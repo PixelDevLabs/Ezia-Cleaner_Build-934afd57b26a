@@ -471,6 +471,8 @@ extern void rspCacheDirtyRect(
 extern void rspKeyRepeat(int bEnable);
 
 extern void rspPresentFrame(void);
+extern void rspPresentFrameTest(void);
+
 
 extern void rspUpdateDisplayRects(void);
 

@@ -165,9 +165,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Variables/data
 ////////////////////////////////////////////////////////////////////////////////
-int wideScreenWidth;
+extern double wideScreenWidth = 0.0;
+extern double wideScreenHeight = 0.0;
 extern int PrefsViewWidth = 0;
 extern int PrefsViewHeight = 0;
+extern double myRatio = 0.0;
 ////////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ////////////////////////////////////////////////////////////////////////////////
@@ -176,6 +178,14 @@ extern int PrefsViewHeight = 0;
 ////////////////////////////////////////////////////////////////////////////////
 // Set up video for the game.
 ////////////////////////////////////////////////////////////////////////////////
+static int gcd(		// Greatest Common Divisor
+	int a,			// Width (Ex 1600, 1280, 1024, 640, 320)
+	int b)			// Height (Ex 900, 720, 768, 480, 240)
+{
+	return (b == 0) ? a : gcd(b, a%b);
+}
+
+
 static int16_t SetupVideo(					// Returns 0 on success.
 	int16_t	sUseCurrentDeviceDimensions,	// In:  1 to use current video area.
 	int16_t	sDeviceWidth,						// In:  Desired video hardware width.
@@ -196,11 +206,36 @@ static int16_t SetupVideo(					// Returns 0 on success.
 	while (!rspQueryVideoMode(&sDepth, &sWidth, &sHeight));
 	TRACE("rspQueryVideoMode result: %ix%ix%i\n", sWidth, sHeight, sDepth);
 	// Sanity-check result
+
+	// Aspect Ratio / Greatest Common Divisor Check
+	int getGCD = gcd(sWidth, sHeight)+20;
+	
+	switch (getGCD)
+	{
+	case 120:	// 4:3
+	//	wideScreenWidth = PrefsViewWidth;
+		wideScreenWidth = ((double)PrefsViewWidth * ((double)PrefsViewWidth / (double)PrefsViewHeight));
+		wideScreenHeight = PrefsViewHeight;
+		
+		break;
+	default:
+		wideScreenWidth = ((double)PrefsViewWidth * ((double)sWidth / (double)sHeight));
+		wideScreenHeight = ((double)PrefsViewHeight / ((double)sWidth / (double)sHeight));
+		
+		break;
+	}
+
+	
+	// If bigger than 640x480, set to 853x480, else 640x480...no ty
+	/*
 	if (sHeight > 480 && sWidth > 640)
 		wideScreenWidth = 480 * sWidth / sHeight;
 	else // fallback to specified resolution
 		wideScreenWidth = 480 * sDeviceWidth / sDeviceHeight;
+		*/
 #endif
+
+
 	// If "use current settings" is specified, we get the current device settings
 	// instead of using those specified in the prefs file.
 	if (sUseCurrentDeviceDimensions != FALSE)
@@ -786,8 +821,8 @@ int main(int argc, char **argv)
 		prefs.GetVal("Video", "DeviceWidth", MAIN_SCREEN_MIN_WIDTH, &sDeviceWidth);
 		prefs.GetVal("Video", "DeviceHeight", MAIN_SCREEN_MIN_HEIGHT, &sDeviceHeight);
 		prefs.GetVal("Video", "UseCurrentDeviceDimensions", 1, &sUseCurrentDeviceDimensions);
-		prefs.GetVal("Video", "EditorViewWidth", 480, &PrefsViewWidth);
-		prefs.GetVal("Video", "EditorViewHeight", 640, &PrefsViewHeight);
+		prefs.GetVal("Video", "EditorViewWidth", MAIN_WINDOW_WIDTH, &PrefsViewWidth);
+		prefs.GetVal("Video", "EditorViewHeight", MAIN_WINDOW_HEIGHT, &PrefsViewHeight);
 
 		// Get audio preferences
 		int16_t	sAudioSamplesPerSec;
@@ -836,7 +871,7 @@ rspSetProfileOutput("profile.out");
 				//------------------------------------------------------------------------
 				// Setup video
 				//------------------------------------------------------------------------
-
+				myRatio = (((double)PrefsViewWidth*(double)PrefsViewHeight) / (640.0 * 480.0));
 				sResult	= SetupVideo(				// Returns 0 on success.
 					sUseCurrentDeviceDimensions,	// In:  1 to use current video area.
 					sDeviceWidth,						// In:  Desired video hardware width.

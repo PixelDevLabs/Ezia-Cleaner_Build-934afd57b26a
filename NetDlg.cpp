@@ -1507,7 +1507,7 @@ static DLG_ACTION UpdateDialog(						// Returns dialog action
 			{
 			if (bReset)
 				{
-				ms_lNextOptionsUpdateTime	= lCurTime + OPTIONS_SEND_FREQUENCY;
+				ms_lNextOptionsUpdateTime	= lCurTime*10 + OPTIONS_SEND_FREQUENCY;
 				}
 
 			action	= DLG_OPTIONS_UPDATED;

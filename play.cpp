@@ -378,7 +378,8 @@
 //#define RSP_PROFILE_ON
 //#include "ORANGE/Debug/profile.h"
 
-
+extern double wideScreenWidth;
+extern double wideScreenHeight;
 ////////////////////////////////////////////////////////////////////////////////
 // Macros/types/etc.
 ////////////////////////////////////////////////////////////////////////////////
@@ -395,9 +396,9 @@
 #define DISP_INFO_FONT_HEIGHT				15
 
 #define VIEW_X									0
-#define VIEW_Y									0 
-#define VIEW_W									wideScreenWidth
-#define VIEW_H									400
+#define VIEW_Y									0
+#define VIEW_W									(wideScreenWidth)
+#define VIEW_H									((double)wideScreenHeight/1.2)
 
 #define FILM_X									0
 #define FILM_Y									40
@@ -407,20 +408,20 @@
 #define FILM_MAX_SCALE						1.00
 #define FILM_MIN_SCALE						0.30
 
-#define INFO_STATUS_RECT_X					((VIEW_W - 640)/2)
-#define INFO_STATUS_RECT_Y					(FILM_Y - (INFO_STATUS_RECT_H + 3) )
+#define INFO_STATUS_RECT_X					((VIEW_W-640)/2)
+#define INFO_STATUS_RECT_Y					(FILM_Y - (INFO_STATUS_RECT_H + 3))
 #define INFO_STATUS_RECT_W					(g_pimScreenBuf->m_sWidth - INFO_STATUS_RECT_X)
 #define INFO_STATUS_RECT_H					DISP_INFO_FONT_HEIGHT
 
-#define DUDE_STATUS_RECT_X					0
-#define DUDE_STATUS_RECT_Y					(FILM_Y + VIEW_H)
+#define DUDE_STATUS_RECT_X					((VIEW_W-640)/2)
+#define DUDE_STATUS_RECT_Y					((wideScreenHeight/(480/FILM_Y)) + VIEW_H)
 #define DUDE_STATUS_RECT_W					(g_pimScreenBuf->m_sWidth - DUDE_STATUS_RECT_X)
 #define DUDE_STATUS_RECT_H					(g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y)
 
 #define REALM_STATUS_RECT_X				0
 #define REALM_STATUS_RECT_Y				0
 #define REALM_STATUS_RECT_W				(FILM_X + VIEW_W - REALM_STATUS_RECT_X)
-#define REALM_STATUS_RECT_H				40
+#define REALM_STATUS_RECT_H				(wideScreenHeight/12)
 
 // No less than this even after scaling.
 #define MIN_GRIP_ZONE_RADIUS				30
@@ -430,8 +431,8 @@
 #define GRIP_MIN_MOVE_Y						1
 #define GRIP_MAX_MOVE_X						8
 #define GRIP_MAX_MOVE_Y						8
-#define GRIP_ALIGN_X							1
-#define GRIP_ALIGN_Y							1
+#define GRIP_ALIGN_X						1
+#define GRIP_ALIGN_Y						1
 
 // Time for black screen between cutscene and game screen
 #define BLACK_HOLD_TIME						250
@@ -2549,7 +2550,7 @@ class CPlayStatus : public CPlay
 								m_rectDude.sY,
 								pinfo->LocalDudePointer()) == true)
 								{
-								pinfo->m_drl.Add(m_rectDude.sX, m_rectDude.sY, m_rectDude.sW, m_rectDude.sH);
+								pinfo->m_drl.Add(m_rectDude.sX, m_rectDude.sY, m_rectDude.sW, m_rectDude.sH*2);
 								}
 							}
 

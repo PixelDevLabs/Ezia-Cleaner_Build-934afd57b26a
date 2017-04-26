@@ -324,7 +324,8 @@
 #include "alphablitforpostal.h"
 #include "reality.h"
 
-
+extern double wideScreenWidth;
+extern double wideScreenHeight;
 ////////////////////////////////////////////////////////////////////////////////
 // Macros/types/etc.
 ////////////////////////////////////////////////////////////////////////////////
@@ -338,7 +339,7 @@
 
 // Diameter in pixels for screen for 3D objects.
 // Should be largest to hold largest 3D object.
-#define SCREEN_DIAMETER_FOR_3D	(MODEL_DIAMETER * SCREEN2MODEL_RATIO)	
+#define SCREEN_DIAMETER_FOR_3D	(MODEL_DIAMETER * SCREEN2MODEL_RATIO)
 
 int16_t	gsGlobalBrightnessPerLightAttribute = 5;  
 /* short gsGlobalLightingAdjustment = 128; /* neutral center */
@@ -357,8 +358,8 @@ bool	g_bSceneDontBlit;
 #define FONT_BACK_COLOR				0
 #define FONT_SHADOW_COLOR			0
 
-const double	c_dMaxScale		= 10.0;
-const double	c_dMinScale		= 0.2;
+const double	c_dMaxScale = 10.0;
+const double	c_dMinScale = 0.2;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Variables/data

@@ -22,7 +22,7 @@
 #include "../cyan.h"
 
 extern SDL_Window *sdlWindow;
-extern SDL_Surface *sdlShadowSurface;
+
 extern int sdlWindowWidth;
 extern int sdlWindowHeight;
 
@@ -144,6 +144,7 @@ extern int16_t rspOpenBox(								// Returns 0 if successfull, non-zero otherwis
 	const char*	pszFilter /*= NULL*/)				// In:  Filename filter or NULL for none
 {
 	int sRes = -1;
+	
 	nfdchar_t *outPath = NULL;
 	nfdresult_t result = NFD_OpenDialog(NULL, NULL, &outPath);
 
@@ -161,7 +162,7 @@ extern int16_t rspOpenBox(								// Returns 0 if successfull, non-zero otherwis
 		printf("Error: %s\n", NFD_GetError());
 		sRes = -1;
 	}
-
+	
 	fprintf(stderr, "STUBBED: %s:%d\n", __FILE__, __LINE__);
 	return sRes;
 }

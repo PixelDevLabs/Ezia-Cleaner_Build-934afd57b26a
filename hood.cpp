@@ -912,8 +912,8 @@ int16_t CHood::Init(void)									// Returns 0 if successfull, non-zero otherwis
 		if (sResult == 0)
 			{
 			// Jon has PROMISED me that there is an m_pRealm which is ACCURATE.
-			#define MAX_SMASHEE_W 72 // 40	once we deal with fat objects
-			#define MAX_SMASHEE_H 72 // 40	once we deal with fat objects
+			#define MAX_SMASHEE_W 500 // 40	once we deal with fat objects
+			#define MAX_SMASHEE_H 500 // 40	once we deal with fat objects
 			
 			// Allocate the Smashatorium:  Pick tile size greater than any normal object radius...
 			m_pRealm->m_smashatorium.Destroy();
@@ -1011,7 +1011,8 @@ int16_t SpryLoadConv(			// Returns 0 on success.
 	return sRes;
 	}
 
-extern int wideScreenWidth;
+extern double wideScreenWidth;
+extern double wideScreenHeight;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1221,7 +1222,10 @@ int16_t CHood::GetResources(void)						// Returns 0 if successfull, non-zero oth
 
 
 		RImage * stretched = new RImage();
-		stretched->CreateImage(wideScreenWidth,m_pimTopBar->GetHeight(),m_pimTopBar->GetType(),0);
+		RImage * stretched2 = new RImage();
+		stretched->CreateImage(wideScreenWidth,m_pimTopBar->GetHeight(), m_pimTopBar->GetType(), 0);
+		
+		stretched->CreateImage(wideScreenWidth, m_pimTopBar->GetHeight(), m_pimTopBar->GetType(), 0);
 
 		//Here we create a new streched image for widescreen
 		float widthScale = (float)m_pimTopBar->m_sWidth / (float)stretched->m_sWidth;
