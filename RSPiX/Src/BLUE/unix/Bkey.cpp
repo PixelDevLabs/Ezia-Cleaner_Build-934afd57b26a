@@ -83,7 +83,6 @@ extern bool rspGetWindowGrab()
 
 extern void Key_Event(SDL_Event *event)
 {
-HEAD
     ASSERT((event->type == SDL_KEYUP) || (event->type == SDL_KEYDOWN));
     //ASSERT(event->key.keysym.sym < SDLK_LAST);
 
@@ -173,7 +172,6 @@ HEAD
 
     if (key < sizeof (keystates))
         keystates[key] = pushed;
-origin/experimental
 }
 
 extern void rspClearKeyEvents(void)
