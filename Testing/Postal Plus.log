@@ -1,237 +1,48 @@
-======== Postal Plus build Apr 26 2017 12:09:20 ========
-Debug log file initialized: Wed Apr 26 15:22:47 2017
+======== Postal Plus build Apr 27 2017 02:26:31 ========
+Debug log file initialized: Thu Apr 27 04:49:16 2017
 
 GameSettings.cpp(241):It ain't April Fools my dude!
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blitinit.cpp(136):BLiT has initialized
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\mix\mixbuf.cpp(841):Volume Control Initialized.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\quickmath.cpp(108):QTRIG initialized!
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\quickmath\fixedpoint.h(222):QTRIG fixed point initialized!
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(362):FindCorrectFile initializing...
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\file\file.cpp(450):prefpath is "C:\Users\MzTek\AppData\Roaming\RunningWithScissors\Postal Plus\"
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\main.cpp(208):rspQueryVideoMode result: 1600x900x8
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(663):rspSetVideoMode(8, 0, 0, 1280, 720, 1, 0)
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(724):SDL Window initialized at 1280x720
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(755):SDL Renderer set: 1280x720
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(1) = 1
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(2) = 2
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(-32768) = 16
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1) = 1
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(4) = 3
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(8) = 4
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(2) = 2
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(6) = 32
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1024) = 11
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(7) = 64
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(512) = 10
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\title.cpp(651):EndTitle(): lTotalUnits = 12000, lCummUnits = 12004
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\orange\color\colormatch.cpp(430):RAlpha::CreateAlphaRGB: First set your palette with ms_SetPalette
-hood.cpp(1106):GetResources(): Successfully loaded 7 Alpha layers and 8 Opaque layers.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\image\image.cpp(783):RImage::CreateData - Attempting to create data when pMem is still pointing to memory
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 18
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 25
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 15
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 4
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 19
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 1
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 22
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 19
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 10
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 18
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 24
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 1
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 16
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 21
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 26
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 17
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 2
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 18
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 22
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 3
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 5
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "BillGrunt.wav".
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 29
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 12
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 28
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 11
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(587):CacheSample(): Could not cache sample "ambient/birds3.wav".
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-person.cpp(388):m_ePersonType = 7
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-person.cpp(388):m_ePersonType = 22
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-person.cpp(388):m_ePersonType = 22
-person.cpp(389):NUM_ELEMENTS(g_apersons) = 70
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\green\blit\blit.cpp(679):BLiT:  Gone outside source buffer.  Must source clip.
-e:\game dev\postal 1\gui_test-postal-934afd57b26a\samplemaster.cpp(687):PlaySample(): Could not get sample "ambient/birds3.wav".
-e:\gam
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\blitinit.cpp(136):BLiT has initialized
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\mix\mixbuf.cpp(841):Volume Control Initialized.
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.cpp(108):QTRIG initialized!
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\fixedpoint.h(222):QTRIG fixed point initialized!
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\file\file.cpp(362):FindCorrectFile initializing...
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\file\file.cpp(450):prefpath is "C:\Users\MzTek\AppData\Roaming\RunningWithScissors\Postal Plus\"
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\main.cpp(208):rspQueryVideoMode result: 1600x900x8
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(661):rspSetVideoMode(8, 0, 0, 640, 480, 1, 0)
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(722):SDL Window initialized at 640x480
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(753):SDL Renderer set: 640x480
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(1) = 1
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(2) = 2
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(-32768) = 16
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1) = 1
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(4) = 3
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(8) = 4
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(2) = 2
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(6) = 32
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1024) = 11
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(438):MouseIndexToBitfield(7) = 64
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(512) = 10
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\title.cpp(650):EndTitle(): lTotalUnits = 12000, lCummUnits = 12002
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(870):SetFont WARNING: Used small non-cached size 9
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(870):SetFont WARNING: Used small non-cached size 9
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(870):SetFont WARNING: Used small non-cached size 0
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(710):RPrint::SetEffect:ERROR - no font selected!
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(710):RPrint::SetEffect:ERROR - no font selected!
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(466):RPrint::print: No font installed yet.
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(764):RPrint::SetColumn: Bad dimensions!
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(870):SetFont WARNING: Used small non-cached size 9
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\blit\rprint.cpp(870):SetFont WARNING: Used small non-cached size 9
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\credits.cpp(820):Error - already text
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(362):MouseBitfieldToIndex(1) = 1
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(65536) = 17
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(362):MouseBitfieldToIndex(2) = 2
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(32768) = 16
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1) = 1
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(4) = 3
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(8) = 4
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(2) = 2
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(362):MouseBitfieldToIndex(32) = 6
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(1024) = 11
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(362):MouseBitfieldToIndex(64) = 7
+e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bjoy.cpp(411):JoyBitfieldToIndex(512) = 10

@@ -428,7 +428,7 @@
 // This is used when setting up font's for GUI's.  The size doesn't matter, but we do have to
 // supply a value, so just for kicks, let's use the same one each time.  Since we use RFont to
 // try to figure out how many font sizes are used, we want this to be a cached size.
-#define DEFAULT_GUI_FONT_HEIGHT		19
+#define DEFAULT_GUI_FONT_HEIGHT		((19*wideScreenMultiH)/2)
 
 #define HEAD_COLOR						MAKE_U32_COLOR(160,   0,   0,   0)
 #define HEAD_SHADOW_COLOR				MAKE_U32_COLOR( 64,  16,  16,   0)

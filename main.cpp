@@ -167,8 +167,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 extern int wideScreenWidth = 0;
 extern int wideScreenHeight = 0;
-extern int wideScreenMultiW = 0;
-extern int wideScreenMultiH = 0;
+extern double wideScreenMultiW = 0.0;
+extern double wideScreenMultiH = 0.0;
 extern int PrefsViewWidth = 0;
 extern int PrefsViewHeight = 0;
 ////////////////////////////////////////////////////////////////////////////////
@@ -225,8 +225,8 @@ static int16_t SetupVideo(					// Returns 0 on success.
 		wideScreenHeight = PrefsViewHeight;
 		break;
 	}
-	wideScreenMultiW = PrefsViewWidth / 640;
-	wideScreenMultiH = PrefsViewHeight / 480;
+	wideScreenMultiW = (double)PrefsViewWidth / 640.0;
+	wideScreenMultiH = (double)PrefsViewHeight / 480.0;
 	
 	// If bigger than 640x480, set to 853x480, else 640x480...no ty
 	/*

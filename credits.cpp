@@ -130,8 +130,6 @@ SampleMasterID*	g_psmidMusic = &g_smidCreditsMusak;
 
 extern int wideScreenWidth;
 extern int wideScreenHeight;
-extern int wideScreenMultiW;
-extern int wideScreenMultiH;
 
 
 ////////////////////////////////////////////////////////////////////////////////

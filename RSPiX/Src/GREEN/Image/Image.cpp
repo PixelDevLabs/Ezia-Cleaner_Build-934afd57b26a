@@ -825,8 +825,8 @@ int16_t RImage::CreateImage(		// Returns 0 if successful.
 	int16_t	sRes	= SUCCESS;	// Assume success.
 
 	// Fill in fields.
-	m_sWidth = m_sWinWidth	 = sWidth;
-	m_sHeight = m_sWinHeight = sHeight;
+	m_sWidth = m_sWinWidth = sWidth = round((double)sWidth*wideScreenMultiW);
+	m_sHeight = m_sWinHeight = sHeight = round((double)sHeight*wideScreenMultiH);
 	m_type						 = type;
 	m_sDepth						 = sDepth;
 	m_sWinX = m_sWinY			 = 0;

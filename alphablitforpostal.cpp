@@ -208,8 +208,6 @@ void Verify();
 extern char* pct;
 extern int wideScreenWidth;
 extern int wideScreenHeight;
-extern int wideScreenMultiW;
-extern int wideScreenMultiH;
 // USE GLOBAL MASK
 //
 void g_alphaBlit(

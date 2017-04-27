@@ -1,12 +1,12 @@
-﻿Build started 4/26/2017 3:18:42 PM.
-     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Blue.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/27/2017 2:28:18 AM.
+     1>Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Blue.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\c\Win32\WinG\Inc /I.\RSPiX\c\Win32\DirectX\Inc /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I.\RSPiX\c\Win32\HeapAgent\Include /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Blue\Debug/" /Fd".\Build\Blue\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\Blue\unix\Bdisp.cpp
          Bdisp.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(260): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(261): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(262): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1361,5): warning MSB8012: TargetPath(E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Blue\Debug\Blue.lib) does not match the Library's OutputFile property value (E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Blue\Debug\BlueD.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(258): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(259): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\bdisp.cpp(260): warning C4244: '=' : conversion from 'int16_t' to 'U8', possible loss of data
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1361,5): warning MSB8012: TargetPath(E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\Build\Blue\Debug\Blue.lib) does not match the Library's OutputFile property value (E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Blue\Debug\BlueD.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1363,5): warning MSB8012: TargetName(Blue) does not match the Library's OutputFile property value (BlueD). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Blue\Debug\BlueD.lib" /NOLOGO .\Build\Blue\Debug/Bdebug.obj
@@ -17,9 +17,9 @@
          .\Build\Blue\Debug/Bmouse.obj
          .\Build\Blue\Debug/Bsound.obj
          .\Build\Blue\Debug/Btime.obj
-         Blue.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\Blue\Debug\Blue.lib
-     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Blue.vcxproj" (Build target(s)).
+         Blue.vcxproj -> E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\Build\Blue\Debug\Blue.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Blue.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.95
+Time Elapsed 00:00:00.76

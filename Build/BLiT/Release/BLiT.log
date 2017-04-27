@@ -1,109 +1,109 @@
-﻿Build started 4/24/2017 12:26:18 PM.
-     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\BLiT.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 4/27/2017 4:42:14 AM.
+     1>Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\BLiT.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D WITH_STEAMWORKS=0 /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\BLiT\Release/" /Fd".\Build\BLiT\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\GREEN\BLiT\alphablit.cpp RSPiX\Src\GREEN\BLiT\BLIT.CPP RSPiX\Src\GREEN\BLiT\BLITINIT.CPP RSPiX\Src\GREEN\BLiT\BLiTT.cpp RSPiX\Src\GREEN\BLiT\CFNT.cpp RSPiX\Src\GREEN\BLiT\Fspr1.cpp RSPiX\Src\GREEN\BLiT\FSPR8.cpp RSPiX\Src\GREEN\BLiT\line.cpp RSPiX\Src\GREEN\BLiT\mono.cpp RSPiX\Src\GREEN\BLiT\Rotate96.cpp RSPiX\Src\GREEN\BLiT\RPrint.cpp RSPiX\Src\GREEN\BLiT\ScaleFlat.cpp
          alphablit.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          BLIT.CPP
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          BLITINIT.CPP
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          BLiTT.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          CFNT.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          Fspr1.cpp
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          FSPR8.cpp
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          line.cpp
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          mono.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          Rotate96.cpp
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
      1>RSPiX\Src\GREEN\BLiT\Rotate96.cpp(919): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
      1>RSPiX\Src\GREEN\BLiT\Rotate96.cpp(966): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
      1>RSPiX\Src\GREEN\BLiT\Rotate96.cpp(967): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
          RPrint.cpp
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\BLUE/unix/UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
      1>RSPiX\Src\GREEN\BLiT\RPrint.cpp(416): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
      1>RSPiX\Src\GREEN\BLiT\RPrint.cpp(429): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -111,14 +111,14 @@
      1>RSPiX\Src\GREEN\BLiT\RPrint.cpp(445): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
          ScaleFlat.cpp
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>e:\game dev\postal 1\gui_test-postal-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
-     1>E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
          Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\BLiT\Release\BLiT.lib" /NOLOGO .\Build\BLiT\Release/alphablit.obj
@@ -133,9 +133,9 @@
          .\Build\BLiT\Release/Rotate96.obj
          .\Build\BLiT\Release/RPrint.obj
          .\Build\BLiT\Release/ScaleFlat.obj
-         BLiT.vcxproj -> E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\.\Build\BLiT\Release\BLiT.lib
-     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\BLiT.vcxproj" (Rebuild target(s)).
+         BLiT.vcxproj -> E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\Build\BLiT\Release\BLiT.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\BLiT.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.66
+Time Elapsed 00:00:20.55

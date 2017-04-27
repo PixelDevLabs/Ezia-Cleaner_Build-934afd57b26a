@@ -1,8 +1,443 @@
-﻿Build started 4/24/2017 12:35:00 PM.
-     1>Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Postal Plus.vcxproj" on node 3 (Build target(s)).
+﻿Build started 4/27/2017 4:43:19 AM.
+     1>Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Postal Plus.vcxproj" on node 3 (Rebuild target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(363,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\testing\Postal.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\SDL2\libs\win32 /LIBPATH:.\steamworks\sdk\redistributable_bin odbc32.lib odbccp32.lib WSock32.lib WinMM.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\Build\Postal Plus\Release/Postal Plus.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\testing\Postal.lib" /MACHINE:X86 /SAFESEH ".\Build\Postal Plus\Release\Postal.res"
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I.\steamworks\sdk\public /I. /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D LOCALE=US /D TARGET=POSTAL_2015 /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"RSPiX.H" /Fp".\Build\Postal Plus\Release/Postal Plus.pch" /Fo".\Build\Postal Plus\Release/" /Fd".\Build\Postal Plus\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt aivars.cpp
+         aivars.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Meter/meter.h(192): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\bouy.h(404): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\character.h(460): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I.\steamworks\sdk\public /I. /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D LOCALE=US /D TARGET=POSTAL_2015 /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"RSPiX.H" /Fp".\Build\Postal Plus\Release/Postal Plus.pch" /Fo".\Build\Postal Plus\Release/" /Fd".\Build\Postal Plus\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt band.cpp input.cpp localize.cpp menus.cpp play.cpp SampleMaster.cpp title.cpp
+         band.cpp
+     1>band.cpp(168): warning C4603: 'BAND_CPP' : macro is not defined or definition is different after precompiled header use
+                 Add macro to precompiled header instead of defining here
+                 band.cpp(170) : use of precompiled header
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\bouy.h(404): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\character.h(460): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(499): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(500): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(610): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>band.cpp(639): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(640): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(678): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(691): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(692): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(780): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(781): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(872): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(873): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(892): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(899): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(900): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(901): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(922): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(923): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(924): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(926): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(933): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(935): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(955): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(978): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(1013): warning C4244: '=' : conversion from 'double' to 'int32_t', possible loss of data
+     1>band.cpp(1016): warning C4244: '=' : conversion from 'double' to 'int32_t', possible loss of data
+     1>band.cpp(1017): warning C4244: '=' : conversion from 'double' to 'int32_t', possible loss of data
+     1>band.cpp(1535): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(1539): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>band.cpp(1540): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+         input.cpp
+     1>input.cpp(913): warning C4244: '+=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>input.cpp(919): warning C4244: '+=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>input.cpp(959): warning C4244: '-=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>input.cpp(964): warning C4244: '-=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>input.cpp(1140): warning C4244: '=' : conversion from 'UINPUT' to 'U32', possible loss of data
+         localize.cpp
+     1>localize.cpp(185): warning C4603: 'LOCALIZE_CPP' : macro is not defined or definition is different after precompiled header use
+                 Add macro to precompiled header instead of defining here
+                 localize.cpp(187) : use of precompiled header
+         menus.cpp
+     1>menus.cpp(362): warning C4603: 'MENUS_CPP' : macro is not defined or definition is different after precompiled header use
+                 Add macro to precompiled header instead of defining here
+                 menus.cpp(364) : use of precompiled header
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\character.h(460): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(3759): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(3798): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(3869): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4180): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4253): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4345): warning C4101: 'sDevicePages' : unreferenced local variable
+     1>menus.cpp(4548): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4704): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4754): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(4778): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(4955): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(4997): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(4998): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(4999): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(5000): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(5001): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+     1>menus.cpp(5027): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(5390): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>menus.cpp(5833): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>menus.cpp(4928): warning C4244: 'argument' : conversion from 'double' to 'int32_t', possible loss of data
+                 menus.cpp(4958) : see reference to function template instantiation 'int16_t SetUpRotationScrollBar<double>(ValType *,Menu *,int16_t,char *)' being compiled
+                 with
+                 [
+                     ValType=double
+                 ]
+         play.cpp
+     1>play.cpp(334): warning C4603: 'PLAY_CPP' : macro is not defined or definition is different after precompiled header use
+                 Add macro to precompiled header instead of defining here
+                 play.cpp(336) : use of precompiled header
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\grip.h(157): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\character.h(460): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\bouy.h(404): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>play.cpp(1576): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(2377): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(2379): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(2384): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(2387): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(2467): warning C4244: '=' : conversion from 'double' to 'int32_t', possible loss of data
+     1>play.cpp(2611): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>play.cpp(2622): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>play.cpp(2633): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>play.cpp(2634): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(245) : see declaration of 'strdup'
+     1>play.cpp(2690): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(3483): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>play.cpp(3477): warning C4101: 'sResult' : unreferenced local variable
+     1>play.cpp(3622): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(3848): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(3964): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(3968): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>play.cpp(4316): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4317): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4319): warning C4244: 'initializing' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4340): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4426): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4431): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4504): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(4722): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>play.cpp(4914): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>play.cpp(4920): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>play.cpp(5174): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>play.cpp(5268): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>play.cpp(5282): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>play.cpp(5409): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>play.cpp(5515): warning C4018: '<=' : signed/unsigned mismatch
+     1>play.cpp(5518): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>play.cpp(5527): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>play.cpp(5685): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>play.cpp(5694): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(86) : see declaration of 'ctime'
+     1>play.cpp(5697): warning C4018: '<' : signed/unsigned mismatch
+     1>play.cpp(5700): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>play.cpp(5716): warning C4018: '<' : signed/unsigned mismatch
+     1>play.cpp(5718): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>play.cpp(5753): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+         SampleMaster.cpp
+     1>SampleMaster.cpp(652): warning C4244: 'argument' : conversion from 'int16_t' to 'uint8_t', possible loss of data
+         title.cpp
+     1>title.cpp(169): warning C4603: 'TITLE_CPP' : macro is not defined or definition is different after precompiled header use
+                 Add macro to precompiled header instead of defining here
+                 title.cpp(171) : use of precompiled header
+     1>title.cpp(282): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>title.cpp(286): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : see declaration of 'strtok'
+     1>title.cpp(296): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(204) : see declaration of 'strtok'
+     1>title.cpp(659): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>title.cpp(667): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I.\steamworks\sdk\public /I. /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D LOCALE=US /D TARGET=POSTAL_2015 /D WITH_STEAMWORKS=0 /D ALLOW_TWINSTICK /D _VC80_UPGRADE=0x0710 /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Postal Plus\Release/" /Fd".\Build\Postal Plus\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt credits.cpp game.cpp main.cpp
+         credits.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Meter/meter.h(192): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(80): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(86): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(92): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(93): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(105): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(106): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(125): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Parse/SimpleBatch.h(131): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(325): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>credits.cpp(410): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>credits.cpp(547): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(787): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(800): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(827): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(903): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>credits.cpp(1112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(1113): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(1117): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(1118): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>credits.cpp(1137): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+         game.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Meter/meter.h(192): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\character.h(460): warning C4244: 'argument' : conversion from 'double' to 'int16_t', possible loss of data
+     1>game.cpp(932): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>game.cpp(942): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>game.cpp(950): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>game.cpp(952): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(245) : see declaration of 'strdup'
+     1>game.cpp(1618): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>game.cpp(1700): warning C4800: 'int16_t' : forcing value to bool 'true' or 'false' (performance warning)
+     1>game.cpp(1929): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(2186): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2190): warning C4101: 'tmp' : unreferenced local variable
+     1>game.cpp(2321): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2330): warning C4018: '<' : signed/unsigned mismatch
+     1>game.cpp(2332): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2366): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2405): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2413): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2443): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2450): warning C4018: '<' : signed/unsigned mismatch
+     1>game.cpp(2452): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2489): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(2497): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(2505): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(2510): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2511): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>game.cpp(2512): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>game.cpp(2516): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2517): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>game.cpp(2522): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(2523): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>game.cpp(2544): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>game.cpp(2686): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(2925): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3097): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(3101): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(3105): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(3292): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3293): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3304): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3305): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3316): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3328): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3329): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3340): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3353): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(3531): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>game.cpp(3814): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>game.cpp(4510): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4536): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4562): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4588): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4614): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4639): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4667): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>game.cpp(4709): warning C4018: '<=' : signed/unsigned mismatch
+     1>game.cpp(4732): warning C4996: 'getcwd': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getcwd. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(130) : see declaration of 'getcwd'
+     1>game.cpp(4735): warning C4996: 'chdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _chdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(136) : see declaration of 'chdir'
+     1>game.cpp(4738): warning C4996: 'getcwd': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getcwd. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(130) : see declaration of 'getcwd'
+     1>game.cpp(4751): warning C4996: 'chdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _chdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\direct.h(136) : see declaration of 'chdir'
+         main.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(248): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(254): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\blue\unix\UnixSystem.h(260): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/QuickMath/QuickMath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Meter/meter.h(192): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(408): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(416): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(432): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(499): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(507): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/RString/rstring.h(523): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\RSPiX\Src\ORANGE/Debug/profile.h(299): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>main.cpp(260): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>main.cpp(262): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>main.cpp(264): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>main.cpp(266): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>main.cpp(268): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>main.cpp(964): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D POSTAL_PLUS /D _VC80_UPGRADE=0x0710 /l"0x0409" /Ires /I.\res /nologo /fo".\Build\Postal Plus\Release\Postal.res" res\Postal.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\testing\Postal.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\SDL2\libs\win32 /LIBPATH:.\steamworks\sdk\redistributable_bin nfd.lib odbc32.lib odbccp32.lib WSock32.lib WinMM.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmt /NODEFAULTLIB:libc /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\Build\Postal Plus\Release/Postal Plus.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\testing\Postal.lib" /MACHINE:X86 /SAFESEH ".\Build\Postal Plus\Release\Postal.res"
          ".\Build\Postal Plus\Release/aivars.obj"
          ".\Build\Postal Plus\Release/band.obj"
          ".\Build\Postal Plus\Release/credits.obj"
@@ -14,20 +449,17 @@
          ".\Build\Postal Plus\Release/play.obj"
          ".\Build\Postal Plus\Release/SampleMaster.obj"
          ".\Build\Postal Plus\Release/title.obj"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Cyan\Release\Cyan.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Blue\Release\Blue.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\BLiT\Release\BLiT.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\BLiT3D\Release\BLiT3D.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Green\Release\Green.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Orange\Release\Orange.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\WishPiX\Release\WishPiX.lib"
-         "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Build\Postal Common\Release\Postal Common.lib"
-     1>Cyan.lib(uDialog.obj) : error LNK2019: unresolved external symbol _NFD_OpenDialog referenced in function "short __cdecl rspOpenBox(char const *,char const *,char *,short,char const *)" (?rspOpenBox@@YAFPBD0PADF0@Z)
-     1>Cyan.lib(uDialog.obj) : error LNK2019: unresolved external symbol _NFD_SaveDialog referenced in function "short __cdecl rspSaveBox(char const *,char const *,char *,short,char const *)" (?rspSaveBox@@YAFPBD0PADF0@Z)
-     1>Cyan.lib(uDialog.obj) : error LNK2019: unresolved external symbol _NFD_GetError referenced in function "short __cdecl rspOpenBox(char const *,char const *,char *,short,char const *)" (?rspOpenBox@@YAFPBD0PADF0@Z)
-     1>.\testing\Postal.exe : fatal error LNK1120: 3 unresolved externals
-     1>Done Building Project "E:\GAME DEV\Postal 1\GUI_TEST-postal-934afd57b26a\Postal Plus.vcxproj" (Build target(s)) -- FAILED.
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Cyan\Release\Cyan.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Blue\Release\Blue.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\BLiT\Release\BLiT.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\BLiT3D\Release\BLiT3D.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Green\Release\Green.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Orange\Release\Orange.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\WishPiX\Release\WishPiX.lib"
+         "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Build\Postal Common\Release\Postal Common.lib"
+         Postal Plus.vcxproj -> E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\testing\Postal.exe
+     1>Done Building Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Postal Plus.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.41
+Time Elapsed 00:00:11.57

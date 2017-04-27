@@ -370,7 +370,7 @@
 // Determines the number of elements in the passed array at compile time.
 #define NUM_ELEMENTS(a)		(sizeof(a) / sizeof(a[0]) )
 
-#define MAX_SMASH_DIAMETER				20
+#define MAX_SMASH_DIAMETER				2000
 
 #define REALM_DIALOG_FILE				"res/editor/realm.gui"
 

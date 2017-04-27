@@ -63,6 +63,9 @@
 #define MAIN_VANILLA_AUDIO_RATE		22050
 #define MAIN_VANILLA_AUDIO_BITS		8
 
+extern double wideScreenMultiW;
+extern double wideScreenMultiH;
+
 #endif // MAIN_H
 ////////////////////////////////////////////////////////////////////////////////
 // EOF

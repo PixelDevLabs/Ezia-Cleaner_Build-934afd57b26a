@@ -1733,7 +1733,7 @@ void CScene::SetupPipeline(						// Returns nothing.
 
 	// Use the built in adjustment features of the pipeline:
 	if (m_pipeline.Create(1000, SCREEN_DIAMETER_FOR_3D) != 0)
-		TRACE("SetupPipeline(): FONGOOL!  m_pipeline.Create() failed!  No 3D for you!\n");
+		TRACE("SetupPipeline(): FONGOOL!  m_pipeline.Create() failed!  No 3D for you!\n"); // hah, cute
 
 	/////////////////////////////////////////////////////////////////////////////
 	// End previously done in UpdatePipeline().

@@ -4,6 +4,6 @@
     <LocalDebuggerCommand>.\Testing\PostalD.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>$(SolutionDir)\Testing</LocalDebuggerWorkingDirectory>
-    <LocalDebuggerCommandArguments>-windowed</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-windowed -opengl</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

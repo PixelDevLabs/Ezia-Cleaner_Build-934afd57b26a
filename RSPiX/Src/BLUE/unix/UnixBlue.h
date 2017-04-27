@@ -31,6 +31,8 @@
 
 #include "UnixSystem.h"
 #include "UnixBlueKeys.h"
+extern double wideScreenMultiW;
+extern double wideScreenMultiH;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Blue API
