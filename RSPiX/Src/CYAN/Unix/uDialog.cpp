@@ -131,12 +131,12 @@ extern int16_t rspMsgBox(	// Returns RSP_MB_RET_*.  See switch statement below.
     data.buttons = buttons;
 
     int button = 0;
-HEAD
+
     bool grab = rspGetWindowGrab();
     rspSetWindowGrab(false);
     const int rc = SDL_ShowMessageBox(&data, &button);
     rspSetWindowGrab(grab);
-origin/experimental
+
     return (rc == 0) ? button : -1;
 }
 
