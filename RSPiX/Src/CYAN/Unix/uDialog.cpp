@@ -131,9 +131,12 @@ extern int16_t rspMsgBox(	// Returns RSP_MB_RET_*.  See switch statement below.
     data.buttons = buttons;
 
     int button = 0;
-
+HEAD
+    bool grab = rspGetWindowGrab();
+    rspSetWindowGrab(false);
     const int rc = SDL_ShowMessageBox(&data, &button);
-
+    rspSetWindowGrab(grab);
+origin/experimental
     return (rc == 0) ? button : -1;
 }
 
@@ -149,7 +152,10 @@ extern int16_t rspOpenBox(								// Returns 0 if successfull, non-zero otherwis
 	
 
 	nfdchar_t *outPath = NULL;
+	bool grab = rspGetWindowGrab();
+	rspSetWindowGrab(false);
 	nfdresult_t result = NFD_OpenDialog(NULL, NULL, &outPath);
+	rspSetWindowGrab(grab);
 
 
 	if (result == NFD_OKAY) {
@@ -185,7 +191,10 @@ extern int16_t rspSaveBox(			// Returns 0 on success.
 
 
 	nfdchar_t *outPath = NULL;
+	bool grab = rspGetWindowGrab();
+	rspSetWindowGrab(false);
 	nfdresult_t result = NFD_SaveDialog(NULL, NULL, &outPath);
+	rspSetWindowGrab(grab);
 
 
 	if (result == NFD_OKAY) {

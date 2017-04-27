@@ -70,99 +70,110 @@ extern bool mouse_grabbed;
 
 extern void rspSetQuitStatus(int16_t sQuitStatus);
 
+extern void rspSetWindowGrab(bool mode)
+{
+	SDL_SetWindowGrab(sdlWindow, mode ? SDL_TRUE : SDL_FALSE);
+	mouse_grabbed = mode;
+}
+
+extern bool rspGetWindowGrab()
+{
+	return SDL_GetWindowGrab(sdlWindow);
+}
+
 extern void Key_Event(SDL_Event *event)
 {
-	ASSERT((event->type == SDL_KEYUP) || (event->type == SDL_KEYDOWN));
-	//ASSERT(event->key.keysym.sym < SDLK_LAST);
+HEAD
+    ASSERT((event->type == SDL_KEYUP) || (event->type == SDL_KEYDOWN));
+    //ASSERT(event->key.keysym.sym < SDLK_LAST);
 
-	const U8 pushed = (event->type == SDL_KEYDOWN);
-	if ((pushed) && (event->key.repeat) && (!sdlKeyRepeat))
-		return;  // drop it.
+    const U8 pushed = (event->type == SDL_KEYDOWN);
+    if ((pushed) && (event->key.repeat) && (!sdlKeyRepeat))
+        return;  // drop it.
 
-	U8 key = sdl_to_rws_keymap[event->key.keysym.sym];
-	U16 gkey = sdl_to_rws_gkeymap[event->key.keysym.sym];
-	U8* pu8KeyStatus = (&ms_au8KeyStatus[key]);
+    U8 key = sdl_to_rws_keymap[event->key.keysym.sym];
+    U16 gkey = sdl_to_rws_gkeymap[event->key.keysym.sym];
+    U8* pu8KeyStatus = (&ms_au8KeyStatus[key]);
 
-	if (key == 0)
-		return;
+    if (key == 0)
+        return;
 
-	if (pushed)
-	{
-		if ((event->key.keysym.sym == SDLK_g))
-		{
-			if (event->key.keysym.mod & KMOD_CTRL) // ctrl-g
-			{
-				const SDL_bool mode = SDL_GetWindowGrab(sdlWindow) ? SDL_FALSE : SDL_TRUE;
-				//SDL_SetRelativeMouseMode(mode);
-				SDL_SetWindowGrab(sdlWindow, mode);
-				mouse_grabbed = (mode == SDL_TRUE);
-				return;  // don't pass this key event on to the game.
-			}
-		}
+    if (pushed)
+    {
+        if ( (event->key.keysym.sym == SDLK_g) )
+        {
+            if (event->key.keysym.mod & KMOD_CTRL) // ctrl-g
+            {
+                const bool mode = !rspGetWindowGrab();
+                rspSetWindowGrab(mode);
+                return;  // don't pass this key event on to the game.
+            }
+        }
 
-		else if ((event->key.keysym.sym == SDLK_RETURN))
-		{
-			if (event->key.keysym.mod & KMOD_ALT) // alt-enter
-			{
-				if (SDL_GetWindowFlags(sdlWindow) & SDL_WINDOW_FULLSCREEN)
-					SDL_SetWindowFullscreen(sdlWindow, 0);
-				else
-					SDL_SetWindowFullscreen(sdlWindow, SDL_WINDOW_FULLSCREEN);
-				return;  // don't pass this key event on to the game.
-			}
-		}
+        else if ( (event->key.keysym.sym == SDLK_RETURN) )
+        {
+            if (event->key.keysym.mod & KMOD_ALT) // alt-enter
+            {
+                if (SDL_GetWindowFlags(sdlWindow) & SDL_WINDOW_FULLSCREEN)
+                    SDL_SetWindowFullscreen(sdlWindow, 0);
+                else
+                    SDL_SetWindowFullscreen(sdlWindow, SDL_WINDOW_FULLSCREEN);
+                return;  // don't pass this key event on to the game.
+            }
+        }
 
-		if (ms_qkeEvents.IsFull() == FALSE)
-		{
-			// Create event.
-			static int16_t sEventIndex = 0;
-			PRSP_SK_EVENT	pkeEvent = ms_akeEvents + INC_N_WRAP(sEventIndex, MAX_EVENTS);
-			// Fill event.
-			pkeEvent->lTime = SDL_GetTicks();
-			pkeEvent->lKey = ((gkey) ? gkey : key);
+        if (ms_qkeEvents.IsFull() == FALSE)
+	    {
+        	// Create event.
+            static int16_t sEventIndex = 0;
+	        PRSP_SK_EVENT	pkeEvent	= ms_akeEvents + INC_N_WRAP(sEventIndex, MAX_EVENTS);
+    	    // Fill event.
+    	    pkeEvent->lTime	= SDL_GetTicks();
+        	pkeEvent->lKey = ((gkey) ? gkey : key);
 
-			// Enqueue event . . .
-			if (ms_qkeEvents.EnQ(pkeEvent) == 0)
-			{
-				// Success.
-			}
-			else
-			{
-				TRACE("Key_Message(): Unable to enqueue key event.\n");
-			}
-		}
+    	    // Enqueue event . . .
+	    	if (ms_qkeEvents.EnQ(pkeEvent) == 0)
+		    {
+    		    // Success.
+	    	}
+		    else
+    		{
+	    	    TRACE("Key_Message(): Unable to enqueue key event.\n");
+		    }
+    	}
 
-		if (key < sizeof(ms_au8KeyStatus))
-		{
-			// If key is even . . .
-			if (((*pu8KeyStatus) & 1) == 0)
-			{
-				// Go to next odd state.
-				*pu8KeyStatus += 1;
-			}
-			else
-			{
-				// Go to next odd state.
-				*pu8KeyStatus += 2;
-			}
-		}
-	}
+        if (key < sizeof (ms_au8KeyStatus))
+        {
+		    // If key is even . . .
+    		if ( ( (*pu8KeyStatus) & 1) == 0)
+	    	{
+    		    // Go to next odd state.
+	    		*pu8KeyStatus	+= 1;
+		    }
+    		else
+	    	{
+		        // Go to next odd state.
+			    *pu8KeyStatus	+= 2;
+    		}
+        }
+    }
 
-	else  // not pushed.
-	{
-		if (key < sizeof(ms_au8KeyStatus))
-		{
-			// If key is odd . . .
-			if (((*pu8KeyStatus) & 1) == 1)
-				*pu8KeyStatus += 1;
+    else  // not pushed.
+    {
+        if (key < sizeof (ms_au8KeyStatus))
+        {
+    		// If key is odd . . .
+	    	if ( ( (*pu8KeyStatus) & 1) == 1)
+		        *pu8KeyStatus	+= 1;
 
-			// Note that there is intentionally no else condition even though there
-			// is one in the key down case.
-		}
-	}
+    		// Note that there is intentionally no else condition even though there
+	    	// is one in the key down case.
+        }
+    }
 
-	if (key < sizeof(keystates))
-		keystates[key] = pushed;
+    if (key < sizeof (keystates))
+        keystates[key] = pushed;
+origin/experimental
 }
 
 extern void rspClearKeyEvents(void)
