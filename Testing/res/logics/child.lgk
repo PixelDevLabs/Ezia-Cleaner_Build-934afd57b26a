@@ -1,0 +1,3 @@
+USER_GLOBAL		TARGET_DIST		-> SET_ACTION
+normal				*				Walk
+attack				*				advance

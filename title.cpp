@@ -175,17 +175,20 @@
 #include "SampleMaster.h"
 #include "CompileOptions.h"
 
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+
 ////////////////////////////////////////////////////////////////////////////////
 // Macros/types/etc.
 ////////////////////////////////////////////////////////////////////////////////
 
-#define TITLE_BG_W			640
-#define TITLE_BG_H			400
+#define TITLE_BG_W			wideScreenWidth
+#define TITLE_BG_H			wideScreenHeight
 
 #define TITLE_BG_X			(g_pimScreenBuf->m_sWidth / 2 - TITLE_BG_W / 2)
 #define TITLE_BG_Y			(g_pimScreenBuf->m_sHeight / 2 - TITLE_BG_H / 2)
 
-#define PROGRESS_W			(600-8)
+#define PROGRESS_W			((600-8)*wideScreenMultiW)
 
 #define TITLE_SOUND_UPDATE_INTERVAL 50
 
@@ -653,14 +656,14 @@ extern int16_t EndTitle(void)				// Returns 0 if successfull, non-zero otherwise
 		rspLockBuffer();
 
 		// Erase progress meter
-		RRect	rcClip(0, 440, 640, 40);
+		RRect	rcClip(0, 440, floor(wideScreenWidth), 40);
 		rspRect(
 			RSP_BLACK_INDEX,
 			g_pimScreenBuf,
 			0,
-			440,
-			640,
-			40,
+			(wideScreenHeight - 480) + 440,
+			floor(wideScreenWidth),
+			(wideScreenHeight/12),
 			&rcClip);
 
 		// Unlock now that we're done with the composite buffer.

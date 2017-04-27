@@ -129,6 +129,7 @@ SampleMasterID*	g_psmidMusic = &g_smidCreditsMusak;
 
 
 extern int wideScreenWidth;
+extern int wideScreenHeight;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -321,7 +322,7 @@ public:
 			// each justification needed to select the RPrint cell to use:
 			// RPrint doesn't seem to be justifying correctly...
 			// I will attempt some of my own:
-			int wideScreenOffset = (wideScreenWidth - 640);
+			int wideScreenOffset = floor((wideScreenWidth - 640));
 			switch (pCur->m_eJust)
 				{	
 				int16_t sRadius;
@@ -406,7 +407,7 @@ public:
 		m_lActivationTime = 0;
 		m_cHead.m_pNext = &m_cTail;
 		m_cTail.m_pPrev = &m_cHead;
-		m_rDisplay = RRect(0,40,wideScreenWidth,360);
+		m_rDisplay = RRect(0, 40, floor(wideScreenWidth), ((double)wideScreenHeight / 1.33333333333));
 		m_dScrollRate = 0.1;	// 100 seconds per screen
 		m_sNumBackgrounds = 0;
 		m_pCurSceneChange = NULL;
@@ -1133,7 +1134,7 @@ int16_t Credits(SampleMasterID* pMusic,
 	
 	//------------------------------------------------------------------------------
 	// Begin scrolling loop....
-    RRect rect(0,80,wideScreenWidth,320);
+	RRect rect(0, (wideScreenHeight / 6), floor(wideScreenWidth), (wideScreenHeight / 1.5));
 	if (ScrollPage(szBackground,szCredits,0.12,&rect) != SUCCESS)
 		{
 		// USER aborted!

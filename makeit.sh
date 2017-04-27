@@ -1,5 +1,5 @@
-#!/bin/sh
-# POSTAL Makeit
+#!/bin/bash
+# POSTAL Make Helper
 # Copyright 2017 Declan Hoare
 #
 # This program is free software; you can redistribute it and/or modify
@@ -14,57 +14,48 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+#
+# Helper script for make to find NFD.
 
-# Bit confusing, definitely not as flexible as a configure script,
-# but it gets the job done. This script handles the BINDIR for the
-# target architecture, because make can't change that itself for some
-# reason. It also changes it for debug vs release to make that easier,
-# although it's not quite as important there.
+# Find the directory for NFD's Makefile on this target.
+nfdSrcDir()
+{
+	echo "NFD/build/gmake_${1%%_*}"
+}
 
-bindir="./bin"
-
-if [ `uname -m` = "x86_64" ]
-then
-	bindir1="64"
-else
-	x86="yes"
-fi
-
-bindir2="-release"
-for i in "$@"
-do
-	if [ "$i" = "x86" ]
+# Format the target for NFD.
+nfdTarget()
+{
+	MODE="release"
+	for argument in "$@"
+	do
+		if [ "$argument" = "debug" ]
+		then
+			MODE="debug"
+		fi
+	done
+	ARCHITECTURE="${1#*_}"
+	if [ "$ARCHITECTURE" = "x86_64" ]
 	then
-		x86="yes"
+		ARCHITECTURE="x64"
 	fi
-	if [ "$i" = "debug" ]
-	then
-		after="debug"
-		bindir2="-debug"
-	fi
-	if [ "$i" = "clean" ]
-	then
-		remove="yes"
-	fi
-	if [ "$i" = "smp" ]
-	then
-		thread=$(cat /proc/cpuinfo | awk '/^processor/{print $3}' | tail -1)
-		thread=$(( $thread + 2 ))
-		thread="-j$thread"
-	fi
-done
+	echo "${MODE}_${ARCHITECTURE}"
+}
 
-if [ "$x86" = "yes" ]
-then
-	before="linux_x86=\"1\""
-	bindir1="32"
-fi
+# Find the NFD library location on this target.
+nfdFileName()
+{
+	TARGET=$(nfdTarget $*)
+	MODE="${TARGET%_*}"
+	MODE="$(printf '%b' '\'$(( $(printf '%o' "'${MODE:0:1}") - 40 )))${MODE:1}"
+	if [ "$MODE" = "Debug" ]
+	then
+		FILENAME="libnfd_d.a"
+	else
+		FILENAME="libnfd.a"
+	fi
+	ARCHITECTURE="${TARGET#*_}"
+	echo "NFD/build/lib/${MODE}/${ARCHITECTURE}/${FILENAME}"
+}
 
-if [ "$remove" = "yes" ]
-then
-	after="clean"
-	thread=""
-fi
-
-bindir="$bindir$bindir1$bindir2"
-eval "BINDIR=$bindir $before make -e $after $thread"
+eval "$*"

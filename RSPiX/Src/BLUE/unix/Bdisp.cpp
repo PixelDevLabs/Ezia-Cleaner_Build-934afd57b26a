@@ -37,12 +37,13 @@ extern SDL_Window *sdlWindow;
 static char *sdlAppName;
 static SDL_Renderer *sdlRenderer;
 static SDL_Texture *sdlTexture;
-static int RequestedWidth = 0;
-static int RequestedHeight = 0;
-static int FramebufferWidth = 0;
-static int FramebufferHeight = 0;
+extern int RequestedWidth = 0;
+extern int RequestedHeight = 0;
+extern int FramebufferWidth = 0;
+extern int FramebufferHeight = 0;
 static Uint32 *TexturePointer = NULL;
 static Uint8 *PalettedTexturePointer = NULL;
+extern bool presentDirty = FALSE;
 
 typedef struct		// Stores information on usable video modes.
 	{
@@ -82,6 +83,7 @@ static int16_t				asPalEntryLocks[256];	// TRUE, if an indexed entry is locked.
 														// locking.
 
 extern bool mouse_grabbed;
+extern bool needPresent = TRUE;
 
 //////////////////////////////////////////////////////////////////////////////
 // Module specific macros.
@@ -238,13 +240,13 @@ extern void Disp_Init(void)	// Returns nothing.
     {
         if (rspCommandLine("windowed"))
         {
-			RequestedWidth = 640;
-			RequestedHeight = 480;
+			RequestedWidth = PrefsViewWidth;
+			RequestedHeight = PrefsViewHeight;
         }
         else
         {
-			RequestedWidth = 0;
-			RequestedHeight = 0;
+			RequestedWidth = PrefsViewWidth;
+			RequestedHeight = PrefsViewHeight;
         }
     }
 
@@ -696,7 +698,7 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
 #endif
 
 		// Resizeable Window
-		// flags += SDL_WINDOW_RESIZABLE;
+		//flags += SDL_RENDERER_PRESENTVSYNC, SDL_RENDERER_ACCELERATED;
         //TRACE("RequestedWidth %d   RequestedHeight %d\n",RequestedWidth,RequestedHeight);
 		if (sdlWindow != NULL)
 		{
@@ -705,7 +707,7 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
 			SDL_DestroyTexture(sdlTexture);
 		}
         const char *title = sdlAppName ? sdlAppName : "";
-		sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, PrefsViewWidth, PrefsViewHeight, flags);
+		sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, RequestedWidth, RequestedHeight, flags);
         if (!sdlWindow)
         {
             char buf[128];
@@ -744,18 +746,15 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
             exit(1);
         }
 
-        SDL_SetRenderDrawColor(sdlRenderer, 0, 0, 0, 255);
-        SDL_RenderClear(sdlRenderer);
-        SDL_RenderPresent(sdlRenderer);
-        SDL_RenderClear(sdlRenderer);
-        SDL_RenderPresent(sdlRenderer);
-        SDL_RenderClear(sdlRenderer);
-        SDL_RenderPresent(sdlRenderer);
+        
+
 #ifndef MOBILE //Need to remove this for the mouse point to be in the correct place, Android And IOS
         SDL_RenderSetLogicalSize(sdlRenderer, FramebufferWidth, FramebufferHeight);
 		TRACE("SDL Renderer set: %ix%i\n", FramebufferWidth, FramebufferHeight);
 #endif
         sdlTexture = SDL_CreateTexture(sdlRenderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, FramebufferWidth, FramebufferHeight);
+	//	sdlTextureTop = SDL_CreateTexture(sdlRenderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, FramebufferWidth, FramebufferHeight);
+		SDL_SetRenderTarget(sdlRenderer, sdlTexture);
         if (!sdlTexture)
         {
             char buf[128];
@@ -777,7 +776,11 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
         SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
 
     	SDL_ShowCursor(0);
-        //SDL_SetRelativeMouseMode(mouse_grabbed ? SDL_TRUE : SDL_FALSE);
+       // SDL_SetRelativeMouseMode(mouse_grabbed ? SDL_TRUE : SDL_FALSE);
+
+		SDL_SetRenderDrawColor(sdlRenderer, 0, 0, 0, 255);
+		SDL_RenderClear(sdlRenderer);
+		SDL_RenderPresent(sdlRenderer);
 
         return 0;
 	}
@@ -843,12 +846,18 @@ extern void rspPresentFrame(void)
         for (int x = 0; x < FramebufferWidth; x++, src++, dst++)
             *dst = apeApp[*src].argb;
         }
-
-    SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
-    SDL_RenderClear(sdlRenderer);
-    SDL_RenderCopy(sdlRenderer, sdlTexture, NULL, NULL);
-    SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
-
+	
+	if (presentDirty == TRUE)
+	{
+		
+	}
+	else
+	{
+		SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
+		SDL_RenderClear(sdlRenderer);
+		SDL_RenderCopyEx(sdlRenderer, sdlTexture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
+		SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
+	}
     static Uint32 lastframeticks = 0;
     const Uint32 now = SDL_GetTicks();
 
@@ -877,6 +886,51 @@ extern void rspPresentFrame(void)
 
 extern void rspUpdateDisplay(void)
 {
+}
+
+extern void rspPresentFrameTest(void)
+{
+	if (!sdlWindow) return;
+
+	// !!! FIXME: I imagine this is not fast. Maybe keep the dirty rect code at least?
+	ASSERT(sizeof(apeApp[0]) == sizeof(Uint32));
+	const Uint8 *src = PalettedTexturePointer;
+	Uint32 *dst = TexturePointer;
+	for (int y = 0; y < FramebufferHeight; y++)
+	{
+		for (int x = 0; x < FramebufferWidth; x++, src++, dst++)
+			*dst = apeApp[*src].argb;
+	}
+
+		SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
+		SDL_RenderClear(sdlRenderer);
+		SDL_RenderCopyEx(sdlRenderer, sdlTexture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
+		SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
+
+	static Uint32 lastframeticks = 0;
+	const Uint32 now = SDL_GetTicks();
+
+	if ((lastframeticks) && (lastframeticks <= now))
+	{
+		const Uint32 elapsed = (now - lastframeticks);
+		if (elapsed <= 5)  // going WAY too fast, maybe OpenGL (and/or no vsync)?
+			SDL_Delay(16 - elapsed);  // try to get closer to 60fps.
+	}
+
+	lastframeticks = now;
+
+#if 0
+	static Uint32 ticks = 0;
+	static Uint32 frames = 0;
+	frames++;
+	if ((now - ticks) > 5000)
+	{
+		if (ticks > 0)
+			printf("fps: %f\n", (((double)frames) / ((double)(now - ticks))) * 1000.0);
+		ticks = now;
+		frames = 0;
+	}
+#endif
 }
 
 ///////////////////////////////////////////////////////////////////////////////

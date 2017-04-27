@@ -35,7 +35,6 @@
 #include "ORANGE/CDT/QUEUE.H"
 
 extern SDL_Window *sdlWindow;
-extern SDL_Surface *sdlShadowSurface;
 extern int sdlWindowWidth;
 extern int sdlWindowHeight;
 
@@ -338,7 +337,7 @@ extern void rspShowMouseCursor(void)
 	{
 	// Increment show cursor count.
 	if (++ms_sCursorShowLevel >= 0)
-	    SDL_ShowCursor(1);
+	   SDL_ShowCursor(1);
 	}
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -84,7 +84,12 @@
 //////////////////////////////////////////////////////////////////////////////
 // Exported (extern) variables.
 //////////////////////////////////////////////////////////////////////////////
-
+SDL_Renderer *sdlRenderer;
+SDL_Texture *sdlTexture;
+SDL_Texture *sdlTextureTop;
+extern int FramebufferWidth;
+Uint32 *TexturePointer;
+extern bool presentDirty;
 //////////////////////////////////////////////////////////////////////////////
 // Module specific (static) variables / Instantiate class statics.
 //////////////////////////////////////////////////////////////////////////////
@@ -223,6 +228,7 @@ void RProcessGui::Unprepare(void)	// Returns nothing.
 
 	// Deallocate dynamic schtuff.
 	Kill();
+	presentDirty = FALSE;
 	}
 
 //////////////////////////////////////////////////////////////////////////////
@@ -476,6 +482,7 @@ int32_t RProcessGui::DoModeless(		// Returns ID of pressed GUI or value.
 
 	// Remember last dst.
 	m_pimLastDst	= pimDst;
+
 
 	// Check GUI pressage.
 	return ms_lPressedId;

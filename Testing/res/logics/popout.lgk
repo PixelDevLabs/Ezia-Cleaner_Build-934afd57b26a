@@ -1,0 +1,48 @@
+// This guy has a main goal of waiting for you to trigger him.
+// Once discovered, he will run after you, but will also seek other pylons to hide again:
+// He should be visibly hidden at start!
+
+RECENTLY_STUCK	GET_ACTION	PYLON_AVAIL	IS_TRIGGERED	TARGET_DIST	MY_HEALTH	DUDE_HEALTH	USER1		POPOUT_AVAIL	RUNSHOOT_AVAIL	SAFETY_AVAIL	RECENTLY_SHOT	HELPCALL	->	SET_ACTION	USER1
+
+true				*				*				*					*				*				*				*			*					*					*					*					*				*				*
+// Don't EVER be in guard mode!
+*					Guard       *           false          VeryClose   !low        >low        *        *              *              *					*					*				Engage      *           
+*					Guard       *           *              *           !low        >low        *        *              true           *					*					*				Run&Shoot   *           
+*					Guard       *           *              *           !low        >low        *        true           *              *					*					*				Popout      *           
+*					Guard       *           *              *           !low        >low        *        *              *              *					*					*				Advance     *
+*					Guard			*				*					*				*				*				*			*					*					*					true				*				Engage		*
+																																																									
+// You need to get fairly close to get a rise out of these guys!																															
+*					Popout      *           false          <Medium     !low        >low        *        *              *              *					*					*				Engage      *           
+*					Run&Shoot   *           false          <Medium     !low        >low        *        *              *              *					*					*				Engage      *           
+*					Popout      *           *              *				*		      *	         *        *              *              *					true				*				Engage      *           
+*					Run&Shoot   *           *              *    			*				*		      *        *              *              *					true				*				Engage      *           
+*					Popout		*				*					*				*				*				*			*					*					*					*					true			Help			*
+*					Run&Shoot	*				*					*				*				*				*			*					*					*					*					true			Help			*
+*					Help			*				*					*				*				*				*			*					*					*					*					false			Guard			*
+*					Help			*				*					*				*				*				*			*					*					*					true				*				Engage		*
+																																																									
+// Even while engaging, find another popout!																																						
+*					Engage      *           *              >Close      !low        >low        *        *              true           *					*					*				Run&Shoot   *      
+*					Engage      *           *              >Close      !low        >low        *        true           *              *					*					*				Popout      *                
+																																																									
+// Lost... track you down!																																												
+*					Engage      *           *              >Medium     !low        >low        *        *              *              *					*					*				Advance     *           
+																																																								
+// Get into it again!																																													
+*					Advance     *           *              <Medium     !low        >low        *        *              *              *					*					*				Engage      *
+*					Advance		*				*					*				*				*				*			*					*					*					true				*				Engage		*           
+																																																									
+// /////////////////////																																												
+//  SPECIAL SCENARIOS																																													
+// /////////////////////																																												
+																																																									
+					// Beserker Mode:  If you're near death I will hunt you down!																																
+*					*           *           *              >Close      !low        <med        *        *              *              *					*					*				Advance     *           
+*					*           *           *              <Medium     !low        <med        *        *              *              *					*					*				Engage      *           
+																																																									
+// Survival Mode:  But if I am near death I will run and hide!																																
+*					!Retreat    *           *              <Far        low         *           *        *              *              *					*					*				Retreat     *   
+*					*           *           *              >Medium     low         *           *        *              *              true				*					*				Hide        *   
+*					*           *           *              *           *           *           *        *              *              *					*					*				*           *   
+																																																				

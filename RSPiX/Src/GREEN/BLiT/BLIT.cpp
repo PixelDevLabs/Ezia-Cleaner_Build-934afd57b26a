@@ -790,6 +790,8 @@ int16_t	rspBlit(RImage* pimSrc,RImage* pimDst,int16_t sSrcX,int16_t sSrcY,int16_
 		case (BUF_MEMORY<<3) + BUF_VRAM: // system buffer to front screen
 
 			rspUpdateDisplay(sDstX,sDstY,sW,sH); 
+
+			
 			return 0; // DONE!!!!!
 		break;
 
@@ -924,6 +926,7 @@ int16_t	rspBlit(RImage* pimSrc,RImage* pimDst,int16_t sSrcX,int16_t sSrcY,int16_
 #endif
 
 //BLIT_DONTUNLOCK:	
+
 	return 0;
 	}
 
@@ -1193,7 +1196,6 @@ int16_t rspRect(U32 color,RImage* pimDst,int16_t sX,int16_t sY,int16_t sW,int16_
 		}
 
 //RECT_DONTUNLOCK:
-	
 	return 0;
 	}
 

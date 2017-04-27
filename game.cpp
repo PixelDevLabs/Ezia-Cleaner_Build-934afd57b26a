@@ -783,6 +783,7 @@ static int16_t	ms_sLoadedDifficulty	= INVALID_DIFFICULTY;
 
 static SampleMaster::SoundInstance	ms_siMusak	= 0;
 
+extern bool presentDirty;
 ////////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ////////////////////////////////////////////////////////////////////////////////
@@ -1581,6 +1582,7 @@ static int16_t GameCore(void)		// Returns 0 on success.
 						NetMsg msg;
 						if (DoNetGameDialog(pnetclient, bBrowse, NULL, &msg) == 0)
 							{
+								
 							// If the game was actually started...
 							if (msg.msg.nothing.ucType == NetMsg::START_GAME)
 								{

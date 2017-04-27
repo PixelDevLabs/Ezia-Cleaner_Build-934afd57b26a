@@ -1,0 +1,25 @@
+* 01/21/00 - MJR - I created this script for generating multialphas for the two
+*                  new cutscenes.  I derived the values by trying them out for
+*                  an existing scene until I generated a file that matched the
+*                  existing file.  The same values could be used to recreate
+*                  any other cutscene multialphas (I'm guessing they all use
+*                  the same values).
+
+CreateAlphaTable
+	{
+	palette = "tokyo-1.bmp";
+	output = "tokyo-1.mlp";
+	levels = 3;
+	values = .5;
+	FinalColors = 10,236;
+	}
+
+CreateAlphaTable
+	{
+	palette = "osaka-1.bmp";
+	output = "osaka-1.mlp";
+	levels = 3;
+	values = .5;
+	FinalColors = 10,236;
+	}
+

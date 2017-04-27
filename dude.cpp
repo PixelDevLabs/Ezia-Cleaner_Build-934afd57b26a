@@ -2829,7 +2829,12 @@ if (!demoCompat)
 			stockpile.m_sDoubleBarrel		= 1;
 
 			CreateCheat(&stockpile);
-
+			m_pRealm->m_scene.m_dScale3d += 1;
+			m_pRealm->m_phood->m_dScale3d += 1;
+			m_dScaleX += 1;
+			m_dScaleY += 1;
+			m_dScaleZ += 1;
+			m_pRealm->m_phood->SetupPipeline();
 			// Enable Double Barrel in editor as well.
 			CStockPile::ms_sEnableDoubleBarrel	= TRUE;
 			break;
@@ -2840,8 +2845,17 @@ if (!demoCompat)
 			Flag_Achievements |= FLAG_USED_CHEATS;
 
 			// Modify hood's scale.
-			m_pRealm->m_phood->m_dScale3d -= 0.10;
-
+			//m_pRealm->m_phood->m_dScale3d += 0.50;
+			//m_dScaleX += 1;
+			//m_dScaleY += 1;
+			//m_dScaleZ += 1;
+			
+			m_pRealm->m_scene.m_pipeline.m_sH = +5;
+			m_pRealm->m_scene.m_pipeline.m_sW = +5;
+		
+			//m_pRealm->m_scene.m_transScene2Realm.Scale(4, 4, 4);
+			//m_pRealm->m_phood->m_pimBackground->m_sWidth += 10;
+			
 			// Let the hood setup the pipeline. 
 			m_pRealm->m_phood->SetupPipeline();
 

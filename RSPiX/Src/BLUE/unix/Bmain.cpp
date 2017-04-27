@@ -48,7 +48,6 @@
 #include "BLUE/Blue.h"
 
 SDL_Window *sdlWindow = NULL;
-SDL_Surface *sdlShadowSurface = NULL;
 
 bool mouse_grabbed = false;
 static int16_t ms_sQuit = 0;
@@ -123,7 +122,7 @@ bool GSDLAppIsActive = true;
 
 extern void rspDoSystem(void)										// Returns nothing.
 	{
-        rspPresentFrame();
+		rspPresentFrame();
 
         #if WITH_STEAMWORKS
         extern void RunSteamworksUpkeep();

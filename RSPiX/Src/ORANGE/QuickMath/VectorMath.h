@@ -336,9 +336,9 @@ public:
 		{
 		for (int16_t i=0;i<4;i++)
 			{
-			T[ ROW0 + i] *= a;	
-			T[ ROW1 + i] *= b;	
-			T[ ROW2 + i] *= c;	
+				T[ROW0 + i] *= a;
+				T[ROW1 + i] *= b;
+				T[ROW2 + i] *= c;
 			}
 		}
 

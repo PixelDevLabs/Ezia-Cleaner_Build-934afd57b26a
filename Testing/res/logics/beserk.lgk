@@ -1,0 +1,30 @@
+// This guy is triggered by a pop-out trigger area, but once triggered,
+// he just jumps out and tries to kill you. (The trigger area can be far away)
+
+GET_ACTION	PYLON_AVAIL	IS_TRIGGERED	TARGET_DIST	MY_HEALTH	DUDE_HEALTH	USER1	     POPOUT_AVAIL	RUNSHOOT_AVAIL	SAFETY_AVAIL	RECENTLY_SHOT HELPCALL	->	SET_ACTION	USER1
+
+// We need to find a popout nearby.  Let's try two user states:
+
+Guard       *           false          VeryClose   *           *           default		*              *              *           *					*				Engage      active
+																																																			
+Guard       *           *              *           *           *           default		*              true           *           *					*				Run&Shoot   active      
+Guard       *           *              *           *           *           default		true           *              *           *					*				Popout      active                
+Guard       *           *              *           *           *           default		*              *              *           *					*				Advance     *   
+																																																				
+Advance     *           *              *           *           *           default		*              true           *           *					*				Run&Shoot   active      
+Advance     *           *              *           *           *           default		true           *              *           *					*				Popout      active                
+Advance     *           false          VeryClose   *           *           default		*              *              *           *					*				Engage      active
+																																																				
+Engage      *           *              >Medium     *           *           active		*              *              *           *					*				Advance     *   
+Advance     *           *              <far        *           *           active		*              *              *           *					*				Engage      *   
+Popout      *           true           *           *           *           active		*              *              *           *					*				Engage      *   
+Run&Shoot   *           true           *           *           *           active		*              *              *           *					*				Engage      *   
+Popout      *           *              <Medium     *           *           active		*              *              *           *					*				Engage      *   
+Run&Shoot   *           *              <Medium     *           *           active		*              *              *           *					*				Engage      *   
+Popout		*				*					*				*				*				*				*					*					*				true				*				Engage		*
+Run&Shoot	*				*					*				*				*				*				*					*					*				true				*				Engage		*
+Popout		*				*					*				*				*				*				*					*					*				*					true			Help			*
+Run&Shoot	*				*					*				*				*				*				*					*					*				*					true			Help			*
+Help			*				*					*				*				*				*				*					*					*				*					false			Guard			*
+																																																				
+*           *           *              *           *           *           *				*              *              *           *					*				*           *   

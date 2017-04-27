@@ -1,0 +1,29 @@
+﻿Build started 4/27/2017 4:25:18 AM.
+     1>Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Green.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Green\Debug/" /Fd".\Build\Green\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\GREEN\Image\Image.cpp
+         Image.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\image\image.cpp(457): warning C4244: 'argument' : conversion from 'U64' to 'size_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\image\image.cpp(515): warning C4244: 'argument' : conversion from 'U64' to 'size_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\image\image.cpp(828): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\image\image.cpp(829): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\Green\Debug\Green.lib" /NOLOGO .\Build\Green\Debug/hot.obj
+         .\Build\Green\Debug/Image.obj
+         .\Build\Green\Debug/Imagecon.obj
+         .\Build\Green\Debug/ImageFile.obj
+         .\Build\Green\Debug/InputEvent.obj
+         .\Build\Green\Debug/mix.obj
+         .\Build\Green\Debug/MixBuf.obj
+         .\Build\Green\Debug/pal.obj
+         .\Build\Green\Debug/PalFile.obj
+         .\Build\Green\Debug/sample.obj
+         .\Build\Green\Debug/snd.obj
+         .\Build\Green\Debug/SndFx.obj
+         .\Build\Green\Debug/task.obj
+         Green.vcxproj -> E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\Build\Green\Debug\Green.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\Green.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.00

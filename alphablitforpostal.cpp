@@ -206,7 +206,8 @@ void rspCopyAsMask(RImage* pimSrc,RImage* pimDst,uint8_t ucVal)
 static int sFirst = TRUE;
 void Verify();
 extern char* pct;
-
+extern int wideScreenWidth;
+extern int wideScreenHeight;
 // USE GLOBAL MASK
 //
 void g_alphaBlit(
@@ -292,7 +293,7 @@ void test(RImage* pimF,RImage* pimB)
 	rspNameBuffers(&pimBuffer);
 
 	rspLockBuffer();
-	rspRect(RSP_BLACK_INDEX,pimBuffer,0,0,640,480);
+	rspRect(RSP_BLACK_INDEX, pimBuffer, 0, 0, floor(wideScreenWidth), wideScreenHeight);
 	rspUnlockBuffer();
 
 	rspUpdateDisplay();

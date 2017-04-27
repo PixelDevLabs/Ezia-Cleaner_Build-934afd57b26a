@@ -1,0 +1,47 @@
+GET_ACTION	PYLON_AVAIL	IS_TRIGGERED	TARGET_DIST	MY_HEALTH	DUDE_HEALTH	USER1			POPOUT_AVAIL	RUNSHOOT_AVAIL	SAFETY_AVAIL	RECENTLY_SHOT	HELPCALL	->	SET_ACTION	USER1
+Guard       *           false          VeryClose   *           *           *				*              *              *				*					*				Engage      *           
+Guard       *           *              *           *           *           *				*              true           *				*					*				Run&Shoot   *           
+Guard       *           *              *           *           *           *				true           *              *				*					*				Popout      *           
+																																																				
+Engage      *           *              Far         *           *           *				*              *              *				*					*				Advance     *           
+																																																				
+Engage      *           *              Medium      *           *           *				*              true           *				*					*				Run&Shoot   *      
+Engage      *           *              Medium      *           *           *				true           *              *				*					*				Popout      *                
+Engage      *           *              Close       *           *           *				*              true           *				*					*				Run&Shoot   *      
+Engage      *           *              Close       *           *           *				true           *              *				*					*				Popout      *                
+																																																				
+Advance     *           *              Medium      *           *           *				*              *              *				*					*				Engage      *           
+Advance     *           *              Close       *           *           *				*              *              *				*					*				Engage      *           
+Advance     *           *              VeryClose   *           *           *				*              *              *				*					*				Engage      *           
+																																																				
+Popout      *           false          VeryClose   *           *           *				*              *              *				*					*				Engage      *           
+Run&Shoot   *           false          VeryClose   *           *           *				*              *              *				*					*				Engage      *           
+Popout		*				*					*				*				*				*				*					*					*				true				*				Engage		*
+Run&Shoot	*				*					*				*				*				*				*					*					*				true				*				Engage		*
+Popout		*				*					*				*				*				*				*					*					*				*					true			Help			*
+Run&Shoot	*				*					*				*				*				*				*					*					*				*					true			Help			*
+Help			*				*					*				*				*				*				*					*					*				*					false			Guard			*
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           
+*           *           *              *           *           *           *				*              *              *				*					*				*           *           

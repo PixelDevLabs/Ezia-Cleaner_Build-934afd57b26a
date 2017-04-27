@@ -1,0 +1,7 @@
+<mm:style name="Bold" type="char" apply="add" bold />
+<mm:style name="Copyright" format="p" align="center" apply="replace" font="Georgia, Times New Roman, Times, serif" size="1" italic />
+<mm:style name="Normal" apply="replace" font="Verdana, Arial, Helvetica, sans-serif" size="2" />
+<mm:style name="Page Heading" align="left" apply="replace" font="Verdana, Arial, Helvetica, sans-serif" size="4" bold />
+<mm:style name="Red" type="char" apply="add" color="#FF0000" />
+<mm:style name="Section Heading" apply="replace" font="Verdana, Arial, Helvetica, sans-serif" size="2" bold />
+<mm:style name="Small" apply="replace" font="Verdana, Arial, Helvetica, sans-serif" size="1" />

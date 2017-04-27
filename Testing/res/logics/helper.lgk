@@ -1,0 +1,37 @@
+
+					
+RECENTLY_STUCK	IS_TRIGGERED	GET_ACTION	POPOUT_AVAIL	RUNSHOOT_AVAIL		TARGET_DIST	RECENTLY_SHOT	HELPCALL	->	SET_ACTION		
+true				*					*				*					*						*				*					*				*
+*					*					Advance		true				*						Close			*					*				Popout
+*					*					Advance		*					true					Close			*					*				Run&Shoot
+*					true				Popout		*					*						*				*					*				Popout
+*					true				Run&Shoot	*					*						*				*					*				Run&Shoot
+*					false				Popout		*					*						VeryClose	*					*				Engage
+*					false				Run&Shoot	*					*						VeryClose	*					*				Engage
+*					false				Popout		*					*						Close			*					*				Engage
+*					false				Run&Shoot	*					*						Close			*					*				Engage
+*					false				Popout		*					*						*				*					*				Popout
+*					false				Run&Shoot	*					*						*				*					*				Run&Shoot
+*					*					Popout		*					*						*				true				*				Engage
+*					*					Run&Shoot	*					*						*				true				*				Engage
+*					*					Popout		*					*						*				*					true			Help
+*					*					Run&Shoot	*					*						*				*					true			Help
+*					*					Help			*					*						*				*					false			Guard
+*					*					Guard			true				*						*				*					*				Popout
+*					*					Guard			*					true					*				*					*				Run&Shoot
+*					*					Engage		true				*						*				*					*				Popout
+*					*					Engage		*					true					*				*					*				Run&Shoot
+*					*					Guard			*					*						Far			*					*				Guard
+*					*					Guard			*					*						Medium		*					*				Advance
+*					*					Guard			*					*						Close			*					*				Advance
+*					*					Guard			*					*						VeryClose	*					*				Engage
+*					*					Advance		*					*						Far			*					*				Advance
+*					*					Advance		*					*						Medium		*					*				Advance
+*					*					Advance		*					*						Close			*					*				Engage
+*					*					Advance		*					*						VeryClose	*					*				Engage
+*					*					Engage		*					*						Far			*					*				Advance
+*					*					Engage		*					*						Medium		*					*				Advance
+*					*					Engage		*					*						Close			*					*				Advance
+*					*					Engage		*					*						VeryClose	*					*				Engage
+*					*						*			*					*						*				*					*				Guard																																				
+																															

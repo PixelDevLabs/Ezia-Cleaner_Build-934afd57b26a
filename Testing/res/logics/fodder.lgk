@@ -1,0 +1,22 @@
+// This guy is designed to be filler for a level -> easy to kill, hides the hard guys
+// He is barely more than a victim, and cares nothing of pylons.
+
+RECENTLY_STUCK	GET_ACTION	PYLON_AVAIL	IS_TRIGGERED	TARGET_DIST	MY_HEALTH	DUDE_HEALTH	USER1	     POPOUT_AVAIL	RUNSHOOT_AVAIL	SAFETY_AVAIL	RECENTLY_SHOT ->	SET_ACTION	USER1
+
+true				*				*				*					*				*				*				*			  *				  *				  *				*						*				*
+// Don't EVER be in guard mode!
+*					Guard       *           *              *           *           *           *          *              *              *            *                 Advance     *   
+
+// Normally, go after the dude
+*					Advance     *           *              >close      >low        *           *          *              *              *            false             Advance     *   
+*					Advance     *           *              <medium     >low        *           *          *              *              *            false             Engage      *   
+*					Engage      *           *              >close      >low        *           *          *              *              *            false             Advance     *   
+
+// Unless you're in danger
+*					*           *           *              >close      *           *           *          *              *              *            true              Retreat     *   
+*					*           *           *              >close      low         *           *          *              *              *            *                 Retreat     *  
+*					Retreat     *           *              VeryClose   *           *           *          *              *              *            *                 Engage      *   
+*					Engage      *           *              >VeryClose  low         *           *          *              *              *            *                 Retreat     *   
+*					Advance-Hold *          *              <close      *           *           *          *              *              *            *                 Engage      *
+*					Advance-Hold *          *              *           *           *           *          *              *              *            true              Engage      *
+*					*           *           *              *           *           *           *          *              *              *            *                 *           *   

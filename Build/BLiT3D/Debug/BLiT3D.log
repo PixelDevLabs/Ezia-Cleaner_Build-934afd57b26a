@@ -1,0 +1,32 @@
+﻿Build started 4/27/2017 3:46:01 AM.
+     1>Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\BLiT3D.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\SDL2\include /I.\RSPiX\Src /I.\RSPiX\Src\Blue /I.\RSPiX\Inc /I. /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D WIN32 /D _WINDOWS /D NOSHMALLOC /D WITH_STEAMWORKS=0 /D RSP_DEBUG_OUT_FILE /D "RSP_TRACE_LOG_NAME=\"Postal Plus.log\"" /D _VC80_UPGRADE=0x0710 /D _USING_V110_SDK71_ /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\BLiT3D\Debug/" /Fd".\Build\BLiT3D\Debug/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSPiX\Src\GREEN\3D\pipeline.cpp RSPiX\Src\GREEN\3D\render.cpp RSPiX\Src\GREEN\3D\types3d.cpp
+         pipeline.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\pipeline.cpp(110): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\pipeline.cpp(112): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\pipeline.cpp(431): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\pipeline.cpp(432): warning C4244: '=' : conversion from 'double' to 'int16_t', possible loss of data
+         render.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+         types3d.cpp
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(190): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\orange\quickmath\quickmath.h(191): warning C4244: '=' : conversion from 'S64' to 'S32', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\types3d.cpp(243): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\types3d.cpp(246): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+     1>e:\game dev\postal 1\ezia-cleaner_build-934afd57b26a\rspix\src\green\3d\types3d.cpp(249): warning C4244: '=' : conversion from 'float' to 'U8', possible loss of data
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:".\Build\BLiT3D\Debug\BLiT3D.lib" /NOLOGO .\Build\BLiT3D\Debug/pipeline.obj
+         .\Build\BLiT3D\Debug/render.obj
+         .\Build\BLiT3D\Debug/types3d.obj
+         .\Build\BLiT3D\Debug/zbuffer.obj
+         BLiT3D.vcxproj -> E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\.\Build\BLiT3D\Debug\BLiT3D.lib
+     1>Done Building Project "E:\GAME DEV\Postal 1\Ezia-Cleaner_Build-934afd57b26a\BLiT3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.04

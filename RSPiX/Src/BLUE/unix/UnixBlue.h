@@ -31,6 +31,8 @@
 
 #include "UnixSystem.h"
 #include "UnixBlueKeys.h"
+extern double wideScreenMultiW;
+extern double wideScreenMultiH;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Blue API
@@ -232,6 +234,8 @@ extern int32_t rspGetToggleKeyStates(void);	// Returns toggle key state flags
 #define RSP_NUM_LOCK_ON				0x00000002
 #define RSP_SCROLL_LOCK_ON			0x00000004
 
+extern void rspSetWindowGrab(bool mode);
+extern bool rspGetWindowGrab();
 
 ///////////////////////////////////////////////////////////////////////////////
 // JOYSTICK Macros:
@@ -471,6 +475,8 @@ extern void rspCacheDirtyRect(
 extern void rspKeyRepeat(int bEnable);
 
 extern void rspPresentFrame(void);
+extern void rspPresentFrameTest(void);
+
 
 extern void rspUpdateDisplayRects(void);
 

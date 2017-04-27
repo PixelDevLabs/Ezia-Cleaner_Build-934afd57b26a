@@ -72,6 +72,9 @@
 // TOOLBAR Graphic parameters:
 ////////////////////////////////////////////////////////////////////////////////
 
+extern int wideScreenWidth;
+extern int wideScreenHeight;
+
 //=================== toolbar templates (loaded each level) ====================
 
 //=====================  General Toolbar Parameters  ===========================
@@ -81,7 +84,7 @@
 #define	TB_TWEAK_FONT_Y		-5
 #define	TB_TWEAK_FONT_X		-3
 
-#define  TB_SMALL_FONT			11		// pixel height for ammo font
+#define  TB_SMALL_FONT			11	// pixel height for ammo font
 #define	TB_LARGE_FONT			15		// for health and armour
 
 #define	TB_AMMOW_LOW	3			// ammo changes color as warning
@@ -94,7 +97,7 @@
 #define	TB_MILLI_INTERVAL_TIME	500	// maximum update rate, unless forced
 #endif
 
-extern int wideScreenWidth;
+
 
 
 extern RFont g_fontBig;	// I hope this one is OK....
@@ -358,8 +361,8 @@ public:
 
 			ms_pimCompositeBufferScaled = new RImage;
 			ms_pimCompositeBufferScaled->CreateImage(
-				wideScreenWidth, //HACK HACK
-				pHood->m_pimEmptyBar->m_sHeight,
+				pHood->m_pimEmptyBar->m_sWidth, //HACK HACK
+				pHood->m_pimEmptyBar->m_sHeight, // MATH MATHS c:
 				RImage::BMP8);
 			}
 
