@@ -428,7 +428,7 @@
 // This is used when setting up font's for GUI's.  The size doesn't matter, but we do have to
 // supply a value, so just for kicks, let's use the same one each time.  Since we use RFont to
 // try to figure out how many font sizes are used, we want this to be a cached size.
-#define DEFAULT_GUI_FONT_HEIGHT		((19*wideScreenMultiH)/2)
+#define DEFAULT_GUI_FONT_HEIGHT		19
 
 #define HEAD_COLOR						MAKE_U32_COLOR(160,   0,   0,   0)
 #define HEAD_SHADOW_COLOR				MAKE_U32_COLOR( 64,  16,  16,   0)
@@ -722,9 +722,9 @@ static void RotationScrollUpdateShort(		// Returns nothing.
 // Variables/data
 ////////////////////////////////////////////////////////////////////////////////
 
-extern int RequestedWidth;
-extern int RequestedHeight;
-extern SDL_Window *sdlWindow;
+//extern int RequestedWidth;
+//extern int RequestedHeight;
+//extern SDL_Window *sdlWindow;
 
 CMenuSettings	g_MenuSettings;
 
@@ -2848,7 +2848,7 @@ extern Menu	menuStartSingle =
 #ifndef LOADLEVEL_REMOVED
 			{ g_pszStartSinglePlayerMenu_LoadLevel,	TRUE,			&menuLoadLevel,					NULL,	},
 #endif
-			{ g_pszStartSinglePlayerMenu_Challenge,	TRUE,			/*&menuChallenge,*/NULL,	NULL,	},
+			{ g_pszStartSinglePlayerMenu_Challenge,	TRUE,			&menuChallenge,	NULL,	},
 			{ "",													FALSE,		NULL,					NULL, },
 			NULL							// Terminates list.
 		},
@@ -4357,89 +4357,6 @@ static bool ResolutionChoice(	// Returns true to accept, false to deny choice.
 	else
 		PlaySample(g_smidMenuItemSelect, SampleMaster::UserFeedBack);
 
-	switch (sMenuItem)
-	{
-
-	case 0:
-		RequestedWidth = 320;
-		RequestedHeight = 240;
-		//wideScreenWidth = 480 * MAIN_SCREEN_MIN_WIDTH / MAIN_SCREEN_MIN_HEIGHT;
-		
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-
-		prefs.SetVal("Video", "EditorViewWidth", RequestedWidth);
-		prefs.SetVal("Video", "EditorViewHeight", RequestedHeight);
-		break;
-	case 1:
-		RequestedWidth = 640;
-		RequestedHeight = 480;
-		//wideScreenWidth = 480 * MAIN_SCREEN_MIN_WIDTH / MAIN_SCREEN_MIN_HEIGHT;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-		break;
-	case 2:
-		RequestedWidth = 800;
-		RequestedHeight = 600;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-		break;
-	case 3:
-		RequestedWidth = 1024;
-		RequestedHeight = 768;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-		break;
-	case 4:
-		RequestedWidth = 1280;
-		RequestedHeight = 720;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		if (prefs.Open(g_pszPrefFileName, "rt") == 0)
-		{
-
-			// Hey sleepy, you're trying to write to the INI
-			prefs.SetVal("Video", "EditorViewWidth", RequestedWidth);
-			prefs.SetVal("Video", "EditorViewHeight", RequestedHeight);
-			prefs.Write();
-			rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-			prefs.Close();
-		}
-		break;
-	case 5:
-		RequestedWidth = 1600;
-		RequestedHeight = 900;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-
-		break;
-	case 6:
-		RequestedWidth = 1920;
-		RequestedHeight = 1080;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-
-		break;
-	case 7:
-		RequestedWidth = 2560;
-		RequestedHeight = 1440;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		rspSetVideoMode(sDeviceDepth, sDeviceWidth, sDeviceHeight, RequestedWidth, RequestedHeight, sPages, sScaling);
-
-		break;
-	case 8:
-		RequestedWidth = 3840;
-		RequestedHeight = 2160;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		SDL_SetWindowSize(sdlWindow, RequestedWidth, RequestedHeight);
-
-		break;
-	case 9:
-		RequestedWidth = 7680;
-		RequestedHeight = 4320;
-		//wideScreenWidth = 480 * RequestedWidth / RequestedHeight;
-		SDL_SetWindowSize(sdlWindow, RequestedWidth, RequestedHeight);
-
-		break;
-
-	}
 
 	return bAcceptChoice;
 }

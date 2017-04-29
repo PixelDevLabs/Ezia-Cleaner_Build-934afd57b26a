@@ -370,7 +370,7 @@
 // Determines the number of elements in the passed array at compile time.
 #define NUM_ELEMENTS(a)		(sizeof(a) / sizeof(a[0]) )
 
-#define MAX_SMASH_DIAMETER				2000
+#define MAX_SMASH_DIAMETER				20
 
 #define REALM_DIALOG_FILE				"res/editor/realm.gui"
 
@@ -398,11 +398,11 @@ int16_t CRealm::ms_sFileCount;
 int16_t CRealm::ms_asAttribToLayer[CRealm::LayerAttribMask + 1];
 
 // Names of layers.  Use Layer enum values to index.
-char* CRealm::ms_apszLayerNames[TotalLayers]	=
-	{
+char* CRealm::ms_apszLayerNames[TotalLayers] =
+{
 	"Background",
 
- 	"Sprite1",
+	"Sprite1",
 	"Opaque1",
 
 	"Sprite2",
@@ -448,17 +448,17 @@ char* CRealm::ms_apszLayerNames[TotalLayers]	=
 	"Opaque8",
 
 	"Sprite16",
-	};
+};
 
 // These are the various 2d paths that we currently support.  Eventually, if
 // there's more than two, this can be presented in listbox form (instead of
 // checkbox form).
-char*	CRealm::ms_apsz2dResPaths[Num2dPaths]	=
-	{
+char*	CRealm::ms_apsz2dResPaths[Num2dPaths] =
+{
 	"2d/Top/",
 	"2d/Side/",
 	"2d/SideBright/",
-	};
+};
 
 // Used for CRealm oriented drawing tasks.
 static RPrint	ms_print;
@@ -484,10 +484,10 @@ void Map3Dto2D(	// Returns nothing.
 	TOut* ptX,			// Out.
 	TOut* ptY,			// Out.
 	int16_t	sViewAngle)	// In:  View angle in degrees.
-	{
-	*ptX	= tX;
-	*ptY	= SINQ[sViewAngle] * tZ - COSQ[sViewAngle] * tY;
-	}
+{
+	*ptX = tX;
+	*ptY = SINQ[sViewAngle] * tZ - COSQ[sViewAngle] * tY;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scales a Z coordinate onto the viewing plane provided the 
@@ -498,11 +498,11 @@ void MapZ3DtoY2D(		// Returns nothing.
 	TIn	tZIn,			// In.
 	TOut* ptYOut,		// Out.
 	int16_t	sViewAngle)	// In:  View angle in degrees.
-	{
+{
 	ASSERT(sViewAngle >= 0 && sViewAngle < 360);
 
-	*ptYOut	= SINQ[sViewAngle] * tZIn;
-	}
+	*ptYOut = SINQ[sViewAngle] * tZIn;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane provided the 
@@ -513,19 +513,19 @@ void MapY2DtoZ3D(		// Returns nothing.
 	TIn	tYIn,			// In.
 	TOut* ptZOut,		// Out.
 	int16_t	sViewAngle)	// In:  View angle in degrees.
-	{
+{
 	ASSERT(sViewAngle >= 0 && sViewAngle < 360);
 
-	REAL	rSin	= SINQ[sViewAngle];
+	REAL	rSin = SINQ[sViewAngle];
 	if (rSin != 0.0)
-		{
-		*ptZOut	= tYIn / rSin;
-		}
-	else
-		{
-		*ptZOut	= 0;
-		}
+	{
+		*ptZOut = tYIn / rSin;
 	}
+	else
+	{
+		*ptZOut = 0;
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate onto the viewing plane provided the 
@@ -536,11 +536,11 @@ void MapY3DtoY2D(		// Returns nothing.
 	TIn	tYIn,			// In.
 	TOut* ptYOut,		// Out.
 	int16_t	sViewAngle)	// In:  View angle in degrees.
-	{
+{
 	ASSERT(sViewAngle >= 0 && sViewAngle < 360);
 
-	*ptYOut	= COSQ[sViewAngle] * tYIn;
-	}
+	*ptYOut = COSQ[sViewAngle] * tYIn;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane provided the 
@@ -551,26 +551,26 @@ void MapY2DtoY3D(		// Returns nothing.
 	TIn	tYIn,			// In.
 	TOut* ptYOut,		// Out.
 	int16_t	sViewAngle)	// In:  View angle in degrees.
-	{
+{
 	ASSERT(sViewAngle >= 0 && sViewAngle < 360);
 
-	REAL	rCos	= COSQ[sViewAngle];
+	REAL	rCos = COSQ[sViewAngle];
 	if (rCos != 0.0)
-		{
-		*ptYOut	= tYIn / rCos;
-		}
-	else
-		{
-		*ptYOut	= 0;
-		}
+	{
+		*ptYOut = tYIn / rCos;
 	}
+	else
+	{
+		*ptYOut = 0;
+	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Default (and only) constructor
 ////////////////////////////////////////////////////////////////////////////////
 CRealm::CRealm()
-	{
+{
 	time_t lTime;
 	time(&lTime);
 #ifndef WIN32
@@ -578,10 +578,10 @@ CRealm::CRealm()
 	lTime -= ((365 * 70UL) + 17) * 24 * 60 * 60; // time_fudge 1900->1970
 #endif
 	g_lRegValue = lTime - g_lRegTime;
-	g_lExpValue = g_lExpTime - lTime; 
+	g_lExpValue = g_lExpTime - lTime;
 
 	CreateLayerMap();
-	
+
 	// Setup render object (it's constructor was automatically called)
 	m_scene.SetLayers(TotalLayers);
 
@@ -592,20 +592,20 @@ CRealm::CRealm()
 	m_pTriggerMapHolder = 0;
 
 	// Set Hood ptr to a safe (but invalid) value.
-	m_phood			= NULL;
+	m_phood = NULL;
 
-/*
+	/*
 	// Create a container of things for each element in the array
 	short	s;
 	for (s = 0; s < CThing::TotalIDs; s++)
-		m_apthings[s] = new CThing::Things;
-*/
+	m_apthings[s] = new CThing::Things;
+	*/
 
 	// Initialize current Navigation Net pointer
 	m_pCurrentNavNet = NULL;
 
 	// Not currently updating.
-	m_bUpdating		= false;
+	m_bUpdating = false;
 
 	// Initialize dummy nodes for linked lists of CThings
 	m_everythingHead.m_pnNext = &m_everythingTail;
@@ -617,7 +617,7 @@ CRealm::CRealm()
 
 	int16_t i;
 	for (i = 0; i < CThing::TotalIDs; i++)
-		{
+	{
 		m_aclassHeads[i].m_pnNext = &(m_aclassTails[i]);
 		m_aclassHeads[i].m_pnPrev = NULL;
 		m_aclassHeads[i].m_powner = NULL;
@@ -625,49 +625,49 @@ CRealm::CRealm()
 		m_aclassTails[i].m_pnPrev = &(m_aclassHeads[i]);
 		m_aclassTails[i].m_powner = NULL;
 		m_asClassNumThings[i] = 0;
-		}
+	}
 
 	m_sNumThings = 0;
 
-	m_sNumSuspends	= 0;
+	m_sNumSuspends = 0;
 
 	// Setup print.
 	ms_print.SetFont(STATUS_FONT_SIZE, &g_fontBig);
 	ms_print.SetColor(
-		STATUS_FONT_FORE_INDEX, 
-		STATUS_FONT_BACK_INDEX, 
+		STATUS_FONT_FORE_INDEX,
+		STATUS_FONT_BACK_INDEX,
 		STATUS_FONT_SHADOW_INDEX);
 
 	// Initialize flags to defaults for safety.
 	// This might be a bad idea if we want to guarantee they get set in which
 	// case we should maybe set them to absurd values.
-	m_flags.bMultiplayer	= false;
-	m_flags.bCoopMode		= false;
-	m_flags.bEditing		= false;
-	m_flags.bEditPlay		= false;
-	m_flags.sDifficulty	= 5;
+	m_flags.bMultiplayer = false;
+	m_flags.bCoopMode = false;
+	m_flags.bEditing = false;
+	m_flags.bEditPlay = false;
+	m_flags.sDifficulty = 5;
 
-	m_fnProgress			= NULL;
+	m_fnProgress = NULL;
 
 	m_bPressedEndLevelKey = false;
 
 	// Initialize.
 	Init();
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Destructor
 ////////////////////////////////////////////////////////////////////////////////
 CRealm::~CRealm()
-	{
+{
 	// Clear the realm (in case this hasn't been done yet)
 	Clear();
 
 	// Double-check to be sure there's nothing left
 	if (m_everythingHead.m_pnNext != &m_everythingTail)
 		TRACE("CRealm::~CRealm(): There are still %d CThing's in this realm!\n", m_sNumThings);
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -676,7 +676,7 @@ CRealm::~CRealm()
 // spot to implement these, rather than having to do it twice.
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Init(void)		// Returns nothing.  Cannot fail.
-	{
+{
 	m_dKillsPercentGoal = 80.0;
 	m_sKillsGoal = 0;
 	m_sFlagsGoal = 0;
@@ -698,21 +698,21 @@ void CRealm::Init(void)		// Returns nothing.  Cannot fail.
 	m_s2dResPathIndex = 1;
 
 	// Reset timer.
-	m_lLastStatusDrawTime	= -STATUS_UPDATE_INTERVAL;
+	m_lLastStatusDrawTime = -STATUS_UPDATE_INTERVAL;
 
 	// Pylon stuff
 	int16_t i;
-	for (i=0;i < 256;i++)
+	for (i = 0; i < 256; i++)
 		m_asPylonUIDs[i] = 0; // clear the Pylon UIDs!
 	m_sNumPylons = 0;
 	m_ucNextPylonID = 1;
-	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Clear the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Clear()
-	{
+{
 	// Shutdown the realm (in case this hasn't been done yet)
 	Shutdown();
 
@@ -743,7 +743,7 @@ void CRealm::Clear()
 
 	// Re-Initialize.
 	Init();
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -752,16 +752,16 @@ void CRealm::Clear()
 // static
 bool CRealm::DoesFileExist(							// Returns true if file exists, false otherwise
 	const char* pszFileName)							// In:  Name of file
-	{
+{
 	bool bResult = false;
 	RFile file;
 	if (Open(pszFileName, &file) == 0)
-		{
+	{
 		file.Close();
 		bResult = true;
-		}
-	return bResult;
 	}
+	return bResult;
+}
 
 
 
@@ -772,42 +772,42 @@ bool CRealm::DoesFileExist(							// Returns true if file exists, false otherwis
 int16_t CRealm::Open(										// Returns 0 if successfull, non-zero otherwise
 	const char* pszFileName,							// In:  Name of file to load from
 	RFile* pfile)											// I/O: RFile to be used
-	{
+{
 	int16_t sResult = 0;
-	
-	if (strlen(pszFileName) > 0)
-		{
 
-		#if !defined(ENABLE_PLAY_SPECIFIC_REALMS_ONLY)
-			// Try the given path first since it may already have a full path in the
-			// case of loading a level, then try the path with the HD path prepended, 
-			// then try the CD path.
-			sResult = pfile->Open(rspPathToSystem((char*)pszFileName), "rb", RFile::LittleEndian);
-			if (sResult != 0)
-				{
-				char pszFullPath[RSP_MAX_PATH];
-				strcpy(pszFullPath, FullPathHD((char*) pszFileName));
-				sResult = pfile->Open((char*)pszFullPath, "rb", RFile::LittleEndian);
-				if (sResult != 0)
-					{
-					strcpy(pszFullPath, FullPathCD((char*) pszFileName));
-					sResult = pfile->Open((char*)pszFullPath, "rb", RFile::LittleEndian);
-					}
-				}
-		#else
-			// There's only one place it can possibly be and, if it's not there,
-			// no realm for you!
-			sResult	= GetMemFileResource(pszFileName, RFile::LittleEndian, pfile);
-		#endif	// ENABLE_PLAY_SPECIFIC_REALMS_ONLY
-		}
-	else
+	if (strlen(pszFileName) > 0)
+	{
+
+#if !defined(ENABLE_PLAY_SPECIFIC_REALMS_ONLY)
+		// Try the given path first since it may already have a full path in the
+		// case of loading a level, then try the path with the HD path prepended, 
+		// then try the CD path.
+		sResult = pfile->Open(rspPathToSystem((char*)pszFileName), "rb", RFile::LittleEndian);
+		if (sResult != 0)
 		{
+			char pszFullPath[RSP_MAX_PATH];
+			strcpy(pszFullPath, FullPathHD((char*)pszFileName));
+			sResult = pfile->Open((char*)pszFullPath, "rb", RFile::LittleEndian);
+			if (sResult != 0)
+			{
+				strcpy(pszFullPath, FullPathCD((char*)pszFileName));
+				sResult = pfile->Open((char*)pszFullPath, "rb", RFile::LittleEndian);
+			}
+		}
+#else
+		// There's only one place it can possibly be and, if it's not there,
+		// no realm for you!
+		sResult = GetMemFileResource(pszFileName, RFile::LittleEndian, pfile);
+#endif	// ENABLE_PLAY_SPECIFIC_REALMS_ONLY
+	}
+	else
+	{
 		sResult = -1;
 		TRACE("CRealm::Open(): Empty file name!\n");
-		}
+	}
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -816,7 +816,7 @@ int16_t CRealm::Open(										// Returns 0 if successfull, non-zero otherwise
 int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 	const char* pszFileName,							// In:  Name of file to load from
 	bool bEditMode)										// In:  Use true for edit mode, false otherwise
-	{
+{
 	int16_t sResult = 0;
 
 	// Copy the name to use later for high score purposes
@@ -826,20 +826,20 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 	RFile file;
 	sResult = Open(pszFileName, &file);
 	if (sResult == 0)
-		{
+	{
 		// Use alternate load to do most of the work
 		sResult = Load(&file, bEditMode);
 
 		file.Close();
-		}
+	}
 	else
-		{
+	{
 		sResult = -1;
 		TRACE("CRealm::Load(): Couldn't open file: %s !\n", pszFileName);
-		}
+	}
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -848,9 +848,9 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 	RFile* pFile,											// In:  File to load from
 	bool bEditMode)										// In:  Use true for edit mode, false otherwise
-	{
+{
 	int16_t sResult = 0;
-	
+
 	// Clear the realm before loading this new stuff
 	Clear();
 
@@ -860,70 +860,70 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 	// Read & validate file ID
 	uint32_t ulFileID;
 	if (pFile->Read(&ulFileID) == 1)
-		{
+	{
 		if (ulFileID == CRealm::FileID)
-			{
+		{
 
 			// Read & validate file version
 			uint32_t ulFileVersion;
 			if (pFile->Read(&ulFileVersion) == 1)
-				{
+			{
 				// If a known version . . .
 				if (ulFileVersion <= CRealm::FileVersion)
-					{
+				{
 					// Read properties for the realm
 					switch (ulFileVersion)
 					{
-						default:
-						case 30:
-							pFile->Read(&m_s2dResPathIndex);
+					default:
+					case 30:
+						pFile->Read(&m_s2dResPathIndex);
 
-						case 29:
-							pFile->Read(&m_ScoringMode);
-						case 28:
-						case 27:
-						{
-							int16_t sUp;
-							pFile->Read(&m_lScoreTimeDisplay);
-							m_lScoreInitialTime = m_lScoreTimeDisplay;
-							pFile->Read(&sUp);
-							if (sUp == 1)
-								m_bScoreTimerCountsUp = true;
-							else
-								m_bScoreTimerCountsUp = false;
-							pFile->Read(&m_sKillsGoal);
-							pFile->Read(&m_sFlagsGoal);
-							pFile->Read(&m_dKillsPercentGoal);
-							break;
-						}
-						case 26:
-						case 25:
-						case 24:
-						case 23:
-						case 22:
-						case 21:
-						case 20:
-						case 19:
-						case 18:
-						case 17:
-						case 16:
-						case 15:
-						case 14:
-						case 13:
-						case 12:
-						case 11:
-						case 10:
-						case 9:
-						case 8:
-						case 7:
-						case 6:
-						case 5:
-						case 4:
-						case 3:
-						case 2:
-						case 1:
-						case 0:
-							break;
+					case 29:
+						pFile->Read(&m_ScoringMode);
+					case 28:
+					case 27:
+					{
+						int16_t sUp;
+						pFile->Read(&m_lScoreTimeDisplay);
+						m_lScoreInitialTime = m_lScoreTimeDisplay;
+						pFile->Read(&sUp);
+						if (sUp == 1)
+							m_bScoreTimerCountsUp = true;
+						else
+							m_bScoreTimerCountsUp = false;
+						pFile->Read(&m_sKillsGoal);
+						pFile->Read(&m_sFlagsGoal);
+						pFile->Read(&m_dKillsPercentGoal);
+						break;
+					}
+					case 26:
+					case 25:
+					case 24:
+					case 23:
+					case 22:
+					case 21:
+					case 20:
+					case 19:
+					case 18:
+					case 17:
+					case 16:
+					case 15:
+					case 14:
+					case 13:
+					case 12:
+					case 11:
+					case 10:
+					case 9:
+					case 8:
+					case 7:
+					case 6:
+					case 5:
+					case 4:
+					case 3:
+					case 2:
+					case 1:
+					case 0:
+						break;
 					}
 
 
@@ -932,153 +932,153 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 					// is to give classes whose objects don't exist at the start of a level
 					// a chance to preload resources now rather than during gameplay.
 					for (int16_t sPre = 0; sPre < CThing::TotalIDs; sPre++)
-						{
+					{
 						CThing::FuncPreload func = CThing::ms_aClassInfo[sPre].funcPreload;
 						if (func != 0)
-							{
+						{
 							sResult = (*func)(this);
 							if (sResult != 0)
-								{
+							{
 								TRACE("CRealm::Load(): Error reported by Preload() for CThing class ID = %hd\n", (int16_t)sPre);
 								break;
-								}
 							}
 						}
+					}
 					if (sResult == 0)
-						{
+					{
 
 						// Read number of things that were written to file (could be 0!)
 						int16_t sCount;
 						if (pFile->Read(&sCount) == 1)
-							{
+						{
 
-							CThing::ClassIDType	idLastThingLoaded	= CThing::TotalIDs;
+							CThing::ClassIDType	idLastThingLoaded = CThing::TotalIDs;
 
 							// If there's a callback . . .
 							if (m_fnProgress)
-								{
+							{
 								// Call it . . .
 								if (m_fnProgress(0, sCount) == true)
-									{
+								{
 									// Callback is happy to continue.
-									}
-								else
-									{
-									// Callback has decided to end this operation.
-									sResult	= 1;
-									}
 								}
+								else
+								{
+									// Callback has decided to end this operation.
+									sResult = 1;
+								}
+							}
 
 							// Load each object that was written to the file (could be 0!)
 							for (int16_t s = 0; (s < sCount) && !sResult; s++)
-								{
+							{
 
 								// Read class ID of next object in file
 								CThing::ClassIDType id;
 								if (pFile->Read(&id) == 1)
-									{
+								{
 
 									// Create object based on class ID
 									CThing* pThing;
 									sResult = CThing::Construct(id, this, &pThing);
 									if (!sResult)
-										{
+									{
 
 										// Load object assocated with this class ID
 										sResult = pThing->Load(pFile, bEditMode, ms_sFileCount, ulFileVersion);
 
 										// If successful . . .
 										if (sResult == 0)
-											{
+										{
 											// Store last thing to successfully load.
-											idLastThingLoaded	= id;
+											idLastThingLoaded = id;
 											// If there's a callback . . .
 											if (m_fnProgress)
-												{
+											{
 												// Call it . . .
 												if (m_fnProgress(s + 1, sCount) == true)
-													{
+												{
 													// Callback is happy to continue.
-													}
+												}
 												else
-													{
+												{
 													// Callback has decided to end this operation.
-													sResult	= 1;
-													}
-												}
-											}
-										else
-											{
-											TRACE("CRealm::Load(): Load() failed for thing of type %s; ",
-												CThing::ms_aClassInfo[id].pszClassName);
-											if (idLastThingLoaded != CThing::TotalIDs)
-												{
-												STRACE("The last thing to successfully loaded was a %s.\n",
-													CThing::ms_aClassInfo[idLastThingLoaded].pszClassName);
-												}
-											else
-												{
-												STRACE("This was the first thing to load.\n");
+													sResult = 1;
 												}
 											}
 										}
-
+										else
+										{
+											TRACE("CRealm::Load(): Load() failed for thing of type %s; ",
+												CThing::ms_aClassInfo[id].pszClassName);
+											if (idLastThingLoaded != CThing::TotalIDs)
+											{
+												STRACE("The last thing to successfully loaded was a %s.\n",
+													CThing::ms_aClassInfo[idLastThingLoaded].pszClassName);
+											}
+											else
+											{
+												STRACE("This was the first thing to load.\n");
+											}
+										}
 									}
+
+								}
 								else
-									{
+								{
 									sResult = -1;
 									TRACE("CRealm::Load(): Error reading class ID!\n");
-									}
 								}
+							}
 
 							// Check for I/O errors (only matters if no errors were reported so far)
 							if (!sResult && pFile->Error())
-								{
+							{
 								sResult = -1;
 								TRACE("CRealm::Load(): Error reading file!\n");
-								}
+							}
 
 							// If any errors occurred . . .
 							if (sResult)
-								{
+							{
 								// Better clean up stuff that did load.
 								Clear();
-								}
-							}
-						else
-							{
-							sResult = -1;
-							TRACE("CRealm::Load(): Error reading count of objects in file!\n");
 							}
 						}
+						else
+						{
+							sResult = -1;
+							TRACE("CRealm::Load(): Error reading count of objects in file!\n");
+						}
 					}
+				}
 				else
-					{
+				{
 					sResult = -1;
 					TRACE("CRealm::Load(): Incorrect file version (should be 0x%lx or less, was 0x%lx)!\n", CRealm::FileVersion, ulFileVersion);
-					}
 				}
+			}
 			else
-				{
+			{
 				sResult = -1;
 				TRACE("CRealm::Load(): Error reading file version!\n");
-				}
 			}
+		}
 		else
-			{
+		{
 			sResult = -1;
 			TRACE("CRealm::Load(): Incorrect file ID (should be 0x%lx, was 0x%lx)!\n", CRealm::FileID, ulFileID);
-			}
 		}
+	}
 	else
-		{
+	{
 		sResult = -1;
 		TRACE("CRealm::Load(): Error reading file ID!\n");
-		}
+	}
 
 #ifdef NEW_SMASH
 	if (sResult == 0) // a success....
-		{
+	{
 		/* For now, let's see if this is necessary...
 
 		// Allocate the Smashatorium:
@@ -1092,16 +1092,16 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 		if (m_smashatorium.m_pGrid) m_smashatorium.Destroy();
 
 		if (m_smashatorium.Alloc(sOldW,sOldH,sOldTileW,sOldTileH) != SUCCESS)
-			{
-			TRACE("CRealm::Load(): Error reallocating the smashatorium!\n");
-			sResult = -1;
-			}
-		*/
+		{
+		TRACE("CRealm::Load(): Error reallocating the smashatorium!\n");
+		sResult = -1;
 		}
+		*/
+	}
 #endif
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1109,14 +1109,14 @@ int16_t CRealm::Load(										// Returns 0 if successfull, non-zero otherwise
 ////////////////////////////////////////////////////////////////////////////////
 int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 	const char* pszFile)									// In:  Name of file to save to
-	{
+{
 	int16_t sResult = 0;
 
 	// Open file
 	RFile file;
 	sResult = file.Open((char*)pszFile, "wb", RFile::LittleEndian);
 	if (sResult == 0)
-		{
+	{
 
 		// Use alternate save to do most of the work
 		sResult = Save(&file);
@@ -1124,15 +1124,15 @@ int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 		file.Close();
 
 		// Would this be an appropriate time to build the SAK file???
-		}
+	}
 	else
-		{
+	{
 		sResult = -1;
 		TRACE("CRealm::Save(): Couldn't open file: %s !\n", pszFile);
-		}
+	}
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1140,7 +1140,7 @@ int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 ////////////////////////////////////////////////////////////////////////////////
 int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 	RFile* pFile)											// In:  File to save to
-	{
+{
 	int16_t sResult = 0;
 
 	// Increment file count
@@ -1167,25 +1167,25 @@ int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 
 	// If there's a callback . . .
 	if (m_fnProgress)
-		{
+	{
 		// Call it . . .
 		if (m_fnProgress(0, m_sNumThings) == true)
-			{
+		{
 			// Callback is happy to continue.
-			}
-		else
-			{
-			// Callback has decided to end this operation.
-			sResult	= 1;
-			}
 		}
+		else
+		{
+			// Callback has decided to end this operation.
+			sResult = 1;
+		}
+	}
 
 	// Do this for all of the objects
 	CListNode<CThing>* pCur;
 	CListNode<CThing>* pNext = m_everythingHead.m_pnNext;
-	int16_t	sCurItemNum	= 0;
+	int16_t	sCurItemNum = 0;
 	while (pNext->m_powner != NULL && !sResult)
-		{
+	{
 		pCur = pNext;
 		pNext = pNext->m_pnNext;
 
@@ -1197,42 +1197,42 @@ int16_t CRealm::Save(										// Returns 0 if successfull, non-zero otherwise
 		if (sResult)
 			break;
 		else
-			{
+		{
 			sCurItemNum++;
 
 			// If there's a callback . . .
 			if (m_fnProgress)
-				{
+			{
 				// Call it . . .
 				if (m_fnProgress(sCurItemNum, m_sNumThings) == true)
-					{
+				{
 					// Callback is happy to continue.
-					}
+				}
 				else
-					{
+				{
 					// Callback has decided to end this operation.
-					sResult	= 1;
-					}
+					sResult = 1;
 				}
 			}
 		}
+	}
 
 	// Check for I/O errors (only matters if no errors were reported so far)
 	if (!sResult && pFile->Error())
-		{
+	{
 		sResult = -1;
 		TRACE("CRealm::Save(): Error writing file!\n");
-		}
+	}
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Startup the realm
 ////////////////////////////////////////////////////////////////////////////////
 int16_t CRealm::Startup(void)							// Returns 0 if successfull, non-zero otherwise
-	{
+{
 	int16_t sResult = 0;
 
 	// Initialize Population statistics b/c anyone killed already was not done so 
@@ -1291,18 +1291,18 @@ int16_t CRealm::Startup(void)							// Returns 0 if successfull, non-zero otherw
 		// Setup the previous time for the start of the game.														
 		m_lPrevTime = m_time.GetGameTime();
 
-		} while (!sDone && !sResult); 
+	} while (!sDone && !sResult);
 
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Shutdown the realm
 ////////////////////////////////////////////////////////////////////////////////
 int16_t CRealm::Shutdown(void)							// Returns 0 if successfull, non-zero otherwise
-	{
+{
 	int16_t sResult = 0;
 
 	// This loop is specifically designed so that it will not end until all of
@@ -1340,18 +1340,18 @@ int16_t CRealm::Shutdown(void)							// Returns 0 if successfull, non-zero other
 		// Increment pass number for testing/debugging
 		lPassNum++;
 
-		} while (!sDone && !sResult);
+	} while (!sDone && !sResult);
 
 
 	return sResult;
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Suspend the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Suspend(void)
-	{
+{
 	m_sNumSuspends++;
 
 	// Do this for all the objects.  We use a copy of the iterator to avoid being
@@ -1373,15 +1373,15 @@ void CRealm::Suspend(void)
 
 	// Suspend active sounds.
 	PauseAllSamples();
-	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Resume the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Resume(void)
-	{
+{
 	if (m_sNumSuspends > 0)
-		{
+	{
 		// Do this for all the objects.  We use a copy of the iterator to avoid being
 		// stuck with an invalid iterator once the object is gone.
 		CListNode<CThing>* pCur;
@@ -1392,7 +1392,7 @@ void CRealm::Resume(void)
 			pNext = pNext->m_pnNext;
 
 			pCur->m_powner->Resume();
-		}	
+		}
 
 		// Resume the game time.  I don't think it matters whether this is done
 		// before or after the CThing->Resume() calls since game time never actually
@@ -1405,15 +1405,15 @@ void CRealm::Resume(void)
 
 		// Resume active sounds.
 		ResumeAllSamples();
-		}
 	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Update the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Update(void)
-	{
+{
 	// We want to do this for every CThing in the realm.  We use iNext to get
 	// the next iterator before calling the current item to avoid
 	// a problem that could otherwise occur where iCur becomes invalidated during
@@ -1430,7 +1430,7 @@ void CRealm::Update(void)
 	rspStartProfile("Realm Update");
 
 	// Entering update loop.
-	m_bUpdating	= true;
+	m_bUpdating = true;
 
 	// Do this for everything.
 	CThing* pthing;
@@ -1450,21 +1450,21 @@ void CRealm::Update(void)
 	else
 		m_lScoreTimeDisplay -= m_lElapsedTime;
 	m_lPrevTime = m_lThisTime;
- 
+
 	// Leaving update loop.
-	m_bUpdating	= false;
+	m_bUpdating = false;
 
 	rspEndProfile("Realm Update");
-	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Render the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::Render(void)
-	{
+{
 	// Entering update loop.
-	m_bUpdating	= true;
+	m_bUpdating = true;
 
 	// Do this for everything.
 	CThing* pthing;
@@ -1477,8 +1477,8 @@ void CRealm::Render(void)
 	}
 
 	// Leaving update loop.
-	m_bUpdating	= false;
-	}
+	m_bUpdating = false;
+}
 
 // This old way probably doesn't make sense any more since we're going to allow
 // for multiple views of a realm.  I don't think we'd want to tell each object
@@ -1488,36 +1488,36 @@ void CRealm::Render(void)
 // long, and needs to get done no matter what view we're talking about.
 /*
 void CRealm::Render(
-	short sViewX,											// In:  X coord of view
-	short sViewY,											// In:  Y coord of view
-	short sViewW,											// In:  Width of view
-	short sViewH,											// In:  Height of view
-	RImage* pimDst,										// In:  Image to render to
-	short sDstX,											// In:  X coord to draw to
-	short sDstY)											// In:  Y coord to draw to
-	{
-	// It may turn out that some objects want to do their own clipping to see if
-	// they need to add themselves to the scene.  I would guess this would be
-	// the exception rather than the rule, so when (or if) such a requirement
-	// comes up, we shouldn't pass the view info to each object, but instead
-	// should create a function that objects can call to get the view info, the
-	// idea being that this would be faster overall than passing all that data
-	// to each object only to have it ignored most of the time.
+short sViewX,											// In:  X coord of view
+short sViewY,											// In:  Y coord of view
+short sViewW,											// In:  Width of view
+short sViewH,											// In:  Height of view
+RImage* pimDst,										// In:  Image to render to
+short sDstX,											// In:  X coord to draw to
+short sDstY)											// In:  Y coord to draw to
+{
+// It may turn out that some objects want to do their own clipping to see if
+// they need to add themselves to the scene.  I would guess this would be
+// the exception rather than the rule, so when (or if) such a requirement
+// comes up, we shouldn't pass the view info to each object, but instead
+// should create a function that objects can call to get the view info, the
+// idea being that this would be faster overall than passing all that data
+// to each object only to have it ignored most of the time.
 
-	// Do this for everything
-	for (CThing::Things::iterator i = m_everything.begin(); i != m_everything.end(); i++)
-		(*i)->Render();
+// Do this for everything
+for (CThing::Things::iterator i = m_everything.begin(); i != m_everything.end(); i++)
+(*i)->Render();
 
-	// Render specified view to specified position in specified image
-	m_scene.Render(
-		sViewX,
-		sViewY,
-		sViewW,
-		sViewH,
-		pimDst,
-		sDstX,
-		sDstY);
-	}
+// Render specified view to specified position in specified image
+m_scene.Render(
+sViewX,
+sViewY,
+sViewW,
+sViewH,
+pimDst,
+sDstX,
+sDstY);
+}
 */
 
 
@@ -1525,38 +1525,38 @@ void CRealm::Render(
 // Edit mode: Update the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::EditUpdate(void)
-	{
+{
 	// Do this for all the objects.  We use a copy of the iterator to avoid being
 	// stuck with an invalid iterator once the object is gone.
 	CListNode<CThing>* pCur;
 	CListNode<CThing>* pNext = m_everythingHead.m_pnNext;
 	while (pNext->m_powner != NULL)
-		{
+	{
 		pCur = pNext;
 		pNext = pNext->m_pnNext;
 
 		pCur->m_powner->EditUpdate();
-		}
 	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Edit mode: Render the realm
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::EditRender(void)
-	{
+{
 	// Do this for all the objects.  We use a copy of the iterator to avoid being
 	// stuck with an invalid iterator once the object is gone.
 	CListNode<CThing>* pCur;
 	CListNode<CThing>* pNext = m_everythingHead.m_pnNext;
 	while (pNext->m_powner != NULL)
-		{
+	{
 		pCur = pNext;
 		pNext = pNext->m_pnNext;
 
 		pCur->m_powner->EditRender();
-		}
 	}
+}
 
 // This old way probably doesn't make sense any more since we're going to allow
 // for multiple views of a realm.  I don't think we'd want to tell each object
@@ -1566,36 +1566,36 @@ void CRealm::EditRender(void)
 // long, and needs to get done no matter what view we're talking about.
 /*
 void CRealm::EditRender(
-	short sViewX,											// In:  X coord of view
-	short sViewY,											// In:  Y coord of view
-	short sViewW,											// In:  Width of view
-	short sViewH,											// In:  Height of view
-	RImage* pimDst,										// In:  Image to render to
-	short sDstX,											// In:  X coord to draw to
-	short sDstY)											// In:  Y coord to draw to
-	{
-	// It may turn out that some objects want to do their own clipping to see if
-	// they need to add themselves to the render.  I would guess this would be
-	// the exception rather than the rule, so when (or if) such a requirement
-	// comes up, we shouldn't pass the view info to each object, but instead
-	// should create a function that objects can call to get the view info, the
-	// idea being that this would be faster overall than passing all that data
-	// to each object only to have it ignored most of the time.
+short sViewX,											// In:  X coord of view
+short sViewY,											// In:  Y coord of view
+short sViewW,											// In:  Width of view
+short sViewH,											// In:  Height of view
+RImage* pimDst,										// In:  Image to render to
+short sDstX,											// In:  X coord to draw to
+short sDstY)											// In:  Y coord to draw to
+{
+// It may turn out that some objects want to do their own clipping to see if
+// they need to add themselves to the render.  I would guess this would be
+// the exception rather than the rule, so when (or if) such a requirement
+// comes up, we shouldn't pass the view info to each object, but instead
+// should create a function that objects can call to get the view info, the
+// idea being that this would be faster overall than passing all that data
+// to each object only to have it ignored most of the time.
 
-	// Do this for everything
-	for (CThing::Things::iterator i = m_everything.begin(); i != m_everything.end(); i++)
-		(*i)->EditRender();
+// Do this for everything
+for (CThing::Things::iterator i = m_everything.begin(); i != m_everything.end(); i++)
+(*i)->EditRender();
 
-	// Render specified view to specified position in specified image
-	m_scene.Render(
-		sViewX,
-		sViewY,
-		sViewW,
-		sViewH,
-		pimDst,
-		sDstX,
-		sDstY);
-	}
+// Render specified view to specified position in specified image
+m_scene.Render(
+sViewX,
+sViewY,
+sViewW,
+sViewH,
+pimDst,
+sDstX,
+sDstY);
+}
 */
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1603,26 +1603,26 @@ void CRealm::EditRender(
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::EditModify(void)
 {
-	RGuiItem*	pguiRoot	= RGuiItem::LoadInstantiate(FullPathVD(REALM_DIALOG_FILE));
+	RGuiItem*	pguiRoot = RGuiItem::LoadInstantiate(FullPathVD(REALM_DIALOG_FILE));
 	RProcessGui	guiDialog;
 
 	if (pguiRoot != NULL)
 	{
-		RGuiItem*	pguiOk		= pguiRoot->GetItemFromId(1);
-		RGuiItem*	pguiCancel	= pguiRoot->GetItemFromId(2);
+		RGuiItem*	pguiOk = pguiRoot->GetItemFromId(1);
+		RGuiItem*	pguiCancel = pguiRoot->GetItemFromId(2);
 
-		REdit* peditMinutes = (REdit*) pguiRoot->GetItemFromId(TIMER_MIN_EDIT_ID);
-		REdit* peditSeconds = (REdit*) pguiRoot->GetItemFromId(TIMER_SEC_EDIT_ID);
-		REdit* peditKillsNum = (REdit*) pguiRoot->GetItemFromId(KILLS_NUM_EDIT_ID);
-		REdit* peditKillsPct = (REdit*) pguiRoot->GetItemFromId(KILLS_PCT_EDIT_ID);
-		REdit* peditFlagsNum = (REdit*) pguiRoot->GetItemFromId(FLAGS_NUM_EDIT_ID);
-		RListBox* plbScoreModes = (RListBox*) pguiRoot->GetItemFromId(SCORE_MODE_LB_ID);
+		REdit* peditMinutes = (REdit*)pguiRoot->GetItemFromId(TIMER_MIN_EDIT_ID);
+		REdit* peditSeconds = (REdit*)pguiRoot->GetItemFromId(TIMER_SEC_EDIT_ID);
+		REdit* peditKillsNum = (REdit*)pguiRoot->GetItemFromId(KILLS_NUM_EDIT_ID);
+		REdit* peditKillsPct = (REdit*)pguiRoot->GetItemFromId(KILLS_PCT_EDIT_ID);
+		REdit* peditFlagsNum = (REdit*)pguiRoot->GetItemFromId(FLAGS_NUM_EDIT_ID);
+		RListBox* plbScoreModes = (RListBox*)pguiRoot->GetItemFromId(SCORE_MODE_LB_ID);
 		RGuiItem* pguiItem = NULL;
 		int32_t lMinutes;
 		int32_t lSeconds;
 
 		if (peditMinutes != NULL && peditSeconds != NULL && peditKillsNum != NULL &&
-		    peditKillsPct != NULL && peditFlagsNum != NULL && plbScoreModes != NULL)
+			peditKillsPct != NULL && peditFlagsNum != NULL && plbScoreModes != NULL)
 		{
 			ASSERT(peditMinutes->m_type == RGuiItem::Edit);
 			ASSERT(peditSeconds->m_type == RGuiItem::Edit);
@@ -1644,7 +1644,7 @@ void CRealm::EditModify(void)
 			peditKillsNum->Compose();
 			peditKillsPct->Compose();
 			peditFlagsNum->Compose();
-			
+
 			pguiItem = plbScoreModes->GetItemFromId(SCORE_MODE_LIST_BASE + m_ScoringMode);
 			if (pguiItem != NULL)
 			{
@@ -1653,7 +1653,7 @@ void CRealm::EditModify(void)
 				plbScoreModes->EnsureVisible(pguiItem);
 
 			}
-			
+
 			if (guiDialog.DoModal(pguiRoot, pguiOk, pguiCancel) == 1)
 			{
 				lMinutes = peditMinutes->GetVal();
@@ -1663,9 +1663,9 @@ void CRealm::EditModify(void)
 					m_bScoreTimerCountsUp = true;
 				else
 					m_bScoreTimerCountsUp = false;
-				m_sKillsGoal = (int16_t) peditKillsNum->GetVal();
-				m_sFlagsGoal = (int16_t) peditFlagsNum->GetVal();
-				m_dKillsPercentGoal = (double) peditKillsPct->GetVal();
+				m_sKillsGoal = (int16_t)peditKillsNum->GetVal();
+				m_sFlagsGoal = (int16_t)peditFlagsNum->GetVal();
+				m_dKillsPercentGoal = (double)peditKillsPct->GetVal();
 
 				pguiItem = plbScoreModes->GetSel();
 				if (pguiItem != NULL)
@@ -1717,92 +1717,92 @@ bool CRealm::IsEndOfLevelGoalMet(bool bEndLevelKey)
 		// In a standard level, the user is done when the percentage of hostiles killed
 		// is greater than the minimum set in the level and the user presses the
 		// 'next level' key.
-		case Standard:
-			if (m_sHostileBirths != 0)
-				{
-				if (((m_sHostileKills * 100) / m_sHostileBirths < m_dKillsPercentGoal) || !bEndLevelKey)
-					bEnd = false;
-				}
-				else
-				{
-					if (!bEndLevelKey)
-						bEnd = false;
-				}
-			break;
+	case Standard:
+		if (m_sHostileBirths != 0)
+		{
+			if (((m_sHostileKills * 100) / m_sHostileBirths < m_dKillsPercentGoal) || !bEndLevelKey)
+				bEnd = false;
+		}
+		else
+		{
+			if (!bEndLevelKey)
+				bEnd = false;
+		}
+		break;
 
 		// In a timed level, the user is done when the time runs out, the population
 		// runs out, or the user presses the 'next level' key.
-		case Timed:
-			if (m_lScoreTimeDisplay > 0 && m_sPopulation > 0 && !bEndLevelKey)
-				bEnd = false;
-			break;
+	case Timed:
+		if (m_lScoreTimeDisplay > 0 && m_sPopulation > 0 && !bEndLevelKey)
+			bEnd = false;
+		break;
 
 		// In a timed goal level, the user must meet the goal within the specified
 		// time.
-		case TimedGoal:
-			if (m_lScoreTimeDisplay > 0 && m_sPopulationDeaths < m_sKillsGoal)
-				bEnd = false;
-			break;
+	case TimedGoal:
+		if (m_lScoreTimeDisplay > 0 && m_sPopulationDeaths < m_sKillsGoal)
+			bEnd = false;
+		break;
 
 		// In a timed flag level, the user must get the flag to a base before
 		// the goal is considered met.
-		case TimedFlag:
-		case MPTimedFlag:
-//			if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_sFlagsGoal)
-			if (m_lScoreTimeDisplay > 0 && m_sFlagbaseCaptured < m_sFlagsGoal)
-				bEnd = false;
-			break;
+	case TimedFlag:
+	case MPTimedFlag:
+		//			if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_sFlagsGoal)
+		if (m_lScoreTimeDisplay > 0 && m_sFlagbaseCaptured < m_sFlagsGoal)
+			bEnd = false;
+		break;
 
 		// In a capture the flag level, a user must capture a flag and return it
 		// to a base to complete the level.
-		case CaptureFlag:
-		case MPCaptureFlag:
-			if (m_sFlagbaseCaptured < m_sFlagsGoal)
-				bEnd = false;
-			break;
+	case CaptureFlag:
+	case MPCaptureFlag:
+		if (m_sFlagbaseCaptured < m_sFlagsGoal)
+			bEnd = false;
+		break;
 
 		// In a goal level, the user can only be done when they meet the goal.
-		case Goal:
-			if (m_sPopulationDeaths < m_sKillsGoal)
-				bEnd = false;
-			break;
+	case Goal:
+		if (m_sPopulationDeaths < m_sKillsGoal)
+			bEnd = false;
+		break;
 
 		// In a checkpoint level, the user collects as many flags as possible and
 		// can choose to end the level whenever they want (they'll just get a lower
 		// score, if they have not gotten all the flags).
-		case Checkpoint:
-			if (m_sFlagsGoal == 0)
-			{
-				if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_asClassNumThings[CThing::CFlagID])
-					bEnd = false;
-			}
-			else
-			{
-				if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_sFlagsGoal && !bEndLevelKey)
-					bEnd = false;
-			}
-			break;
-
-		case MPFrag:
-			// Get highest number of kills from score module and 
-			if ((m_sKillsGoal < 1) || (ScoreHighestKills(this) < m_sKillsGoal))
+	case Checkpoint:
+		if (m_sFlagsGoal == 0)
+		{
+			if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_asClassNumThings[CThing::CFlagID])
 				bEnd = false;
-			break;
-
-		case MPTimedFrag:
-			if (m_lScoreTimeDisplay > 0 && ScoreHighestKills(this) < m_sKillsGoal)
+		}
+		else
+		{
+			if (m_lScoreTimeDisplay > 0 && m_sFlagsCaptured < m_sFlagsGoal && !bEndLevelKey)
 				bEnd = false;
-			break;
+		}
+		break;
 
-		case MPLastMan:
-			// if (ScorePlayersRemaining() > 1)
-				bEnd = false;
-			break;
+	case MPFrag:
+		// Get highest number of kills from score module and 
+		if ((m_sKillsGoal < 1) || (ScoreHighestKills(this) < m_sKillsGoal))
+			bEnd = false;
+		break;
 
-		case MPTimed:
-			if (m_lScoreTimeDisplay > 0)
-				bEnd = false;
-			break;
+	case MPTimedFrag:
+		if (m_lScoreTimeDisplay > 0 && ScoreHighestKills(this) < m_sKillsGoal)
+			bEnd = false;
+		break;
+
+	case MPLastMan:
+		// if (ScorePlayersRemaining() > 1)
+		bEnd = false;
+		break;
+
+	case MPTimed:
+		if (m_lScoreTimeDisplay > 0)
+			bEnd = false;
+		break;
 	}
 
 #if defined(DEBUG_LEVEL_CHEAT)
@@ -1817,29 +1817,29 @@ bool CRealm::IsEndOfLevelGoalMet(bool bEndLevelKey)
 // Determine if a path is clear of terrain.
 ////////////////////////////////////////////////////////////////////////////////
 bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
-											// Returns false, if only a portion of the path is clear.
-											// (see *psX, *psY, *psZ).
+	// Returns false, if only a portion of the path is clear.
+	// (see *psX, *psY, *psZ).
 	int16_t sX,							// In:  Starting X.
 	int16_t	sY,							// In:  Starting Y.
 	int16_t sZ,							// In:  Starting Z.
 	int16_t sRotY,						// In:  Rotation around y axis (direction on X/Z plane).
 	double dCrawlRate,				// In:  Rate at which to scan ('crawl') path in pixels per
-											// iteration.
-											// NOTE: Values less than 1.0 are inefficient.
-											// NOTE: We scan terrain using GetHeight()
-											// at only one pixel.
-											// NOTE: We could change this to a speed in pixels per second
-											// where we'd assume a certain frame rate.
+	// iteration.
+	// NOTE: Values less than 1.0 are inefficient.
+	// NOTE: We scan terrain using GetHeight()
+	// at only one pixel.
+	// NOTE: We could change this to a speed in pixels per second
+	// where we'd assume a certain frame rate.
 	int16_t	sDistanceXZ,				// In:  Distance on X/Z plane.
 	int16_t sVerticalTolerance /*= 0*/,	// In:  Max traverser can step up.
 	int16_t* psX /*= NULL*/,			// Out: If not NULL, last clear point on path.
 	int16_t* psY /*= NULL*/,			// Out: If not NULL, last clear point on path.
 	int16_t* psZ /*= NULL*/,			// Out: If not NULL, last clear point on path.
 	bool bCheckExtents /*= true*/)	// In:  If true, will consider the edge of the realm a path
-												// inhibitor.  If false, reaching the edge of the realm
-												// indicates a clear path.
-	{
-	bool	bEntirelyClear	= false;	// Assume entire path is not clear.
+	// inhibitor.  If false, reaching the edge of the realm
+	// indicates a clear path.
+{
+	bool	bEntirelyClear = false;	// Assume entire path is not clear.
 
 	////////////////////////// Traverse path ///////////////////////////////////
 
@@ -1847,58 +1847,58 @@ bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
 	// For the rates we use trig with a hypotenuse of 1 which will give
 	// us a rate <= 1.0 and then multiply by the the crawl for
 	// a reasonable increase in the speed of this alg.
-	
-	// sAngle must be between 0 and 359.
-	sRotY	= rspMod360(sRotY);
 
-	float	fRateX		= COSQ[sRotY] * dCrawlRate;
-	float	fRateZ		= -SINQ[sRotY] * dCrawlRate;
-	float	fRateY		= 0.0;	// If we ever want vertical movement . . .
+	// sAngle must be between 0 and 359.
+	sRotY = rspMod360(sRotY);
+
+	float	fRateX = COSQ[sRotY] * dCrawlRate;
+	float	fRateZ = -SINQ[sRotY] * dCrawlRate;
+	float	fRateY = 0.0;	// If we ever want vertical movement . . .
 
 	// Set initial position to first point to check (NEVER checks original position).
-	float	fPosX			= sX + fRateX;
-	float	fPosY			= sY + fRateY;
-	float	fPosZ			= sZ + fRateZ;
+	float	fPosX = sX + fRateX;
+	float	fPosY = sY + fRateY;
+	float	fPosZ = sZ + fRateZ;
 
 	// Determine amount traveled per iteration on X/Z plane just once.
-	float	fIterDistXZ		= rspSqrt(ABS2(fRateX, fRateZ) );
+	float	fIterDistXZ = rspSqrt(ABS2(fRateX, fRateZ));
 
-	float	fTotalDistXZ	= 0.0F;
+	float	fTotalDistXZ = 0.0F;
 
 	// Store extents.
-	int16_t	sMaxX			= GetRealmWidth();
-	int16_t	sMaxZ			= GetRealmHeight();
+	int16_t	sMaxX = GetRealmWidth();
+	int16_t	sMaxZ = GetRealmHeight();
 
-	int16_t	sMinX			= 0;
-	int16_t	sMinZ			= 0;
+	int16_t	sMinX = 0;
+	int16_t	sMinZ = 0;
 
 	int16_t	sCurH;
 
-	bool	bInsurmountableHeight	= false;
+	bool	bInsurmountableHeight = false;
 
 	// Scan while in realm.
 	while (
-			fPosX > sMinX 
-		&& fPosZ > sMinZ 
-		&& fPosX < sMaxX 
+		fPosX > sMinX
+		&& fPosZ > sMinZ
+		&& fPosX < sMaxX
 		&& fPosZ < sMaxZ
 		&& fTotalDistXZ < sDistanceXZ)
-		{
-		sCurH	= GetHeight((int16_t)fPosX, (int16_t)fPosZ);
+	{
+		sCurH = GetHeight((int16_t)fPosX, (int16_t)fPosZ);
 		// If too big a height difference . . .
 		if (sCurH - fPosY > sVerticalTolerance)
-			{
-			bInsurmountableHeight	= true;
+		{
+			bInsurmountableHeight = true;
 			break;
-			}
+		}
 
 		// Update position.
-		fPosX	+= fRateX;
-		fPosY	=	MAX(fPosY, (float)sCurH);
-		fPosZ	+= fRateZ;
+		fPosX += fRateX;
+		fPosY = MAX(fPosY, (float)sCurH);
+		fPosZ += fRateZ;
 		// Update distance travelled on X/Z plane.
-		fTotalDistXZ	+= fIterDistXZ;
-		}
+		fTotalDistXZ += fIterDistXZ;
+	}
 
 	// Set end pt.
 	SET(psX, fPosX);
@@ -1907,63 +1907,63 @@ bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
 
 	// If we made it the whole way . . .
 	if (fTotalDistXZ >= sDistanceXZ)
-		{
-		bEntirelyClear	= true;
-		}
+	{
+		bEntirelyClear = true;
+	}
 	// Else, if we didn't hit any terrain . . .
 	else if (bInsurmountableHeight == false)
-		{
+	{
 		// Only clear if we are not checking extents.
-		bEntirelyClear	= !bCheckExtents;
-		}
+		bEntirelyClear = !bCheckExtents;
+	}
 
 #if 0
 	// FEEDBACK.
 	// Create a line sprite.
-	CSpriteLine2d*	psl2d	= new CSpriteLine2d;
+	CSpriteLine2d*	psl2d = new CSpriteLine2d;
 	if (psl2d != NULL)
-		{
+	{
 		Map3Dto2D(
-			sX, 
-			sY, 
-			sZ, 
-			&(psl2d->m_sX2), 
-			&(psl2d->m_sY2) );
+			sX,
+			sY,
+			sZ,
+			&(psl2d->m_sX2),
+			&(psl2d->m_sY2));
 		Map3Dto2D(
-			fPosX, 
-			fPosY, 
-			fPosZ, 
-			&(psl2d->m_sX2End), 
-			&(psl2d->m_sY2End) );
-		psl2d->m_sPriority	= sZ;
-		psl2d->m_sLayer		= GetLayerViaAttrib(GetLayer(sX, sZ));
-		psl2d->m_u8Color		= (bEntirelyClear == false) ? 249 : 250;
+			fPosX,
+			fPosY,
+			fPosZ,
+			&(psl2d->m_sX2End),
+			&(psl2d->m_sY2End));
+		psl2d->m_sPriority = sZ;
+		psl2d->m_sLayer = GetLayerViaAttrib(GetLayer(sX, sZ));
+		psl2d->m_u8Color = (bEntirelyClear == false) ? 249 : 250;
 		// Destroy when done.
-		psl2d->m_sInFlags	= CSprite::InDeleteOnRender;
+		psl2d->m_sInFlags = CSprite::InDeleteOnRender;
 		// Put 'er there.
 		m_scene.UpdateSprite(psl2d);
-		}
+	}
 #endif
 
 	return bEntirelyClear;
-	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Determine if a path is clear of terrain.
 ////////////////////////////////////////////////////////////////////////////////
 bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
-											// Returns false, if only a portion of the path is clear.
-											// (see *psX, *psY, *psZ).
+	// Returns false, if only a portion of the path is clear.
+	// (see *psX, *psY, *psZ).
 	int16_t sX,							// In:  Starting X.
 	int16_t	sY,							// In:  Starting Y.
 	int16_t sZ,							// In:  Starting Z.
 	double dCrawlRate,				// In:  Rate at which to scan ('crawl') path in pixels per
-											// iteration.
-											// NOTE: Values less than 1.0 are inefficient.
-											// NOTE: We scan terrain using GetHeight()
-											// at only one pixel.
-											// NOTE: We could change this to a speed in pixels per second
-											// where we'd assume a certain frame rate.
+	// iteration.
+	// NOTE: Values less than 1.0 are inefficient.
+	// NOTE: We scan terrain using GetHeight()
+	// at only one pixel.
+	// NOTE: We could change this to a speed in pixels per second
+	// where we'd assume a certain frame rate.
 	int16_t	sDstX,						// In:  Destination X.
 	int16_t	sDstZ,						// In:  Destination Z.
 	int16_t sVerticalTolerance /*= 0*/,	// In:  Max traverser can step up.
@@ -1971,35 +1971,35 @@ bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
 	int16_t* psY /*= NULL*/,			// Out: If not NULL, last clear point on path.
 	int16_t* psZ /*= NULL*/,			// Out: If not NULL, last clear point on path.
 	bool bCheckExtents /*= true*/)	// In:  If true, will consider the edge of the realm a path
-												// inhibitor.  If false, reaching the edge of the realm
-												// indicates a clear path.
-	{
-	int16_t	sDistanceXZ	= rspSqrt(ABS2(sDstX - sX, sZ - sDstZ) );
-	int16_t	sRotY			= rspATan(sZ - sDstZ, sDstX - sX);
+	// inhibitor.  If false, reaching the edge of the realm
+	// indicates a clear path.
+{
+	int16_t	sDistanceXZ = rspSqrt(ABS2(sDstX - sX, sZ - sDstZ));
+	int16_t	sRotY = rspATan(sZ - sDstZ, sDstX - sX);
 
 	return IsPathClear(		// Returns true, if the entire path is clear.
-									// Returns false, if only a portion of the path is clear.
-									// (see *psX, *psY, *psZ).
+		// Returns false, if only a portion of the path is clear.
+		// (see *psX, *psY, *psZ).
 		sX,						// In:  Starting X.
 		sY,						// In:  Starting Y.
 		sZ,						// In:  Starting Z.
 		sRotY,					// In:  Rotation around y axis (direction on X/Z plane).
 		dCrawlRate,				// In:  Rate at which to scan ('crawl') path in pixels per
-									// iteration.
-									// NOTE: Values less than 1.0 are inefficient.
-									// NOTE: We scan terrain using GetHeight()
-									// at only one pixel.
-									// NOTE: We could change this to a speed in pixels per second
-									// where we'd assume a certain frame rate.
+		// iteration.
+		// NOTE: Values less than 1.0 are inefficient.
+		// NOTE: We scan terrain using GetHeight()
+		// at only one pixel.
+		// NOTE: We could change this to a speed in pixels per second
+		// where we'd assume a certain frame rate.
 		sDistanceXZ,			// In:  Distance on X/Z plane.
 		sVerticalTolerance,	// In:  Max traverser can step up.
 		psX,						// Out: If not NULL, last clear point on path.
 		psY,						// Out: If not NULL, last clear point on path.
 		psZ,						// Out: If not NULL, last clear point on path.
 		bCheckExtents);		// In:  If true, will consider the edge of the realm a path
-									// inhibitor.  If false, reaching the edge of the realm
-									// indicates a clear path.
-	}
+	// inhibitor.  If false, reaching the edge of the realm
+	// indicates a clear path.
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Gives this realm an opportunity and drawing surface to display its 
@@ -2008,24 +2008,24 @@ bool CRealm::IsPathClear(			// Returns true, if the entire path is clear.
 void CRealm::DrawStatus(	// Returns nothing.
 	RImage*	pim,				// In:  Image in which to draw status.
 	RRect*	prc)				// In:  Rectangle in which to draw status.  Clips to.
-	{
-	int32_t	lCurTime	= m_time.GetGameTime();
+{
+	int32_t	lCurTime = m_time.GetGameTime();
 	if (lCurTime > m_lLastStatusDrawTime + STATUS_UPDATE_INTERVAL)
-		{
+	{
 		// Set print/clip to area.
 		RRect	rcDst;
-		rcDst.sX	= prc->sX + STATUS_PRINT_X;
+		rcDst.sX = prc->sX + STATUS_PRINT_X;
 		rcDst.sY = prc->sY + STATUS_PRINT_Y;
 		rcDst.sW = prc->sW - STATUS_PRINT_X;
-		rcDst.sH	= prc->sH - STATUS_PRINT_Y;
+		rcDst.sH = prc->sH - STATUS_PRINT_Y;
 		// Clear.
 		rspRect(RSP_BLACK_INDEX, pim, rcDst.sX, rcDst.sY, rcDst.sW, rcDst.sH);
 
 		ms_print.SetDestination(pim, &rcDst);
 		ms_print.print(
-			pim, 
-			rcDst.sX, 
-			rcDst.sY, 
+			pim,
+			rcDst.sX,
+			rcDst.sY,
 			"      Population %d                 Body Count %d (%d%%)                       Goal %d%%",
 			m_sPopulationBirths,
 			m_sPopulationDeaths,
@@ -2033,9 +2033,9 @@ void CRealm::DrawStatus(	// Returns nothing.
 			(int16_t)m_dKillsPercentGoal
 			);
 
-		m_lLastStatusDrawTime	= lCurTime;
-		}
+		m_lLastStatusDrawTime = lCurTime;
 	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Maps a 3D coordinate onto the viewing plane provided the view angle
@@ -2047,9 +2047,9 @@ void CRealm::Map3Dto2D(	// Returns nothing.
 	int16_t	sZ,				// In.
 	int16_t* psX,				// Out.
 	int16_t* psY)				// Out.
-	{
-	::Map3Dto2D(sX, sY, sZ, psX, psY, m_phood->GetRealmRotX() );
-	}
+{
+	::Map3Dto2D(sX, sY, sZ, psX, psY, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Maps a 3D coordinate onto the viewing plane provided the view angle
@@ -2061,9 +2061,9 @@ void CRealm::Map3Dto2D(	// Returns nothing.
 	double	dZ,			// In.
 	double* pdX,			// Out.
 	double* pdY)			// Out.
-	{
-	::Map3Dto2D(dX, dY, dZ, pdX, pdY, m_phood->GetRealmRotX() );
-	}
+{
+	::Map3Dto2D(dX, dY, dZ, pdX, pdY, m_phood->GetRealmRotX());
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -2073,9 +2073,9 @@ void CRealm::Map3Dto2D(	// Returns nothing.
 void CRealm::MapZ3DtoY2D(	// Returns nothing.
 	double	dZIn,				// In.
 	double*	pdYOut)			// Out.
-	{
-	::MapZ3DtoY2D(dZIn, pdYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapZ3DtoY2D(dZIn, pdYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Z coordinate onto the viewing plane using the 
@@ -2084,9 +2084,9 @@ void CRealm::MapZ3DtoY2D(	// Returns nothing.
 void CRealm::MapZ3DtoY2D(	// Returns nothing.
 	int16_t		sZIn,				// In.
 	int16_t*	psYOut)			// Out.
-	{
-	::MapZ3DtoY2D(sZIn, psYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapZ3DtoY2D(sZIn, psYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane using the 
@@ -2095,9 +2095,9 @@ void CRealm::MapZ3DtoY2D(	// Returns nothing.
 void CRealm::MapY2DtoZ3D(	// Returns nothing.
 	double	dYIn,				// In.
 	double*	pdZOut)			// Out.
-	{
-	::MapY2DtoZ3D(dYIn, pdZOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY2DtoZ3D(dYIn, pdZOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane using the 
@@ -2106,9 +2106,9 @@ void CRealm::MapY2DtoZ3D(	// Returns nothing.
 void CRealm::MapY2DtoZ3D(	// Returns nothing.
 	int16_t		sYIn,				// In.
 	int16_t*	psZOut)			// Out.
-	{
-	::MapY2DtoZ3D(sYIn, psZOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY2DtoZ3D(sYIn, psZOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate onto the viewing plane using the 
@@ -2117,9 +2117,9 @@ void CRealm::MapY2DtoZ3D(	// Returns nothing.
 void CRealm::MapY3DtoY2D(	// Returns nothing.
 	double	dYIn,				// In.
 	double*	pdYOut)			// Out.
-	{
-	::MapY3DtoY2D(dYIn, pdYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY3DtoY2D(dYIn, pdYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate onto the viewing plane using the 
@@ -2128,9 +2128,9 @@ void CRealm::MapY3DtoY2D(	// Returns nothing.
 void CRealm::MapY3DtoY2D(	// Returns nothing.
 	int16_t		sYIn,				// In.
 	int16_t*	psYOut)			// Out.
-	{
-	::MapY3DtoY2D(sYIn, psYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY3DtoY2D(sYIn, psYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane using the 
@@ -2139,9 +2139,9 @@ void CRealm::MapY3DtoY2D(	// Returns nothing.
 void CRealm::MapY2DtoY3D(	// Returns nothing.
 	double	dYIn,				// In.
 	double*	pdYOut)			// Out.
-	{
-	::MapY2DtoY3D(dYIn, pdYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY2DtoY3D(dYIn, pdYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scales a Y coordinate from the viewing plane using the 
@@ -2150,9 +2150,9 @@ void CRealm::MapY2DtoY3D(	// Returns nothing.
 void CRealm::MapY2DtoY3D(	// Returns nothing.
 	int16_t		sYIn,				// In.
 	int16_t*	psYOut)			// Out.
-	{
-	::MapY2DtoY3D(sYIn, psYOut, m_phood->GetRealmRotX() );
-	}
+{
+	::MapY2DtoY3D(sYIn, psYOut, m_phood->GetRealmRotX());
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // If enabled, scales the specified height based on the view angle.
@@ -2160,20 +2160,20 @@ void CRealm::MapY2DtoY3D(	// Returns nothing.
 void CRealm::MapAttribHeight(	// Returns nothing.
 	int16_t		sHIn,					// In.
 	int16_t*	psHOut)				// Out.
-	{
+{
 	// If scaling attrib map heights . . .
 	if (m_phood->m_sScaleAttribHeights != FALSE)
-		{
-		int16_t	sRotX	= m_phood->GetRealmRotX();
+	{
+		int16_t	sRotX = m_phood->GetRealmRotX();
 
 		// Scale into realm.
 		::MapY2DtoY3D(sHIn, psHOut, sRotX);
-		}
-	else
-		{
-		*psHOut	= sHIn;
-		}
 	}
+	else
+	{
+		*psHOut = sHIn;
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //// Terrrain map access functions /////////////////////////////////////////////
@@ -2184,18 +2184,18 @@ void CRealm::MapAttribHeight(	// Returns nothing.
 // Get the terrain height at an x/z position.
 // Zero, if off map.
 int16_t CRealm::GetHeight(int16_t sX, int16_t sZ)
-	{
-	int16_t	sRotX	= m_phood->GetRealmRotX();
+{
+	int16_t	sRotX = m_phood->GetRealmRotX();
 	// Scale the Z based on the view angle.
 	::MapZ3DtoY2D(sZ, &sZ, sRotX);
 
-	int16_t	sH = 4 * (m_pTerrainMap->GetVal(sX, sZ, 0x0000) & REALM_ATTR_HEIGHT_MASK); 
+	int16_t	sH = 4 * (m_pTerrainMap->GetVal(sX, sZ, 0x0000) & REALM_ATTR_HEIGHT_MASK);
 
 	// Scale into realm.
 	MapAttribHeight(sH, &sH);
 
 	return sH;
-	}
+}
 
 // Get the height and 'not walkable' status at the specified location.
 // 'No walk', if off map.
@@ -2203,91 +2203,91 @@ int16_t CRealm::GetHeightAndNoWalk(	// Returns height at new location.
 	int16_t sX,								// In:  X position to check on map.
 	int16_t	sZ,								// In:  Z position to check on map.
 	bool* pbNoWalk)						// Out: true, if 'no walk'.
-	{
-	int16_t	sRotX	= m_phood->GetRealmRotX();
+{
+	int16_t	sRotX = m_phood->GetRealmRotX();
 	// Scale the Z based on the view angle.
 	::MapZ3DtoY2D(sZ, &sZ, sRotX);
 
-	U16	u16Attrib	= m_pTerrainMap->GetVal(sX, sZ, REALM_ATTR_NOT_WALKABLE);
+	U16	u16Attrib = m_pTerrainMap->GetVal(sX, sZ, REALM_ATTR_NOT_WALKABLE);
 
-	int16_t	sH = 4 * (u16Attrib & REALM_ATTR_HEIGHT_MASK); 
+	int16_t	sH = 4 * (u16Attrib & REALM_ATTR_HEIGHT_MASK);
 
 	// Scale into realm.
 	MapAttribHeight(sH, &sH);
 
 	// Get 'no walk'.
 	if (u16Attrib & REALM_ATTR_NOT_WALKABLE)
-		{
-		*pbNoWalk	= true;
-		}
+	{
+		*pbNoWalk = true;
+	}
 	else
-		{
-		*pbNoWalk	= false;
-		}
+	{
+		*pbNoWalk = false;
+	}
 
 	return sH;
-	}
+}
 
 // Get the terrain attributes at an x/z position.
 // 'No walk', if off map.
 int16_t CRealm::GetTerrainAttributes(int16_t sX, int16_t sZ)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pTerrainMap->GetVal(sX, sZ, REALM_ATTR_NOT_WALKABLE); 
-	}
+	return m_pTerrainMap->GetVal(sX, sZ, REALM_ATTR_NOT_WALKABLE);
+}
 
 // Get the floor attributes at an x/z position.
 // Zero, if off map.
 int16_t CRealm::GetFloorAttribute(int16_t sX, int16_t sZ)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pTerrainMap->GetVal(sX, sZ, 0) & REALM_ATTR_FLOOR_MASK; 
-	}
+	return m_pTerrainMap->GetVal(sX, sZ, 0) & REALM_ATTR_FLOOR_MASK;
+}
 
 // Get the floor value at an x/z position.
 // sMask, if off map.
 int16_t CRealm::GetFloorMapValue(int16_t sX, int16_t sZ, int16_t sMask/* = 0x007f*/)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pTerrainMap->GetVal(sX, sZ, sMask); 
-	}
+	return m_pTerrainMap->GetVal(sX, sZ, sMask);
+}
 
 // Get the all alpha and opaque layer bits at an x/z position.
 // Zero, if off map.
 int16_t CRealm::GetLayer(int16_t sX, int16_t sZ)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pLayerMap->GetVal(sX, sZ, 0) & REALM_ATTR_LAYER_MASK; 
-	}
+	return m_pLayerMap->GetVal(sX, sZ, 0) & REALM_ATTR_LAYER_MASK;
+}
 
 // Get effect attributes at an x/z position.
 // Zero, if off map.
 int16_t CRealm::GetEffectAttribute(int16_t sX, int16_t sZ)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pTerrainMap->GetVal(sX, sZ, 0) & REALM_ATTR_EFFECT_MASK; 
-	}
+	return m_pTerrainMap->GetVal(sX, sZ, 0) & REALM_ATTR_EFFECT_MASK;
+}
 
 // Get effect value at an x/z position.
 // Zero, if off map.
 int16_t CRealm::GetEffectMapValue(int16_t sX, int16_t sZ)
-	{
+{
 	// Scale the Z based on the view angle.
-	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX() );
+	::MapZ3DtoY2D(sZ, &sZ, m_phood->GetRealmRotX());
 
-	return m_pTerrainMap->GetVal(sX, sZ, 0); 
-	}
-	
+	return m_pTerrainMap->GetVal(sX, sZ, 0);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -2300,25 +2300,25 @@ int16_t CRealm::GetEffectMapValue(int16_t sX, int16_t sZ)
 // modify it).
 ////////////////////////////////////////////////////////////////////////////////
 const char* CRealm::Make2dResPath(	// Returns a ptr to an internal static buffer
-												// containing the passed string, pszResName,
-												// preceded by the appropriate directory based
-												// on the current hood settings.
+	// containing the passed string, pszResName,
+	// preceded by the appropriate directory based
+	// on the current hood settings.
 	const char* pszResName)				// In:  Resource name to prepend path to.
-	{
+{
 	static char	szFullPath[RSP_MAX_PATH];
 
-	ASSERT(m_s2dResPathIndex < NUM_ELEMENTS(ms_apsz2dResPaths) );
+	ASSERT(m_s2dResPathIndex < NUM_ELEMENTS(ms_apsz2dResPaths));
 
 	// Get resource path.
-	char*	pszPath	= ms_apsz2dResPaths[m_s2dResPathIndex];
-	
-	ASSERT(strlen(pszPath) + strlen(pszResName) < sizeof(szFullPath) );
+	char*	pszPath = ms_apsz2dResPaths[m_s2dResPathIndex];
+
+	ASSERT(strlen(pszPath) + strlen(pszResName) < sizeof(szFullPath));
 
 	strcpy(szFullPath, pszPath);
 	strcat(szFullPath, pszResName);
 
 	return szFullPath;
-	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Creates the layer map, if it has not already been done.
@@ -2327,48 +2327,48 @@ const char* CRealm::Make2dResPath(	// Returns a ptr to an internal static buffer
 // (static)
 ////////////////////////////////////////////////////////////////////////////////
 void CRealm::CreateLayerMap(void)
-	{
+{
 	// If table needs to be built . . .
 	if (ms_asAttribToLayer[0] != LayerSprite16)
-		{
+	{
 		int32_t	l;
 		for (l = 0; l < NUM_ELEMENTS(ms_asAttribToLayer); l++)
-			{
+		{
 			if (l & 0x0001)
-				ms_asAttribToLayer[l]	= LayerSprite1;
+				ms_asAttribToLayer[l] = LayerSprite1;
 			else if (l & 0x0002)
-				ms_asAttribToLayer[l]	= LayerSprite2;
+				ms_asAttribToLayer[l] = LayerSprite2;
 			else if (l & 0x0004)
-				ms_asAttribToLayer[l]	= LayerSprite3;
+				ms_asAttribToLayer[l] = LayerSprite3;
 			else if (l & 0x0008)
-				ms_asAttribToLayer[l]	= LayerSprite4;
+				ms_asAttribToLayer[l] = LayerSprite4;
 			else if (l & 0x0010)
-				ms_asAttribToLayer[l]	= LayerSprite5;
+				ms_asAttribToLayer[l] = LayerSprite5;
 			else if (l & 0x0020)
-				ms_asAttribToLayer[l]	= LayerSprite6;
+				ms_asAttribToLayer[l] = LayerSprite6;
 			else if (l & 0x0040)
-				ms_asAttribToLayer[l]	= LayerSprite7;
+				ms_asAttribToLayer[l] = LayerSprite7;
 			else if (l & 0x0080)
-				ms_asAttribToLayer[l]	= LayerSprite8;
+				ms_asAttribToLayer[l] = LayerSprite8;
 			else if (l & 0x0100)
-				ms_asAttribToLayer[l]	= LayerSprite9;
+				ms_asAttribToLayer[l] = LayerSprite9;
 			else if (l & 0x0200)
-				ms_asAttribToLayer[l]	= LayerSprite10;
+				ms_asAttribToLayer[l] = LayerSprite10;
 			else if (l & 0x0400)
-				ms_asAttribToLayer[l]	= LayerSprite11;
+				ms_asAttribToLayer[l] = LayerSprite11;
 			else if (l & 0x0800)
-				ms_asAttribToLayer[l]	= LayerSprite12;
+				ms_asAttribToLayer[l] = LayerSprite12;
 			else if (l & 0x1000)
-				ms_asAttribToLayer[l]	= LayerSprite13;
+				ms_asAttribToLayer[l] = LayerSprite13;
 			else if (l & 0x2000)
-				ms_asAttribToLayer[l]	= LayerSprite14;
+				ms_asAttribToLayer[l] = LayerSprite14;
 			else if (l & 0x4000)
-				ms_asAttribToLayer[l]	= LayerSprite15;
+				ms_asAttribToLayer[l] = LayerSprite15;
 			else
-				ms_asAttribToLayer[l]	= LayerSprite16;
-			}
+				ms_asAttribToLayer[l] = LayerSprite16;
 		}
 	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // EOF

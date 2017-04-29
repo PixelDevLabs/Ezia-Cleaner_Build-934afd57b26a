@@ -42,13 +42,13 @@
 #define MAIN_H
 
 #define MAIN_SCREEN_DEPTH			8
-#define MAIN_SCREEN_MIN_WIDTH		PrefsViewWidth
-#define MAIN_SCREEN_MIN_HEIGHT	PrefsViewHeight
+#define MAIN_SCREEN_MIN_WIDTH		640
+#define MAIN_SCREEN_MIN_HEIGHT	480
 #define MAIN_SCREEN_PAGES			1
 #define MAIN_SCREEN_SCALING		0
 
-#define MAIN_WINDOW_WIDTH			PrefsViewWidth
-#define MAIN_WINDOW_HEIGHT			PrefsViewHeight
+#define MAIN_WINDOW_WIDTH			640
+#define MAIN_WINDOW_HEIGHT			480
 
 // This is our default mode.
 #define MAIN_AUDIO_RATE				11025
@@ -63,8 +63,11 @@
 #define MAIN_VANILLA_AUDIO_RATE		22050
 #define MAIN_VANILLA_AUDIO_BITS		8
 
+extern int wideScreenWidth;
+extern int wideScreenHeight;
 extern double wideScreenMultiW;
 extern double wideScreenMultiH;
+extern bool presentDirty;
 
 #endif // MAIN_H
 ////////////////////////////////////////////////////////////////////////////////

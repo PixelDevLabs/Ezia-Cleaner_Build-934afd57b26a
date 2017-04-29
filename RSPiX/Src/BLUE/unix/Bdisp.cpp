@@ -37,53 +37,52 @@ extern SDL_Window *sdlWindow;
 static char *sdlAppName;
 static SDL_Renderer *sdlRenderer;
 static SDL_Texture *sdlTexture;
-extern int RequestedWidth = 0;
-extern int RequestedHeight = 0;
-extern int FramebufferWidth = 0;
-extern int FramebufferHeight = 0;
+static int RequestedWidth = 0;
+static int RequestedHeight = 0;
+static int FramebufferWidth = 0;
+static int FramebufferHeight = 0;
 static Uint32 *TexturePointer = NULL;
 static Uint8 *PalettedTexturePointer = NULL;
 extern bool presentDirty = FALSE;
 
 typedef struct		// Stores information on usable video modes.
-	{
+{
 	int16_t				sWidth;
 	int16_t				sHeight;
 	int16_t				sColorDepth;
 	int16_t				sPages;
-	} VIDEO_MODE, *PVIDEO_MODE;
+} VIDEO_MODE, *PVIDEO_MODE;
 
 static RSList<VIDEO_MODE, int16_t>	slvmModes;	// List of available video modes.
 
 typedef union { struct { Uint8 b; Uint8 g; Uint8 r; Uint8 a; }; Uint32 argb; } ArgbColor;
 static ArgbColor	apeApp[256];				// App's palette.  The palette
-														// entries the App actually set.
+// entries the App actually set.
 
 static ArgbColor	apeMapped[256];			// Tweaked palette.
-														// This is the palette updated to
-														// the hardware.  apeApp is trans-
-														// lated through au8MapRed, Green,
-														// and Blue and stored here for
-														// updating to the hardware on
-														// rspUpdatePalette().
+// This is the palette updated to
+// the hardware.  apeApp is trans-
+// lated through au8MapRed, Green,
+// and Blue and stored here for
+// updating to the hardware on
+// rspUpdatePalette().
 
 static U8					au8MapRed[256];			// Map of red intensities to hardware
-														// values.  Initially an identity
-														// mapping.
+// values.  Initially an identity
+// mapping.
 static U8					au8MapGreen[256];			// Map of green intensities to
-														// hardware values.  Initially an 
-														// identity mapping.
+// hardware values.  Initially an 
+// identity mapping.
 static U8					au8MapBlue[256];			// Map of blue intensities to hardware
-														// values.  Initially an identity
-														// mapping.
+// values.  Initially an identity
+// mapping.
 
 static int16_t				asPalEntryLocks[256];	// TRUE, if an indexed entry is locked.
-														// FALSE, if not.  Implemented as 
-														// shorts in case we ever do levels of
-														// locking.
+// FALSE, if not.  Implemented as 
+// shorts in case we ever do levels of
+// locking.
 
 extern bool mouse_grabbed;
-extern bool needPresent = TRUE;
 
 //////////////////////////////////////////////////////////////////////////////
 // Module specific macros.
@@ -100,49 +99,49 @@ extern bool needPresent = TRUE;
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t Clip(	// Returns non-zero if image entirely clipped out.
 	int16_t*	px,		// Rectangle to be clipped.
-	int16_t*	py, 
-	int16_t*	pw, 
+	int16_t*	py,
+	int16_t*	pw,
 	int16_t*	ph,
 	int16_t		sx,		// Bounding rectangle.
-	int16_t		sy, 
-	int16_t		sw, 
+	int16_t		sy,
+	int16_t		sw,
 	int16_t		sh)
-	{
+{
 	if (*px < sx)
-		{
+	{
 		TRACE("Clip(): x too small.\n");
 		// Adjust width.
 		*pw -= sx - *px;
 		// Adjust x.
 		*px = sx;
-		}
+	}
 
 	if (*py < sy)
-		{
+	{
 		TRACE("Clip(): y too small.\n");
 		// Adjust height.
 		*ph -= sy - *py;
 		// Adjust y.
 		*py = sy;
-		}
+	}
 
 	if (*px + *pw > sw)
-		{
+	{
 		TRACE("Clip(): Width or x too large.\n");
 		// Adjust width.
 		*pw -= ((*px + *pw) - sw);
-		}
+	}
 
 	if (*py + *ph > sh)
-		{
+	{
 		TRACE("Clip(): Height or y too large.\n");
 		// Adjust height.
 		*ph -= ((*py + *ph) - sh);
-		}
-	
+	}
+
 	// Return 0 (success) if there's a width and a height left.	
 	return (int16_t)(*pw > 0 && *ph > 0 ? 0 : -1);
-	}
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -151,45 +150,45 @@ extern int16_t Clip(	// Returns non-zero if image entirely clipped out.
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t ClipQuiet(	// Returns non-zero if image entirely clipped out.
 	int16_t*	px,			// Rectangle to be clipped.
-	int16_t*	py, 
-	int16_t*	pw, 
+	int16_t*	py,
+	int16_t*	pw,
 	int16_t*	ph,
 	int16_t		sx,			// Bounding rectangle.
-	int16_t		sy, 
-	int16_t		sw, 
+	int16_t		sy,
+	int16_t		sw,
 	int16_t		sh)
-	{
+{
 	if (*px < sx)
-		{
+	{
 		// Adjust width.
 		*pw -= sx - *px;
 		// Adjust x.
 		*px = sx;
-		}
+	}
 
 	if (*py < sy)
-		{
+	{
 		// Adjust height.
 		*ph -= sy - *py;
 		// Adjust y.
 		*py = sy;
-		}
+	}
 
 	if (*px + *pw > sw)
-		{
+	{
 		// Adjust width.
 		*pw -= ((*px + *pw) - sw);
-		}
+	}
 
 	if (*py + *ph > sh)
-		{
+	{
 		// Adjust height.
 		*ph -= ((*py + *ph) - sh);
-		}
-	
+	}
+
 	// Return 0 (success) if there's a width and a height left.	
 	return (int16_t)(*pw > 0 && *ph > 0 ? 0 : -1);
-	}
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -199,70 +198,69 @@ extern int16_t ClipQuiet(	// Returns non-zero if image entirely clipped out.
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t ClipQuiet(	// Returns non-zero if image entirely clipped out.
 	int32_t* px,				// Rectangle to be clipped.
-	int32_t* py, 
-	int32_t*	pw, 
+	int32_t* py,
+	int32_t*	pw,
 	int32_t*	ph,
 	int32_t	sx,			// Bounding rectangle.
-	int32_t	sy, 
-	int32_t	sw, 
+	int32_t	sy,
+	int32_t	sw,
 	int32_t	sh)
-	{
-	int16_t	sX	= (int16_t)(*px);
-	int16_t sY	= (int16_t)(*py);
-	int16_t	sW	= (int16_t)(*pw);
-	int16_t	sH	= (int16_t)(*ph);
+{
+	int16_t	sX = (int16_t)(*px);
+	int16_t sY = (int16_t)(*py);
+	int16_t	sW = (int16_t)(*pw);
+	int16_t	sH = (int16_t)(*ph);
 
-	int16_t	sRes	= ClipQuiet(&sX, &sY, &sW, &sH, 
-									(int16_t)sx, (int16_t)sy, (int16_t)sw, (int16_t)sh);
+	int16_t	sRes = ClipQuiet(&sX, &sY, &sW, &sH,
+		(int16_t)sx, (int16_t)sy, (int16_t)sw, (int16_t)sh);
 
-	*px	= sX;
-	*py	= sY;
-	*pw	= sW;
-	*ph	= sH;
+	*px = sX;
+	*py = sY;
+	*pw = sW;
+	*ph = sH;
 
 	return sRes;
-	}
+}
 
 
 int16_t CompareModes(PVIDEO_MODE pvm1, PVIDEO_MODE pvm2);
 
 extern void Disp_Init(void)	// Returns nothing.
 {
-    extern char **_argv;
-    const int arg = rspCommandLine("resolution");
-    if ((arg) && (_argv[arg+1]))
-    {
-        if (SDL_sscanf(_argv[arg+1], "%dx%d", &RequestedWidth, &RequestedHeight) != 2)
+	extern char **_argv;
+	const int arg = rspCommandLine("resolution");
+	if ((arg) && (_argv[arg + 1]))
+	{
+		if (SDL_sscanf(_argv[arg + 1], "%dx%d", &RequestedWidth, &RequestedHeight) != 2)
 			RequestedWidth = RequestedHeight = 0;
-    }
+	}
 
-    if ((RequestedWidth <= 0) || (RequestedHeight <= 0))
-    {
-        if (rspCommandLine("windowed"))
-        {
+	if ((RequestedWidth <= 0) || (RequestedHeight <= 0))
+	{
+		if (rspCommandLine("windowed"))
+		{
 			RequestedWidth = PrefsViewWidth;
 			RequestedHeight = PrefsViewHeight;
-        }
-        else
-        {
+		}
+		else
+		{
 			RequestedWidth = PrefsViewWidth;
 			RequestedHeight = PrefsViewHeight;
-        }
-    }
-
+		}
+	}
 
 	// Initialize maps to indentities.
 	int16_t i;
 	for (i = 0; i < 256; i++)
-		{
-		au8MapRed[i]	= i;
-		au8MapGreen[i]	= i;
-		au8MapBlue[i]	= i;
-		}
+	{
+		au8MapRed[i] = i;
+		au8MapGreen[i] = i;
+		au8MapBlue[i] = i;
+	}
 
 	// Never ever ever unlock these.
-	asPalEntryLocks[0]	= TRUE;
-	asPalEntryLocks[255]	= TRUE;
+	asPalEntryLocks[0] = TRUE;
+	asPalEntryLocks[255] = TRUE;
 
 	slvmModes.SetCompareFunc(CompareModes);
 }
@@ -270,10 +268,10 @@ extern void Disp_Init(void)	// Returns nothing.
 extern void rspSetApplicationName(
 	char* pszName)								// In: Application name
 {
-    SDL_free(sdlAppName);
-    sdlAppName = SDL_strdup(pszName);
-    if (sdlWindow)
-        SDL_SetWindowTitle(sdlWindow, sdlAppName);
+	SDL_free(sdlAppName);
+	sdlAppName = SDL_strdup(pszName);
+	if (sdlWindow)
+		SDL_SetWindowTitle(sdlWindow, sdlAppName);
 }
 
 
@@ -287,55 +285,55 @@ extern void rspSetApplicationName(
 //
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t CompareModes(	// Returns as described above.
-		PVIDEO_MODE	pvm1,		// First video mode to compare.
-		PVIDEO_MODE	pvm2)		// Second video mode to compare.
-	{
-	int16_t	sRes	= 1;	// Assume *pvm1 > *pvm2.
+	PVIDEO_MODE	pvm1,		// First video mode to compare.
+	PVIDEO_MODE	pvm2)		// Second video mode to compare.
+{
+	int16_t	sRes = 1;	// Assume *pvm1 > *pvm2.
 
 	if (pvm1->sColorDepth == pvm2->sColorDepth)
-		{
+	{
 		if (pvm1->sWidth == pvm2->sWidth)
-			{
-			if (pvm1->sHeight == pvm2->sHeight)
-				{
-				if (pvm1->sPages == pvm2->sPages)
-					{
-					sRes = 0;
-					}
-				else
-					{
-					if (pvm1->sPages < pvm2->sPages)
-						{
-						sRes = -1;
-						}
-					}
-				}
-			else
-				{
-				if (pvm1->sHeight < pvm2->sHeight)
-					{
-					sRes = -1;
-					}
-				}
-			}
-		else
-			{
-			if (pvm1->sWidth < pvm2->sWidth)
-				{
-				sRes = -1;
-				}
-			}
-		}
-	else
 		{
-		if (pvm1->sColorDepth < pvm2->sColorDepth)
+			if (pvm1->sHeight == pvm2->sHeight)
 			{
-			sRes = -1;
+				if (pvm1->sPages == pvm2->sPages)
+				{
+					sRes = 0;
+				}
+				else
+				{
+					if (pvm1->sPages < pvm2->sPages)
+					{
+						sRes = -1;
+					}
+				}
+			}
+			else
+			{
+				if (pvm1->sHeight < pvm2->sHeight)
+				{
+					sRes = -1;
+				}
 			}
 		}
+		else
+		{
+			if (pvm1->sWidth < pvm2->sWidth)
+			{
+				sRes = -1;
+			}
+		}
+	}
+	else
+	{
+		if (pvm1->sColorDepth < pvm2->sColorDepth)
+		{
+			sRes = -1;
+		}
+	}
 
 	return sRes;
-	}
+}
 
 
 
@@ -364,11 +362,11 @@ extern int16_t rspSuggestVideoMode(		// Returns 0 if successfull, non-zero other
 	int16_t*	psDeviceWidth /*= NULL*/,	// Out: Suggested device width (unless NULL)
 	int16_t*	psDeviceHeight /*= NULL*/,	// Out: Suggested device height (unless NULL)
 	int16_t*	psScaling /*= NULL*/)		// Out: Suggested scaling (unless NULL)
-	{
-	int16_t	sRes	= 0;	// Assume success.
+{
+	int16_t	sRes = 0;	// Assume success.
 
 	// Store video mode that the app is currently iterating.
-	PVIDEO_MODE	pvmOldModeQuery	= slvmModes.GetCurrent();
+	PVIDEO_MODE	pvmOldModeQuery = slvmModes.GetCurrent();
 
 	rspQueryVideoModeReset();
 
@@ -379,71 +377,71 @@ extern int16_t rspSuggestVideoMode(		// Returns 0 if successfull, non-zero other
 	int16_t	sModePages;
 
 	// Best results.
-	int16_t sBestModeWidth		= 16380;
-	int16_t	sBestModeHeight	= 16380;
-	int16_t	sModeFound			= FALSE;
+	int16_t sBestModeWidth = 16380;
+	int16_t	sBestModeHeight = 16380;
+	int16_t	sModeFound = FALSE;
 
 	while (rspQueryVideoMode(&sModeColorDepth, &sModeWidth, &sModeHeight, &sModePages) == 0)
-		{
+	{
 		// Must be same color depth.
 		if (sModeColorDepth == sDepth && sPages == sModePages)
-			{
+		{
 			// If the desired resolution would fit into this mode . . .
 			if (sWidth <= sModeWidth && sHeight <= sModeHeight)
-				{
+			{
 				// If this mode is closer than a previous one . . .
-				float	fFactorOld	= ((float)sBestModeWidth	* (float)sBestModeHeight)
-										/ ((float)sWidth				* (float)sHeight);
-				float	fFactorNew	= ((float)sModeWidth			* (float)sModeHeight)
-										/ ((float)sWidth				* (float)sHeight);
-				if (fFactorNew < fFactorOld)
-					{
-					sBestModeWidth		= sModeWidth;
-					sBestModeHeight	= sModeHeight;
-					sModeFound			= TRUE;
-					}
+				float	fFactorOld = ((float)sBestModeWidth	* (float)sBestModeHeight)
+					/ ((float)sWidth				* (float)sHeight);
+				float	fFactorNew = ((float)sModeWidth			* (float)sModeHeight)
+					/ ((float)sWidth				* (float)sHeight);
+    				if (fFactorNew < fFactorOld)
+				{
+					sBestModeWidth = sModeWidth;
+					sBestModeHeight = sModeHeight;
+					sModeFound = TRUE;
 				}
 			}
 		}
+	}
 
 	// If we found an acceptable mode . . .
 	if (sModeFound != FALSE)
-		{
+	{
 		// If pixel doubling was specified . . .
 		if (psScaling != NULL)
-			{
+		{
 			// If pixel doubling is allowed . . .
 			if (sScaling != FALSE)
-				{
+			{
 				// If the chosen mode is more than or equal to twice the 
 				// requested mode . . . 
-				if (sWidth * 2 <= sBestModeWidth 
+				if (sWidth * 2 <= sBestModeWidth
 					&& sHeight * 2 <= sBestModeHeight)
-					{
+				{
 					// Okay to pixel double.  Leave *psPixelDoubling as TRUE.
 					// Reduce best width and height appropriately.
-					sBestModeWidth		/= 2;
-					sBestModeHeight	/= 2;
-					}
+					sBestModeWidth /= 2;
+					sBestModeHeight /= 2;
+				}
 				else
-					{
+				{
 					// No pixel doubling possible for this mode.
-					*psScaling	= FALSE;
-					}
+					*psScaling = FALSE;
 				}
 			}
+		}
 
-		*psDeviceWidth		= sBestModeWidth;
-		*psDeviceHeight	= sBestModeHeight;
-		}
+		*psDeviceWidth = sBestModeWidth;
+		*psDeviceHeight = sBestModeHeight;
+	}
 	else
-		{
+	{
 		// Failed to find an acceptable mode.
-		sRes	= 1;
-		}
+		sRes = 1;
+	}
 
 	return sRes;
-	}
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -456,34 +454,34 @@ extern int16_t rspSuggestVideoMode(		// Returns 0 if successfull, non-zero other
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t rspGetVideoMode(
 	int16_t*	psDeviceDepth,				// Hardware display color depth returned here 
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psDeviceWidth,				// Hardware display width returned here 
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psDeviceHeight,			// Hardware display height returned here 
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psDevicePages,				// Hardware display back buffers returned here
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psWidth,						// Display area width returned here 
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psHeight,					// Display area height returned here
-												// (unless NULL).
+	// (unless NULL).
 	int16_t*	psPages/*= NULL*/,			// Number of pages (1 to n) returned here 
-												// (unless NULL).  More than 1 indicates a 
-												// page flipping scenario.
+	// (unless NULL).  More than 1 indicates a 
+	// page flipping scenario.
 	int16_t*	psPixelScaling/*= NULL*/)	// Pixel scaling in effect (1) or not (0)
-													// (unless NULL).
+	// (unless NULL).
 {
-    // lie about everything.
-    SET(psPixelScaling, 0);
-    SET(psDevicePages, 0);
-    SET(psPages, 1);
-    SET(psWidth, FramebufferWidth);
-    SET(psHeight, FramebufferHeight);
-    SET(psDeviceDepth, 8);
-    SET(psDeviceHeight, FramebufferWidth);
-    SET(psDeviceWidth, FramebufferHeight);
+	// lie about everything.
+	SET(psPixelScaling, 0);
+	SET(psDevicePages, 0);
+	SET(psPages, 1);
+	SET(psWidth, FramebufferWidth);
+	SET(psHeight, FramebufferHeight);
+	SET(psDeviceDepth, 8);
+	SET(psDeviceHeight, FramebufferWidth);
+	SET(psDeviceWidth, FramebufferHeight);
 
-    return 0;
+	return 0;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -495,45 +493,45 @@ extern int16_t rspGetVideoMode(
 
 static void addMode(int w, int h, int depth)
 {
-    PVIDEO_MODE pvm;
+	PVIDEO_MODE pvm;
 
-    if (depth >= 8)
-    {
-        pvm = new VIDEO_MODE;
-        pvm->sWidth = w;
-        pvm->sHeight = h;
-        pvm->sColorDepth = 8;
-        pvm->sPages = 1;
-        slvmModes.Insert(pvm);
-    }
+	if (depth >= 8)
+	{
+		pvm = new VIDEO_MODE;
+		pvm->sWidth = w;
+		pvm->sHeight = h;
+		pvm->sColorDepth = 8;
+		pvm->sPages = 1;
+		slvmModes.Insert(pvm);
+	}
 
-    if (depth >= 16)
-    {
-        pvm = new VIDEO_MODE;
-        pvm->sWidth = w;
-        pvm->sHeight = h;
-        pvm->sColorDepth = 16;
-        pvm->sPages = 1;
-        slvmModes.Insert(pvm);
-    }
+	if (depth >= 16)
+	{
+		pvm = new VIDEO_MODE;
+		pvm->sWidth = w;
+		pvm->sHeight = h;
+		pvm->sColorDepth = 16;
+		pvm->sPages = 1;
+		slvmModes.Insert(pvm);
+	}
 
-    if (depth >= 24)
-    {
-        pvm = new VIDEO_MODE;
-        pvm->sWidth = w;
-        pvm->sHeight = h;
-        pvm->sColorDepth = 32;
-        pvm->sPages = 1;
-        slvmModes.Insert(pvm);
-    }
+	if (depth >= 24)
+	{
+		pvm = new VIDEO_MODE;
+		pvm->sWidth = w;
+		pvm->sHeight = h;
+		pvm->sColorDepth = 32;
+		pvm->sPages = 1;
+		slvmModes.Insert(pvm);
+	}
 }
 
 extern void rspQueryVideoModeReset(void)
 {
-    static bool enumerated = false;
-    if (!enumerated)
-    {
-        ASSERT(SDL_WasInit(SDL_INIT_VIDEO));
+	static bool enumerated = false;
+	if (!enumerated)
+	{
+		ASSERT(SDL_WasInit(SDL_INIT_VIDEO));
 
 		// Attempt to grab user's current desktop resolution instead of forcing 640x480
 #ifndef MOBILE
@@ -545,8 +543,8 @@ extern void rspQueryVideoModeReset(void)
 #endif
 			addMode(640, 480, 8);
 
-        enumerated = true;
-    }
+		enumerated = true;
+	}
 
 	slvmModes.GetHead();
 }
@@ -564,63 +562,63 @@ extern void rspQueryVideoModeReset(void)
 //////////////////////////////////////////////////////////////////////////////
 extern int16_t rspQueryVideoMode(			// Returns 0 for each valid mode, then non-zero thereafter
 	int16_t* psColorDepth,						// Color depth (8, 15, 16, 24, 32)
-													// Unless NULL.
+	// Unless NULL.
 	int16_t* psWidth /*= NULL*/,				// Width returned here
-													// Unless NULL.
+	// Unless NULL.
 	int16_t* psHeight /*= NULL*/,			// Height returned here
-													// Unless NULL.
+	// Unless NULL.
 	int16_t* psPages /*= NULL*/)				// Number of video pages possible.
-	{
-	int16_t	sRes	= 0;	// Assume success.
+{
+	int16_t	sRes = 0;	// Assume success.
 
-	PVIDEO_MODE	pvm	= slvmModes.GetCurrent();
+	PVIDEO_MODE	pvm = slvmModes.GetCurrent();
 
 	if (pvm != NULL)
-		{
-		SET(psColorDepth,	pvm->sColorDepth);
-		SET(psWidth,			pvm->sWidth);
-		SET(psHeight,			pvm->sHeight);
+	{
+		SET(psColorDepth, pvm->sColorDepth);
+		SET(psWidth, pvm->sWidth);
+		SET(psHeight, pvm->sHeight);
 
-		SET(psPages,			pvm->sPages);
+		SET(psPages, pvm->sPages);
 
 		// Goto next video mode.
 		slvmModes.GetNext();
-		}
+	}
 	else
-		{
+	{
 		sRes = 1;
-		}
+	}
 
 	return sRes;
-	}
+}
 
 
 static SDL_Renderer *createRendererToggleVsync(SDL_Window *window, const int index, bool vsync)
 {
-    SDL_Renderer *retval = NULL;
-    if (vsync)
-        retval = SDL_CreateRenderer(window, index, SDL_RENDERER_PRESENTVSYNC);
-    if (!retval)
-        retval = SDL_CreateRenderer(window, index, 0);
-    return retval;
+	SDL_Renderer *retval = NULL;
+	if (vsync)
+		retval = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
+	if (!retval)
+		retval = SDL_CreateRenderer(window, -1, 0);
+	return retval;
 }
 
 static SDL_Renderer *createRendererByName(SDL_Window *window, const char *name)
 {
-    const bool vsync = !rspCommandLine("novsync");
-    if (name == NULL)
-        return createRendererToggleVsync(window, -1, vsync);
-    else
-    {
-        const int max = SDL_GetNumRenderDrivers();
-        for (int i = 0; i < max; i++)
-        {
-            SDL_RendererInfo info;
-            if ((SDL_GetRenderDriverInfo(i, &info) == 0) && (SDL_strcmp(info.name, name) == 0))
-                return createRendererToggleVsync(window, i, vsync);
-        }
-    }
-    return NULL;
+	const bool vsync = !rspCommandLine("novsync");
+	if (name == NULL)
+		return createRendererToggleVsync(window, -1, vsync);
+	else
+	{
+		const int max = SDL_GetNumRenderDrivers();
+		for (int i = 0; i < max; i++)
+		{
+			SDL_RendererInfo info;
+			if ((SDL_GetRenderDriverInfo(i, &info) == 0) && (SDL_strcmp(info.name, name) == 0))
+				return createRendererToggleVsync(window, -1, vsync);
+		}
+	}
+	return NULL;
 }
 
 
@@ -650,140 +648,162 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
 	int16_t sWidth,					// Specify width of display area on screen.
 	int16_t sHeight,					// Specify height of display area on screen.
 	int16_t	sPages /*= 1*/,		// Specify number of video pages.  More than 1
-										// indicates a page flipping scenario.
+	// indicates a page flipping scenario.
 	int16_t	sPixelDoubling	/*= FALSE*/)
-										// TRUE indicates to set the video mode
-										// to twice that indicated by sDeviceWidth,
-										// sDeviceHeight and double the coordinate
-										// system and blts.
-										// FALSE indicates not to use this garbage.
+	// TRUE indicates to set the video mode
+	// to twice that indicated by sDeviceWidth,
+	// sDeviceHeight and double the coordinate
+	// system and blts.
+	// FALSE indicates not to use this garbage.
+{
+	TRACE("rspSetVideoMode(%i, %i, %i, %i, %i, %i, %i)\n", sDeviceDepth, sDeviceWidth, sDeviceHeight, sWidth, sHeight, sPages, sPixelDoubling);
+	ASSERT(sDeviceDepth == 8);
+	//ASSERT(sDeviceWidth == 0);
+	//ASSERT(sDeviceHeight == 0);
+	//ASSERT(sWidth == 640);
+	//ASSERT(sHeight == 480);
+
+	for (size_t i = 0; i < 256; i++)
+		apeApp[i].a = 0xFF;
+
+
+	if (sPixelDoubling)
 	{
-		TRACE("rspSetVideoMode(%i, %i, %i, %i, %i, %i, %i)\n", sDeviceDepth, sDeviceWidth, sDeviceHeight, sWidth, sHeight, sPages, sPixelDoubling);
-        ASSERT(sDeviceDepth == 8);
-        //ASSERT(sDeviceWidth == 0);
-        //ASSERT(sDeviceHeight == 0);
-        //ASSERT(sWidth == 640);
-        //ASSERT(sHeight == 480);
+		fprintf(stderr, "STUBBED: pixel doubling? %s:%d\n", __FILE__, __LINE__);
+		return -1;
+	}
 
-        for (size_t i = 0; i < 256; i++)
-            apeApp[i].a = 0xFF;
+	FramebufferWidth = sWidth;
+	FramebufferHeight = sHeight;
 
-        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+	mouse_grabbed = !rspCommandLine("nomousegrab");
 
-        if (sPixelDoubling)
-        {
-            fprintf(stderr, "STUBBED: pixel doubling? %s:%d\n", __FILE__, __LINE__);
-            return -1;
-        }
+	Uint32 flags = 0;
+	if (!rspCommandLine("windowed"))
+	{
+		if ((!RequestedWidth) || (!RequestedHeight))
+			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+		else
+			flags |= SDL_WINDOW_FULLSCREEN;
+	}
 
-        FramebufferWidth = sWidth;
-        FramebufferHeight = sHeight;
+	if (rspCommandLine("opengl"))
+	{
+		flags |= SDL_WINDOW_OPENGL;
+		
+	}
 
-        mouse_grabbed = !rspCommandLine("nomousegrab");
+	if (rspCommandLine("nearest"))
+	{
+		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "nearest");
+	}
+	else if (rspCommandLine("best"))
+	{
+		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "best");
+	}
+	else
+	{
+		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+	}
 
-        Uint32 flags = 0;
-        if (!rspCommandLine("windowed"))
-        {
-            if ((!RequestedWidth) || (!RequestedHeight))
-                flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
-            else
-                flags |= SDL_WINDOW_FULLSCREEN;
-        }
+	if (mouse_grabbed)
+		flags |= SDL_WINDOW_INPUT_GRABBED;
 
-        if (mouse_grabbed)
-            flags |= SDL_WINDOW_INPUT_GRABBED;
 
 #if PLATFORM_IOS
-        flags |= SDL_WINDOW_BORDERLESS;   // don't show the status bar
+	flags |= SDL_WINDOW_BORDERLESS;   // don't show the status bar
 #endif
+	//TRACE("RequestedWidth %d   RequestedHeight %d\n",RequestedWidth,RequestedHeight);
+	//flags |= SDL_WINDOW_ALLOW_HIGHDPI;
+	const char *title = sdlAppName ? sdlAppName : "";
 
-		// Resizeable Window
-		//flags += SDL_RENDERER_PRESENTVSYNC, SDL_RENDERER_ACCELERATED;
-        //TRACE("RequestedWidth %d   RequestedHeight %d\n",RequestedWidth,RequestedHeight);
-		if (sdlWindow != NULL)
-		{
-			SDL_DestroyWindow(sdlWindow);
-			SDL_DestroyRenderer(sdlRenderer);
-			SDL_DestroyTexture(sdlTexture);
-		}
-        const char *title = sdlAppName ? sdlAppName : "";
-		sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, RequestedWidth, RequestedHeight, flags);
-        if (!sdlWindow)
-        {
-            char buf[128];
-            SDL_snprintf(buf, sizeof (buf), "Couldn't create window: %s.", SDL_GetError());
-            fprintf(stderr, "POSTAL: %s\n", buf);
-            SDL_Quit();
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
-            exit(1);
-        }
-		int w = 0, h = 0;
-		SDL_GetWindowSize(sdlWindow, &w, &h);
-		TRACE("SDL Window initialized at %ix%i\n", w, h);
-
-        bool bRequestedRenderer = true;
-        if (rspCommandLine("direct3d"))
-            sdlRenderer = createRendererByName(sdlWindow, "direct3d");
-        else if (rspCommandLine("opengl"))
-            sdlRenderer = createRendererByName(sdlWindow, "opengl");
-        else if (rspCommandLine("software"))
-            sdlRenderer = createRendererByName(sdlWindow, "software");
-        else
-        {
-            bRequestedRenderer = false;
-            sdlRenderer = createRendererByName(sdlWindow, NULL);
-        }
-
-        if (!sdlRenderer)
-        {
-            char buf[128];
-            SDL_snprintf(buf, sizeof (buf), "Couldn't create %s renderer: %s", bRequestedRenderer ? "requested" : "a", SDL_GetError());
-            fprintf(stderr, "POSTAL: %s\n", buf);
-            SDL_DestroyWindow(sdlWindow);
-            sdlWindow = NULL;
-            SDL_Quit();
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
-            exit(1);
-        }
-
-        
-
-#ifndef MOBILE //Need to remove this for the mouse point to be in the correct place, Android And IOS
-        SDL_RenderSetLogicalSize(sdlRenderer, FramebufferWidth, FramebufferHeight);
-		TRACE("SDL Renderer set: %ix%i\n", FramebufferWidth, FramebufferHeight);
-#endif
-        sdlTexture = SDL_CreateTexture(sdlRenderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, FramebufferWidth, FramebufferHeight);
-	//	sdlTextureTop = SDL_CreateTexture(sdlRenderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, FramebufferWidth, FramebufferHeight);
-		SDL_SetRenderTarget(sdlRenderer, sdlTexture);
-        if (!sdlTexture)
-        {
-            char buf[128];
-            SDL_snprintf(buf, sizeof (buf), "Couldn't create texture: %s", SDL_GetError());
-            fprintf(stderr, "POSTAL: %s\n", buf);
-            SDL_DestroyRenderer(sdlRenderer);
-            sdlRenderer = NULL;
-            SDL_DestroyWindow(sdlWindow);
-            sdlWindow = NULL;
-            SDL_Quit();
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
-            exit(1);
-        }
-
-        TexturePointer = new Uint32[FramebufferWidth * FramebufferHeight];
-        PalettedTexturePointer = new Uint8[FramebufferWidth * FramebufferHeight];
-        SDL_memset(TexturePointer, '\0', FramebufferWidth * FramebufferHeight * sizeof (Uint32));
-        SDL_memset(PalettedTexturePointer, '\0', FramebufferWidth * FramebufferHeight * sizeof (Uint8));
-        SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
-
-    	SDL_ShowCursor(0);
-       // SDL_SetRelativeMouseMode(mouse_grabbed ? SDL_TRUE : SDL_FALSE);
-
-		SDL_SetRenderDrawColor(sdlRenderer, 0, 0, 0, 255);
-		SDL_RenderClear(sdlRenderer);
-		SDL_RenderPresent(sdlRenderer);
-
-        return 0;
+	if (sdlWindow)
+	{
+		SDL_DestroyWindow(sdlWindow);
+		SDL_DestroyRenderer(sdlRenderer);
+		SDL_DestroyTexture(sdlTexture);
 	}
+	sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, RequestedWidth, RequestedHeight, flags);
+	if (!sdlWindow)
+	{
+		char buf[128];
+		SDL_snprintf(buf, sizeof(buf), "Couldn't create window: %s.", SDL_GetError());
+		fprintf(stderr, "POSTAL: %s\n", buf);
+		SDL_Quit();
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
+		exit(1);
+	}
+	int w = 0, h = 0;
+	Uint32 renderFlags;
+	SDL_GetWindowSize(sdlWindow, &w, &h);
+	TRACE("SDL Window initialized at %ix%i\n", w, h);
+
+	bool bRequestedRenderer = true;
+	if (rspCommandLine("direct3d"))
+	{
+		sdlRenderer = createRendererByName(sdlWindow, "direct3d");
+		renderFlags |= SDL_RENDERER_ACCELERATED;
+	}
+	else if (rspCommandLine("opengl"))
+	{
+		sdlRenderer = createRendererByName(sdlWindow, "opengl");
+		renderFlags |= SDL_RENDERER_ACCELERATED;
+	}
+	else if (rspCommandLine("software"))
+	{
+		sdlRenderer = createRendererByName(sdlWindow, "software");
+	}
+	else
+	{
+		bRequestedRenderer = false;
+		sdlRenderer = createRendererByName(sdlWindow, NULL);
+	}
+
+	if (!sdlRenderer)
+	{
+		char buf[128];
+		SDL_snprintf(buf, sizeof(buf), "Couldn't create %s renderer: %s", bRequestedRenderer ? "requested" : "a", SDL_GetError());
+		fprintf(stderr, "POSTAL: %s\n", buf);
+		SDL_DestroyWindow(sdlWindow);
+		sdlWindow = NULL;
+		SDL_Quit();
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
+		exit(1);
+	}
+
+	SDL_SetRenderDrawColor(sdlRenderer, 0, 0, 0, 255);
+	SDL_RenderClear(sdlRenderer);
+	SDL_RenderPresent(sdlRenderer);
+#ifndef MOBILE //Need to remove this for the mouse point to be in the correct place, Android And IOS
+	SDL_RenderSetLogicalSize(sdlRenderer, RequestedWidth, RequestedHeight);
+	TRACE("SDL Renderer set: %ix%i\n", RequestedWidth, RequestedHeight);
+#endif
+	sdlTexture = SDL_CreateTexture(sdlRenderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, FramebufferWidth, FramebufferHeight);
+	if (!sdlTexture)
+	{
+		char buf[128];
+		SDL_snprintf(buf, sizeof(buf), "Couldn't create texture: %s", SDL_GetError());
+		fprintf(stderr, "POSTAL: %s\n", buf);
+		SDL_DestroyRenderer(sdlRenderer);
+		sdlRenderer = NULL;
+		SDL_DestroyWindow(sdlWindow);
+		sdlWindow = NULL;
+		SDL_Quit();
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "POSTAL", buf, NULL);
+		exit(1);
+	}
+
+	TexturePointer = new Uint32[FramebufferWidth * FramebufferHeight];
+	PalettedTexturePointer = new Uint8[FramebufferWidth * FramebufferHeight];
+	SDL_memset(TexturePointer, '\0', FramebufferWidth * FramebufferHeight * sizeof(Uint32));
+	SDL_memset(PalettedTexturePointer, '\0', FramebufferWidth * FramebufferHeight * sizeof(Uint8));
+	SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
+
+	SDL_ShowCursor(0);
+	//SDL_SetRelativeMouseMode(mouse_grabbed ? SDL_TRUE : SDL_FALSE);
+
+	return 0;
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -794,9 +814,9 @@ extern int16_t rspSetVideoMode(	// Returns 0 if successfull, non-zero otherwise
 //
 //////////////////////////////////////////////////////////////////////////////
 extern void rspKillVideoMode(void)
-	{
-    /* no-op ... SDL_Quit() will catch this. */
-	}
+{
+	/* no-op ... SDL_Quit() will catch this. */
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -809,9 +829,9 @@ extern void rspKillVideoMode(void)
 //
 //////////////////////////////////////////////////////////////////////////////
 extern void rspKillVideoBuffer(void)
-	{
-    /* no-op ... SDL_Quit() will catch this. */
-	}
+{
+	/* no-op ... SDL_Quit() will catch this. */
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -822,7 +842,7 @@ extern void rspKillVideoBuffer(void)
 
 extern void rspUpdateDisplayRects(void)
 {
-    // no-op, just blast it all to the GPU.
+	// no-op, just blast it all to the GPU.
 }
 
 extern void rspCacheDirtyRect(
@@ -835,53 +855,53 @@ extern void rspCacheDirtyRect(
 
 extern void rspPresentFrame(void)
 {
-    if (!sdlWindow) return;
+	if (!sdlWindow) return;
 
-    // !!! FIXME: I imagine this is not fast. Maybe keep the dirty rect code at least?
-    ASSERT(sizeof (apeApp[0]) == sizeof (Uint32));
-    const Uint8 *src = PalettedTexturePointer;
-    Uint32 *dst = TexturePointer;
-    for (int y = 0; y < FramebufferHeight; y++)
-    {
-        for (int x = 0; x < FramebufferWidth; x++, src++, dst++)
-            *dst = apeApp[*src].argb;
-        }
-	
+	// !!! FIXME: I imagine this is not fast. Maybe keep the dirty rect code at least?
+	ASSERT(sizeof(apeApp[0]) == sizeof(Uint32));
+	const Uint8 *src = PalettedTexturePointer;
+	Uint32 *dst = TexturePointer;
+	for (int y = 0; y < FramebufferHeight; y++)
+	{
+		for (int x = 0; x < FramebufferWidth; x++, src++, dst++)
+			*dst = apeApp[*src].argb;
+	}
+
 	if (presentDirty == TRUE)
 	{
-		
+
 	}
 	else
 	{
-		SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
+   		SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
 		SDL_RenderClear(sdlRenderer);
 		SDL_RenderCopyEx(sdlRenderer, sdlTexture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
 		SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
 	}
-    static Uint32 lastframeticks = 0;
-    const Uint32 now = SDL_GetTicks();
+	static Uint32 lastframeticks = 0;
+	const Uint32 now = SDL_GetTicks();
 
-    if ((lastframeticks) && (lastframeticks <= now))
-    {
-        const Uint32 elapsed = (now - lastframeticks);
-        if (elapsed <= 5)  // going WAY too fast, maybe OpenGL (and/or no vsync)?
-            SDL_Delay(16 - elapsed);  // try to get closer to 60fps.
-    }
+	if ((lastframeticks) && (lastframeticks <= now))
+	{
+		const Uint32 elapsed = (now - lastframeticks);
+		if (elapsed <= 5)  // going WAY too fast, maybe OpenGL (and/or no vsync)?
+			SDL_Delay(16 - elapsed);  // try to get closer to 60fps.
+	}
 
-    lastframeticks = now;
+	lastframeticks = now;
 
-    #if 0
-    static Uint32 ticks = 0;
-    static Uint32 frames = 0;
-    frames++;
-    if ((now - ticks) > 5000)
-    {
-        if (ticks > 0)
-            printf("fps: %f\n", (((double) frames) / ((double) (now - ticks))) * 1000.0);
-        ticks = now;
-        frames = 0;
-    }
-    #endif
+#if 0
+	static Uint32 ticks = 0;
+	static Uint32 frames = 0;
+	frames++;
+	if ((now - ticks) > 5000)
+	{
+		if (ticks > 0)
+			printf("fps: %f\n", (((double)frames) / ((double)(now - ticks))) * 1000.0);
+		ticks = now;
+		frames = 0;
+	}
+#endif
 }
 
 extern void rspUpdateDisplay(void)
@@ -902,10 +922,10 @@ extern void rspPresentFrameTest(void)
 			*dst = apeApp[*src].argb;
 	}
 
-		SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
-		SDL_RenderClear(sdlRenderer);
-		SDL_RenderCopyEx(sdlRenderer, sdlTexture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
-		SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
+	SDL_UpdateTexture(sdlTexture, NULL, TexturePointer, FramebufferWidth * 4);
+	SDL_RenderClear(sdlRenderer);
+	SDL_RenderCopyEx(sdlRenderer, sdlTexture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
+	SDL_RenderPresent(sdlRenderer);  // off to the screen with you.
 
 	static Uint32 lastframeticks = 0;
 	const Uint32 now = SDL_GetTicks();
@@ -954,14 +974,14 @@ extern void rspUpdateDisplay(
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern int16_t rspLockVideoPage(	// Returns 0 if screen memory could be locked.
-											// Returns non-zero otherwise.
+	// Returns non-zero otherwise.
 	void**	ppvMemory,				// Pointer to display memory returned here.
-											// NULL returned if not supported.
+	// NULL returned if not supported.
 	int32_t*		plPitch)					// Pitch of display memory returned here.
-	{
+{
 	/* no-op. */
 	return 1;
-	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -970,9 +990,9 @@ extern int16_t rspLockVideoPage(	// Returns 0 if screen memory could be locked.
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspUnlockVideoPage(void)	// Returns nothing.
-	{
+{
 	/* no-op. */
-	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -981,13 +1001,13 @@ extern void rspUnlockVideoPage(void)	// Returns nothing.
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern int16_t rspLockVideoFlipPage(	// Returns 0 if flip screen memory could be 
-											// locked.  Returns non-zero otherwise.
+	// locked.  Returns non-zero otherwise.
 	void**	ppvMemory,				// Pointer to flip screen memory returned here.
-											// NULL returned on failure.
+	// NULL returned on failure.
 	int32_t*		plPitch)					// Pitch of flip screen memory returned here.
-	{
+{
 	return -1;
-	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -996,8 +1016,8 @@ extern int16_t rspLockVideoFlipPage(	// Returns 0 if flip screen memory could be
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspUnlockVideoFlipPage(void)	// Returns nothing.
-	{
-	}
+{
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1006,19 +1026,19 @@ extern void rspUnlockVideoFlipPage(void)	// Returns nothing.
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern int16_t rspLockVideoBuffer(	// Returns 0 if system buffer could be locked.
-												// Returns non-zero otherwise.
+	// Returns non-zero otherwise.
 	void**	ppvBuffer,					// Pointer to system buffer returned here.
-												// NULL returned on failure.
+	// NULL returned on failure.
 	int32_t*		plPitch)						// Pitch of system buffer returned here.
-	{
-    if (!sdlWindow)
-        return -1;
+{
+	if (!sdlWindow)
+		return -1;
 
-    *ppvBuffer = PalettedTexturePointer;
-    *plPitch = FramebufferWidth;
+	*ppvBuffer = PalettedTexturePointer;
+	*plPitch = FramebufferWidth;
 
-    return(0);
-	}
+	return(0);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1027,8 +1047,8 @@ extern int16_t rspLockVideoBuffer(	// Returns 0 if system buffer could be locked
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspUnlockVideoBuffer(void)	// Returns nothing.
-	{
-	}
+{
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1037,9 +1057,9 @@ extern void rspUnlockVideoBuffer(void)	// Returns nothing.
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern int16_t rspAllowPageFlip(void)	// Returns 0 on success.
-	{
+{
 	return 0;
-	}
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //	External Palette module functions.
@@ -1060,35 +1080,35 @@ extern void rspSetPaletteEntries(
 	uint8_t* pucGreen,	// Pointer to first green component to copy from
 	uint8_t* pucBlue,		// Pointer to first blue component to copy from
 	int32_t lIncBytes)				// Number of bytes by which to increment pointers after each copy
-	{
+{
 	// Set up destination pointers.
-	uint8_t*	pucDstRed	= &(apeApp[sStartIndex].r);
-	uint8_t*	pucDstGreen	= &(apeApp[sStartIndex].g);
-	uint8_t*	pucDstBlue	= &(apeApp[sStartIndex].b);
+	uint8_t*	pucDstRed = &(apeApp[sStartIndex].r);
+	uint8_t*	pucDstGreen = &(apeApp[sStartIndex].g);
+	uint8_t*	pucDstBlue = &(apeApp[sStartIndex].b);
 
 	// Set up lock pointer.
-	int16_t*	psLock		= &(asPalEntryLocks[sStartIndex]);
+	int16_t*	psLock = &(asPalEntryLocks[sStartIndex]);
 
 	while (sCount-- > 0)
-		{
+	{
 		if (*psLock++ == 0)
-			{
-			*pucDstRed		= *pucRed;
-			*pucDstGreen	= *pucGreen;
-			*pucDstBlue		= *pucBlue;
-			}
+		{
+			*pucDstRed = *pucRed;
+			*pucDstGreen = *pucGreen;
+			*pucDstBlue = *pucBlue;
+		}
 
 		// Increment source.
-		pucRed			+= lIncBytes;
-		pucGreen		+= lIncBytes;
-		pucBlue			+= lIncBytes;
+		pucRed += lIncBytes;
+		pucGreen += lIncBytes;
+		pucBlue += lIncBytes;
 
 		// Increment destination.
-		pucDstRed		+= sizeof(apeApp[0]);
-		pucDstGreen		+= sizeof(apeApp[0]);
-		pucDstBlue		+= sizeof(apeApp[0]);
-		}
+		pucDstRed += sizeof(apeApp[0]);
+		pucDstGreen += sizeof(apeApp[0]);
+		pucDstBlue += sizeof(apeApp[0]);
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1101,16 +1121,16 @@ void rspSetPaletteEntry(
 	uint8_t ucRed,				// Red component (0 to 255)
 	uint8_t ucGreen,				// Green component (0 to 255)
 	uint8_t ucBlue)				// Blue component (0 to 255)
-	{
+{
 	ASSERT(sEntry >= 0 && sEntry < 256);
 
 	if (asPalEntryLocks[sEntry] == 0)
-		{
-		apeApp[sEntry].r	= ucRed;
-		apeApp[sEntry].g	= ucGreen;
-		apeApp[sEntry].b	= ucBlue;
-		}
+	{
+		apeApp[sEntry].r = ucRed;
+		apeApp[sEntry].g = ucGreen;
+		apeApp[sEntry].b = ucBlue;
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1123,13 +1143,13 @@ void rspGetPaletteEntry(
 	int16_t* psRed,				// Red component (0 to 255) returned if not NULL.
 	int16_t* psGreen,			// Green component (0 to 255) returned if not NULL.
 	int16_t* psBlue)				// Blue component (0 to 255) returned if not NULL.
-	{
+{
 	ASSERT(sEntry >= 0 && sEntry < 256);
 
-	SET(psRed,		apeApp[sEntry].r);
-	SET(psGreen,	apeApp[sEntry].g);
-	SET(psBlue,		apeApp[sEntry].b);
-	}
+	SET(psRed, apeApp[sEntry].r);
+	SET(psGreen, apeApp[sEntry].g);
+	SET(psBlue, apeApp[sEntry].b);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1147,28 +1167,28 @@ extern void rspGetPaletteEntries(
 	uint8_t* pucGreen,	// Pointer to first green component to copy to
 	uint8_t* pucBlue,		// Pointer to first blue component to copy to
 	int32_t lIncBytes)				// Number of bytes by which to increment pointers after each copy
-	{
+{
 	// Set up source pointers.
-	uint8_t*	pucSrcRed	= &(apeApp[sStartIndex].r);
-	uint8_t*	pucSrcGreen	= &(apeApp[sStartIndex].g);
-	uint8_t*	pucSrcBlue	= &(apeApp[sStartIndex].b);
+	uint8_t*	pucSrcRed = &(apeApp[sStartIndex].r);
+	uint8_t*	pucSrcGreen = &(apeApp[sStartIndex].g);
+	uint8_t*	pucSrcBlue = &(apeApp[sStartIndex].b);
 
 	while (sCount-- > 0)
-		{
-		*pucRed		= *pucSrcRed;
-		*pucGreen	= *pucSrcGreen;
-		*pucBlue		= *pucSrcBlue;
+	{
+		*pucRed = *pucSrcRed;
+		*pucGreen = *pucSrcGreen;
+		*pucBlue = *pucSrcBlue;
 		// Increment destination.
-		pucRed			+= lIncBytes;
-		pucGreen			+= lIncBytes;
-		pucBlue			+= lIncBytes;
+		pucRed += lIncBytes;
+		pucGreen += lIncBytes;
+		pucBlue += lIncBytes;
 
 		// Increment source.
-		pucSrcRed		+= sizeof(apeApp[0]);
-		pucSrcGreen		+= sizeof(apeApp[0]);
-		pucSrcBlue		+= sizeof(apeApp[0]);
-		}
+		pucSrcRed += sizeof(apeApp[0]);
+		pucSrcGreen += sizeof(apeApp[0]);
+		pucSrcBlue += sizeof(apeApp[0]);
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1178,8 +1198,8 @@ extern void rspGetPaletteEntries(
 //
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspUpdatePalette(void)
-	{
-    }
+{
+}
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Set entries in the color map used to tweak values set via 
@@ -1197,23 +1217,23 @@ extern void rspSetPaletteMaps(
 	uint8_t* pucGreen,	// Pointer to first green component to copy from
 	uint8_t* pucBlue,		// Pointer to first blue component to copy from
 	int32_t lIncBytes)				// Number of bytes by which to increment pointers after each copy
-	{
+{
 	// Set up destination pointers.
-	uint8_t*	pucDstRed	= &(au8MapRed[sStartIndex]);
-	uint8_t*	pucDstGreen	= &(au8MapGreen[sStartIndex]);
-	uint8_t*	pucDstBlue	= &(au8MapBlue[sStartIndex]);
+	uint8_t*	pucDstRed = &(au8MapRed[sStartIndex]);
+	uint8_t*	pucDstGreen = &(au8MapGreen[sStartIndex]);
+	uint8_t*	pucDstBlue = &(au8MapBlue[sStartIndex]);
 
 	while (sCount-- > 0)
-		{
-		*pucDstRed++		= *pucRed;
-		*pucDstGreen++		= *pucGreen;
-		*pucDstBlue++		= *pucBlue;
+	{
+		*pucDstRed++ = *pucRed;
+		*pucDstGreen++ = *pucGreen;
+		*pucDstBlue++ = *pucBlue;
 		// Increment source.
-		pucRed				+= lIncBytes;
-		pucGreen				+= lIncBytes;
-		pucBlue				+= lIncBytes;
-		}
+		pucRed += lIncBytes;
+		pucGreen += lIncBytes;
+		pucBlue += lIncBytes;
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1232,23 +1252,23 @@ extern void rspGetPaletteMaps(
 	uint8_t* pucGreen,	// Pointer to first green component to copy to
 	uint8_t* pucBlue,		// Pointer to first blue component to copy to
 	int32_t lIncBytes)				// Number of bytes by which to increment pointers after each copy
-	{
+{
 	// Set up source pointers.
-	uint8_t*	pucSrcRed	= &(au8MapRed[sStartIndex]);
-	uint8_t*	pucSrcGreen	= &(au8MapGreen[sStartIndex]);
-	uint8_t*	pucSrcBlue	= &(au8MapBlue[sStartIndex]);
+	uint8_t*	pucSrcRed = &(au8MapRed[sStartIndex]);
+	uint8_t*	pucSrcGreen = &(au8MapGreen[sStartIndex]);
+	uint8_t*	pucSrcBlue = &(au8MapBlue[sStartIndex]);
 
 	while (sCount-- > 0)
-		{
-		*pucRed		= *pucSrcRed++;
-		*pucGreen	= *pucSrcGreen++;
-		*pucBlue		= *pucSrcBlue++;
+	{
+		*pucRed = *pucSrcRed++;
+		*pucGreen = *pucSrcGreen++;
+		*pucBlue = *pucSrcBlue++;
 		// Increment destination.
-		pucRed				+= lIncBytes;
-		pucGreen				+= lIncBytes;
-		pucBlue				+= lIncBytes;
-		}
+		pucRed += lIncBytes;
+		pucGreen += lIncBytes;
+		pucBlue += lIncBytes;
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Lock several palette entries.  Locking an entry keeps it from
@@ -1258,15 +1278,15 @@ extern void rspGetPaletteMaps(
 extern void rspLockPaletteEntries(
 	int16_t	sStartIndex,			// Palette entry at which to start locking.
 	int16_t	sCount)					// Number of palette entries to lock.
-	{
+{
 	// Set up iterator pointer.
-	int16_t*	psLock	= &(asPalEntryLocks[sStartIndex]);
+	int16_t*	psLock = &(asPalEntryLocks[sStartIndex]);
 
 	while (sCount-- > 0)
-		{
-		*psLock	= TRUE;
-		}
+	{
+		*psLock = TRUE;
 	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Unlock several palette entries previously locked by rspLockPaletteEntries().
@@ -1274,19 +1294,19 @@ extern void rspLockPaletteEntries(
 extern void rspUnlockPaletteEntries(
 	int16_t	sStartIndex,			// Palette entry at which to start locking.
 	int16_t	sCount)					// Number of palette entries to lock.
-	{
+{
 	// Set up iterator pointer.
-	int16_t*	psLock	= &(asPalEntryLocks[sStartIndex]);
+	int16_t*	psLock = &(asPalEntryLocks[sStartIndex]);
 
 	while (sCount-- > 0)
-		{
-		*psLock	= FALSE;
-		}
+	{
+		*psLock = FALSE;
+	}
 
 	// Never ever ever unlock these.
-	asPalEntryLocks[0]	= TRUE;
-	asPalEntryLocks[255]	= TRUE;
-	}
+	asPalEntryLocks[0] = TRUE;
+	asPalEntryLocks[255] = TRUE;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Dyna schtuff.
@@ -1304,10 +1324,10 @@ extern void rspUnlockPaletteEntries(
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspSetBackgroundCallback(	// Returns nothing.
 	void (BackgroundCall)(void))			// Callback when app processing becomes
-													// background.  NULL to clear.
-	{
-        /* no-op. */
-	}
+	// background.  NULL to clear.
+{
+	/* no-op. */
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1316,16 +1336,16 @@ extern void rspSetBackgroundCallback(	// Returns nothing.
 ///////////////////////////////////////////////////////////////////////////////
 extern void rspSetForegroundCallback(	// Returns nothing.
 	void (ForegroundCall)(void))			// Callback when app processing becomes
-													// foreground.  NULL to clear.
-	{
-        /* no-op. */
-	}
+	// foreground.  NULL to clear.
+{
+	/* no-op. */
+}
 
 extern int16_t rspIsBackground(void)			// Returns TRUE if in background, FALSE otherwise
-    {
-        extern bool GSDLAppIsActive;
-        return (int16_t) (!GSDLAppIsActive);
-    }
+{
+	extern bool GSDLAppIsActive;
+	return (int16_t)(!GSDLAppIsActive);
+}
 //////////////////////////////////////////////////////////////////////////////
 // EOF
 //////////////////////////////////////////////////////////////////////////////

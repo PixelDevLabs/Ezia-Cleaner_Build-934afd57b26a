@@ -293,7 +293,7 @@ void test(RImage* pimF,RImage* pimB)
 	rspNameBuffers(&pimBuffer);
 
 	rspLockBuffer();
-	rspRect(RSP_BLACK_INDEX, pimBuffer, 0, 0, floor(wideScreenWidth), wideScreenHeight);
+	rspRect(RSP_BLACK_INDEX, pimBuffer, 0, 0, wideScreenWidth, 480);
 	rspUnlockBuffer();
 
 	rspUpdateDisplay();

@@ -638,7 +638,7 @@ extern char g_pszPlayOneRealmOnlyMessage[]	=
 #endif
 	extern char g_pszStartSinglePlayerMenu_LoadLevel[]		= "LEVEL SELECT";
 	extern char g_pszStartSinglePlayerMenu_LoadGame[]		= "LOAD GAME";
-	extern char g_pszStartSinglePlayerMenu_Challenge[]		= "GAUNTLET CHALLENGE";
+	extern char g_pszStartSinglePlayerMenu_Challenge[]		= "CHALLENGE";
 
 	extern char g_pszStartChallengeMenu_Title[]				= "CHALLENGE";
 	extern char g_pszStartChallengeMenu_Gauntlet[]			= "THE GAUNTLET";
