@@ -300,8 +300,8 @@ CGameSettings::CGameSettings(void)
 
 	m_dGameFilmScale				= 1.0;	// 100%
 	
-	m_sEditorViewWidth = PrefsViewWidth;
-	m_sEditorViewHeight = PrefsViewHeight;
+	m_sEditorViewWidth = 640;
+	m_sEditorViewHeight = 480;
 
 	m_sGripZoneRadius				= 75;
 

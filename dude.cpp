@@ -2829,8 +2829,6 @@ if (!demoCompat)
 			stockpile.m_sDoubleBarrel		= 1;
 
 			CreateCheat(&stockpile);
-			m_pRealm->m_scene.m_dScale3d += 1;
-			m_pRealm->m_phood->m_dScale3d += 1;
 			m_dScaleX += 1;
 			m_dScaleY += 1;
 			m_dScaleZ += 1;

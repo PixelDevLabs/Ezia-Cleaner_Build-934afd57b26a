@@ -211,22 +211,24 @@ static int16_t SetupVideo(					// Returns 0 on success.
 	// Aspect Ratio / Greatest Common Divisor Check
 	//int getGCD = gcd(sWidth, sHeight)+20;
 	
-	int getGCD = (PrefsViewWidth / PrefsViewHeight);
-
-	switch (getGCD)
-	{
-	case (4/3):	// 4:3
-	//	wideScreenWidth = PrefsViewWidth;
-		wideScreenWidth = (PrefsViewWidth * (PrefsViewWidth / PrefsViewHeight));
-		wideScreenHeight = PrefsViewHeight;
-		break;
-	default:
-		wideScreenWidth = PrefsViewWidth;
-		wideScreenHeight = PrefsViewHeight;
-		break;
-	}
+	double getGCD = ((double)PrefsViewWidth / (double)PrefsViewHeight);
 	wideScreenMultiW = (double)PrefsViewWidth / 640.0;
 	wideScreenMultiH = (double)PrefsViewHeight / 480.0;
+
+	if (getGCD == (4.0 / 3.0))
+	{
+		wideScreenWidth = sDeviceWidth;
+		//wideScreenWidth = (sDeviceWidth * (sDeviceWidth / sDeviceHeight));
+		wideScreenHeight = sDeviceHeight;
+	}
+	else
+	{
+		wideScreenWidth = 640;
+		//wideScreenWidth = ((640.0 * ((double)PrefsViewWidth / (double)PrefsViewHeight))+640);
+		wideScreenHeight = 480;
+	}
+
+
 	
 	// If bigger than 640x480, set to 853x480, else 640x480...no ty
 	/*

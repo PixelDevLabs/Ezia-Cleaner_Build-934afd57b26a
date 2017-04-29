@@ -67,9 +67,9 @@
 //*****************************************************************************
 
 #ifdef PATHS_IN_INCLUDES
-	#include "ORANGE/GameLib/SPRITE.H"
+#include "ORANGE/GameLib/SPRITE.H"
 #else
-	#include "SPRITE.H"
+#include "SPRITE.H"
 #endif // PATHS_IN_INCLUDES
 
 ////////////////// Instantiate Static members ////////////////////////////////
@@ -121,7 +121,7 @@ RSprite::RSprite(RImage* pImage, uint32_t ulFlags)
 
 	m_pImage = pImage;
 	m_ulFlags = ulFlags;
-	m_sOwnImage	= FALSE;
+	m_sOwnImage = FALSE;
 }
 
 //*****************************************************************************
@@ -147,8 +147,8 @@ RSprite::RSprite(RImage* pImage, uint32_t ulFlags)
 //
 //*****************************************************************************
 
-RSprite::RSprite(int16_t sX, int16_t sY, int16_t sZ, int16_t sAngle, 
-                 int32_t lWidth, int32_t lHeight, uint32_t ulFlags, RImage* pImage)
+RSprite::RSprite(int16_t sX, int16_t sY, int16_t sZ, int16_t sAngle,
+	int32_t lWidth, int32_t lHeight, uint32_t ulFlags, RImage* pImage)
 {
 	// This basic init, among other things, adds this RSprite to the
 	// list with the key pointing at m_sZ.
@@ -190,17 +190,17 @@ RSprite::RSprite(int16_t sX, int16_t sY, int16_t sZ, int16_t sAngle,
 void RSprite::Init(void)
 {
 	m_pImage = NULL;
-	m_sOwnImage	= FALSE;
+	m_sOwnImage = FALSE;
 	m_ulFlags = 0;
 	m_sX = m_sY = m_sZ = m_sAngle = 0;
 	m_lWidth = m_lHeight = 0;
 
-	m_sHotSpotX	= 0;
-	m_sHotSpotY	= 0;
-	m_sHotSpotZ	= 0;
+	m_sHotSpotX = 0;
+	m_sHotSpotY = 0;
+	m_sHotSpotZ = 0;
 
 	RSprite::SpriteList.Insert(this, &m_sZ);
-//	TRACE("RSprite::RSprite - adding sprite to list\n");
+	//	TRACE("RSprite::RSprite - adding sprite to list\n");
 	if (RSprite::SpriteList.IsEmpty())
 		TRACE("but the list is empty or something\n");
 }
@@ -231,7 +231,7 @@ RSprite::~RSprite()
 	DestroyImage();
 
 	// Remove yourself from the list of sprites
-//	if (RSprite::SpriteList.IsEmpty())
+	//	if (RSprite::SpriteList.IsEmpty())
 	RSprite::SpriteList.Remove(this);
 }
 
@@ -256,19 +256,19 @@ RSprite::~RSprite()
 
 int16_t RSprite::CreateImage(void)	// Returns 0 on success.
 {
-	int16_t	sRes	= 0;	// Assume success.
+	int16_t	sRes = 0;	// Assume success.
 
-	m_pImage	= new RImage;
+	m_pImage = new RImage;
 	if (m_pImage != NULL)
 	{
 		// Succesfully allocated an image.
 		// Remember we allocated it.
-		m_sOwnImage	= TRUE;
+		m_sOwnImage = TRUE;
 	}
 	else
 	{
 		TRACE("CreateImage(): Failed to allocate new RImage.\n");
-		sRes	= -1;
+		sRes = -1;
 	}
 
 	return sRes;
@@ -298,8 +298,8 @@ void RSprite::DestroyImage(void)	// Returns nothing.
 	if (m_pImage != NULL && m_sOwnImage != FALSE)
 	{
 		delete m_pImage;
-		m_pImage		= NULL;
-		m_sOwnImage	= FALSE;
+		m_pImage = NULL;
+		m_sOwnImage = FALSE;
 	}
 }
 
@@ -440,7 +440,7 @@ int16_t RSprite::Save(RFile* pcf)
 																								{
 																									TRACE("RSprite::Save - Error writing image flag\n");
 																									sReturn = FAILURE;
-																								}	
+																								}
 																							}
 																						}
 																						else
@@ -471,7 +471,7 @@ int16_t RSprite::Save(RFile* pcf)
 																		{
 																			TRACE("RSprite::Save - Error writing m_dZvel\n");
 																			sReturn = FAILURE;
-																		}	
+																		}
 																	}
 																	else
 																	{
@@ -519,7 +519,7 @@ int16_t RSprite::Save(RFile* pcf)
 										{
 											TRACE("RSprite::Save - Error writing m_dX\n");
 											sReturn = FAILURE;
-										}	
+										}
 									}
 									else
 									{
@@ -537,37 +537,37 @@ int16_t RSprite::Save(RFile* pcf)
 							{
 								TRACE("RSprite::Save - Error writing m_sAngle\n");
 								sReturn = FAILURE;
-							}						
+							}
 						}
 						else
 						{
 							TRACE("RSprite::Save - Error writing m_sZ position\n");
 							sReturn = FAILURE;
-						}					
+						}
 					}
 					else
 					{
 						TRACE("RSprite::Save - Error writing m_sY position\n");
 						sReturn = FAILURE;
-					}					
+					}
 				}
 				else
 				{
 					TRACE("RSprite::Save - Error writing m_sX position\n");
 					sReturn = FAILURE;
-				}				
+				}
 			}
 			else
 			{
 				TRACE("RSprite::Save - Error writing version number\n");
 				sReturn = FAILURE;
-			}		
+			}
 		}
 		else
 		{
 			TRACE("RSprite::Save - Error writing file type\n");
 			sReturn = FAILURE;
-		}	
+		}
 	}
 	else
 	{
@@ -781,8 +781,8 @@ int16_t RSprite::Load(RFile* pcf)
 														{
 															TRACE("RSprite::Load - Error reading m_dZ\n");
 															sReturn = FAILURE;
-														}	
-													}	
+														}
+													}
 													else
 													{
 														TRACE("RSprite::Load - Error reading m_dY\n");
@@ -863,7 +863,7 @@ int16_t RSprite::Load(RFile* pcf)
 		TRACE("RSprite::Load - Error RFile pointer does not refer to an open file\n");
 		sReturn = FAILURE;
 	}
-	
+
 	return sReturn;
 }
 
@@ -888,7 +888,7 @@ int16_t RSprite::Load(RFile* pcf)
 //
 //*****************************************************************************
 int16_t RSprite::DoRegionsCollide(int16_t /*sThisRegionType*/, int16_t /*sOtherRegionType*/,
-											RSprite* /*pSprite*/)	
+	RSprite* /*pSprite*/)
 {
 	int16_t bCollision = 0;
 

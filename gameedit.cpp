@@ -947,16 +947,16 @@ extern int wideScreenHeight;
 
 // Amount to inc or dec display area when adjusted.
 // Indicate here as inc (i.e., positive).
-#define DISPLAY_SIZE_DELTA_X	((wideScreenWidth - 640)+20)
-#define DISPLAY_SIZE_DELTA_Y	((wideScreenHeight - 480)+20)
+#define DISPLAY_SIZE_DELTA_X	20
+#define DISPLAY_SIZE_DELTA_Y	20
 
 // Amount of bottom border.
-#define DISPLAY_BOTTOM_BORDER	(wideScreenWidth/(640/200))
-#define DISPLAY_RIGHT_BORDER	(wideScreenHeight/(480/100))
+#define DISPLAY_BOTTOM_BORDER	200
+#define DISPLAY_RIGHT_BORDER	100
 
 // Initial camera viewable area.
-#define INITIAL_CAMERA_X		(floor(wideScreenWidth))
-#define INITIAL_CAMERA_Y		(wideScreenHeight)
+#define INITIAL_CAMERA_X		640
+#define INITIAL_CAMERA_Y		480
 
 // Front most priority for a hotbox.
 #define FRONTMOST_HOT_PRIORITY	-32767
@@ -971,22 +971,22 @@ extern int wideScreenHeight;
 #define MAP_GUI_FILE					"res/editor/Map.gui"
 #define NAVNETS_GUI_FILE			"res/editor/NavNets.gui"
 
-#define DISP_INFO_FONT_H			(wideScreenHeight/(480/15))
+#define DISP_INFO_FONT_H			15
 
-#define DUDE_STATUS_RECT_X			((wideScreenWidth - 640)+10)
+#define DUDE_STATUS_RECT_X			10
 #define DUDE_STATUS_RECT_Y			(REALM_STATUS_RECT_Y + REALM_STATUS_RECT_H + 3)
 #define DUDE_STATUS_RECT_W			(ms_pcameraCur->m_sViewW - DUDE_STATUS_RECT_X)
-#define DUDE_STATUS_RECT_H			(wideScreenHeight/(480/(g_GameSettings.m_sDisplayInfo ? (INFO_STATUS_RECT_Y - DUDE_STATUS_RECT_Y) : (g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y) )))// (g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y)
+#define DUDE_STATUS_RECT_H			(g_GameSettings.m_sDisplayInfo ? (INFO_STATUS_RECT_Y - DUDE_STATUS_RECT_Y) : (g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y) )// (g_pimScreenBuf->m_sHeight - DUDE_STATUS_RECT_Y)
 
-#define REALM_STATUS_RECT_X		((wideScreenWidth - 640)+10)
+#define REALM_STATUS_RECT_X		10
 #define REALM_STATUS_RECT_Y		(ms_pcameraCur->m_sFilmViewY + ms_pcameraCur->m_sViewH + 3)
 #define REALM_STATUS_RECT_W		(ms_pcameraCur->m_sViewW - REALM_STATUS_RECT_X)
-#define REALM_STATUS_RECT_H		(wideScreenHeight/(480/40))
+#define REALM_STATUS_RECT_H		40
 
-#define INFO_STATUS_RECT_X			((wideScreenWidth - 640)+10)
+#define INFO_STATUS_RECT_X			10
 #define INFO_STATUS_RECT_Y			(g_pimScreenBuf->m_sHeight - INFO_STATUS_RECT_H)
 #define INFO_STATUS_RECT_W			(g_pimScreenBuf->m_sWidth - INFO_STATUS_RECT_X)
-#define INFO_STATUS_RECT_H			(wideScreenHeight/(480/(DISP_INFO_FONT_H + 1)))
+#define INFO_STATUS_RECT_H			(DISP_INFO_FONT_H + 1)
 
 
 // This value is mutliplied by the amount the cursor is off the edge of the view
@@ -5130,8 +5130,8 @@ static int16_t AdjustDisplaySize(	// Returns 0 on success.
 	{
 	int16_t	sError		= 0;
 
-	int16_t	sDisplayW = PrefsViewWidth;	// Safety.
-	int16_t	sDisplayH = PrefsViewHeight;	// Safety.
+	int16_t	sDisplayW = wideScreenWidth;	// Safety.
+	int16_t	sDisplayH = wideScreenHeight;	// Safety.
 	int16_t	sDeviceD		= 8;		// Safety.
 
 	// Get current settings.
@@ -5170,8 +5170,8 @@ static int16_t SizeUpdate(		// Returns 0 on success.
 	{
 	int16_t	sRes	= 0;	// Assume success.
 
-	int16_t	sDisplayW = PrefsViewWidth;	// Safety.
-	int16_t	sDisplayH = PrefsViewHeight;	// Safety.
+	int16_t	sDisplayW = wideScreenWidth;	// Safety.
+	int16_t	sDisplayH = wideScreenHeight;	// Safety.
 	int16_t	sDisplayD	= 8;		// Safety.
 
 	// Get current settings.
